@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Pacifico&family=Roboto&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="form.css">
+</head>
+
+<body>
+    <div class="logWrap ">
+        <div class="logLeft">
+            <h1><span>W</span>arsha</h1>
+            <!--? condition here if sign up or login -->
+            <h2><strong> Welcome Back !</strong></h2>
+            <p>Find the <span>Nearest</span> mechanic..</p>
+            <p class="pBook">Book online now !</p>
+        </div>
+
+        <!-- TODO login form -->
+        <form class="form" class="animation a1">
+            <h2 class="lFTitle animation a1">Login</h2>
+
+            <input type="email" name="email" id="email" placeholder="Email Address" class="form-field animation a2"
+                autofocus>
+            <label for="email" class="animation a2"></label>
+
+            <input type="password" name="password" id="password" placeholder="Password" class="form-field animation a3">
+            <label for="password" class="animation a3"></label>
+
+            <button className="formBtn" class="animation a4">Login</button>
+
+            <div id="or" class="animation a5">
+                <span id="s1"></span>
+                <p>or</p>
+                <span id="s2"></span>
+            </div>
+            <span class="animation a6">New to Warsha? <a href="#">join now</a></span>
+        </form>
+
+        <!-- TODO Sign up form -->
+        <form class="form" class="animation a1">
+            <h2 class="lFTitle animation a1">Sign Up</h2>
+            <input type="text" name="fName" id="fName" placeholder="First Name" class="form-field animation a2"
+                autofocus>
+            <label for="fName" class="animation a2"></label>
+
+            <input type="text" name="lName" id="lName" placeholder="Last Name" class="form-field animation a2">
+            <label for="lName" class="animation a2"></label>
+
+            <input type="email" name="email" id="email" placeholder="Email Address" class="form-field animation a2">
+            <label for="email" class="animation a2"></label>
+
+            <input type="password" name="password" id="password" placeholder="Password" class="form-field animation a3">
+            <label for="password" class="animation a3"></label>
+
+            <input type="password" name="cPassword" id="cPassword" placeholder="Confirm Password"
+                class="form-field animation a3">
+            <label for="cPassword" class="animation a3"></label>
+
+            <button className="formBtn" class="animation a4">sign up</button>
+            <div id="or" class="animation a5">
+                <span id="s1"></span>
+                <p>or</p>
+                <span id="s2"></span>
+            </div>
+            <span class="animation a6">Already on Warsha? <a href="#"> Login</a></span>
+        </form>
+
+        <!--?S <div role="textbox" contenteditable="true" aria-multiline="true" class="form-field"></div> -->
+    </div>
+
+
+</body>
+
+</html>
