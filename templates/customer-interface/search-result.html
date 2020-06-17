@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
+    <link rel="stylesheet" href="../style.css">
+    <title>Search Result</title>
+</head>
+<body>
+    <div class="container row pt-3 m-auto">
+        
+        <!-- Filters Container Start -->
+        <div class="col-3">
+            <div class="search-filters">
+                <!-- Filter Title Start -->
+                <p class="filters-title">
+                    <i class="fas fa-filter pr-2"></i>
+                    Filters
+                </p>
+                <!-- Filter Title End -->
+
+                <!-- Filters Start -->
+                <ul class="filters p-0 m-0">
+                    <li>
+                        <i class="fas fa-cogs pr-2"></i>
+                        Make
+                        <i class="fas fa-caret-down filter-arrow"></i>
+
+                        <!-- Filter Options Start -->
+                        <ul class="filter-options">
+                            <li>
+                                <input type="checkbox" name="car-make" id="audi">
+                                Audi
+                            </li>
+                            <li>
+                                <input type="checkbox" name="car-make" id="bmw">
+                                BMW
+                            </li>
+                            <li>
+                                <input type="checkbox" name="car-make" id="ford">
+                                Ford
+                            </li>
+                            <li>More</li>
+                        </ul>
+                        <!-- Filter Options End -->
+                    </li>
+                    <li>
+                        <i class="fas fa-car pr-2"></i>
+                        Model
+                        <i class="fas fa-caret-right filter-arrow"></i>
+                    </li>
+                    <li>
+                        <i class="far fa-calendar pr-2"></i>
+                            Year
+                        <i class="fas fa-caret-right filter-arrow"></i>
+                    </li>
+                    <li>
+                        <i class="far fa-calendar-alt pr-2"></i>
+                            Availability
+                        <i class="fas fa-caret-right filter-arrow"></i>
+                    </li>
+                    <li>
+                        <i class="fas fa-tools pr-2"></i>
+                            Remote Check
+                        <i class="fas fa-caret-right filter-arrow"></i>
+                    </li>
+                </ul>
+                <!-- Filters End -->
+            </div>
+        </div>
+        <!-- Filters Container End -->
+
+        <!-- Centers Cards Container Start -->
+        <div class="col-9">
+            <div class="cards-container">
+                <div class="d-flex justify-content-between mb-3 mx-2">
+                    <h5>All Specialities <span class="no-of--all-centers">1050 Centers</span> </h5>
+
+                    <!-- Sort Options Start -->
+                    <div>
+                        <select id="sort" name="sort" class="sort-options">
+                            <option value="default" selected>Select Option</option>
+                            <option value="best-match">Best Match</option>
+                            <option value="top-rated">Top Rated</option>
+                            <option value="price-low-to-hight">Price Low To Hight</option>
+                            <option value="les-waiting-time">Less Waiting Time</option>
+                        </select>
+                    </div>
+                    <!-- Sort Options End -->
+                </div>
+                
+                <!-- Center Card Start -->
+                <div class="center-card d-flex justify-content-between b-radius-10 div-border">
+                    <!-- Center Image Start -->
+                    <div class="center-details-img-container">
+                        <img src="../../public/images/mechanistic.jpg" alt="" class="center-details-img img-circle"/>
+                    </div>
+                    <!-- Center Image End -->
+
+                    <div class="center-card-info">
+                        <!-- Center Name Start -->
+                        <p class="center-name">Center <b>Eng Salah Ahmed</b></p>
+                        <!-- Center Name End -->
+
+                        <!-- Center speciality Start -->
+                        <h6 class="center-speciality">
+                            Speciality Of Electricity & Mechanic
+                        </h6>
+                        <!-- Center speciality End -->
+
+                        <!-- Center Ratings Start -->
+                        <div class="center-ratings">
+                            <!-- Ratings Start -->
+                            <span class="ratings">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <i class="far fa-star"></i>
+                            </span>
+                            <!-- Ratings End -->
+
+                            <!-- No. Of Reviews Start -->
+                            <p class="no-of-reviews m-0">
+                                Overall Ratings From 255 Visitors
+                            </p>
+                            <!-- No. Of Reviews End -->
+                            <!-- No. Of Reviews Start -->
+                            <p class="center-card-addess m-0">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Nasr City: Enozha
+                            </p>
+                            <!-- No. Of Reviews End -->
+                            <!-- No. Of Reviews Start -->
+                            <p class="center-card-phone m-0">
+                                <i class="fas fa-phone-alt"></i>
+                                16697 - Regular Call
+                            </p>
+                            <!-- No. Of Reviews End -->
+
+                        </div>
+                        <!-- Center Ratings Start -->
+                    </div>
+                    <div class="d-flex justify-content-between center-card-appoitments">
+                        <div class="arrow">
+                            <button>
+                                <i class="fas fa-arrow-left"></i>
+                            </button>
+                        </div>
+                        <div class="appointment-board">
+                            <p class="booking-day">Today</p>
+                            <ul class="appointments-times">
+                                <li>Not Available</li>
+                            </ul>
+                            <button class="booking-btn">Book</button>
+                        </div>
+                        <div class="appointment-board">
+                            <p class="booking-day">Tomorrow</p>
+                            <ul class="appointments-times">
+                                <li>12:00 PM</li>
+                                <li><del>01:00 PM</del></li>
+                                <li>03:00 PM</li>
+                                <li><del>05:00 PM</del></li>
+                                <li>More</li>
+                            </ul>
+                            <button class="booking-btn">Book</button>
+                        </div>
+                        <div class="appointment-board">
+                            <p class="booking-day">Wed 06/5</p>
+                            <ul class="appointments-times">
+                                <li>12:00 PM</li>
+                                <li><del>01:00 PM</del></li>
+                                <li>03:00 PM</li>
+                                <li><del>05:00 PM</del></li>
+                                <li>More</li>
+                            </ul>
+                            <button class="booking-btn">Book</button>
+                        </div>
+                        <div class="arrow">
+                            <button>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Center Card End -->
+                <!-- Center Card Start -->
+                <div class="center-card d-flex justify-content-between b-radius-10 div-border">
+                    <!-- Center Image Start -->
+                    <div class="center-details-img-container">
+                        <img src="../../public/images/mechanistic.jpg" alt="" class="center-details-img img-circle"/>
+                    </div>
+                    <!-- Center Image End -->
+
+                    <div class="center-card-info">
+                        <!-- Center Name Start -->
+                        <p class="center-name">Center <b>Eng Salah Ahmed</b></p>
+                        <!-- Center Name End -->
+
+                        <!-- Center speciality Start -->
+                        <h6 class="center-speciality">
+                            Speciality Of Electricity & Mechanic
+                        </h6>
+                        <!-- Center speciality End -->
+
+                        <!-- Center Ratings Start -->
+                        <div class="center-ratings">
+                            <!-- Ratings Start -->
+                            <span class="ratings">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <i class="far fa-star"></i>
+                            </span>
+                            <!-- Ratings End -->
+
+                            <!-- No. Of Reviews Start -->
+                            <p class="no-of-reviews m-0">
+                                Overall Ratings From 255 Visitors
+                            </p>
+                            <!-- No. Of Reviews End -->
+                            <!-- No. Of Reviews Start -->
+                            <p class="center-card-addess m-0">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Nasr City: Enozha
+                            </p>
+                            <!-- No. Of Reviews End -->
+                            <!-- No. Of Reviews Start -->
+                            <p class="center-card-phone m-0">
+                                <i class="fas fa-phone-alt"></i>
+                                16697 - Regular Call
+                            </p>
+                            <!-- No. Of Reviews End -->
+
+                        </div>
+                        <!-- Center Ratings Start -->
+                    </div>
+                    <div class="d-flex justify-content-between center-card-appoitments">
+                        <div class="arrow">
+                            <button>
+                                <i class="fas fa-arrow-left"></i>
+                            </button>
+                        </div>
+                        <div class="appointment-board">
+                            <p class="booking-day">Today</p>
+                            <ul class="appointments-times">
+                                <li>Not Available</li>
+                            </ul>
+                            <button class="booking-btn">Book</button>
+                        </div>
+                        <div class="appointment-board">
+                            <p class="booking-day">Tomorrow</p>
+                            <ul class="appointments-times">
+                                <li>12:00 PM</li>
+                                <li><del>01:00 PM</del></li>
+                                <li>03:00 PM</li>
+                                <li><del>05:00 PM</del></li>
+                                <li>More</li>
+                            </ul>
+                            <button class="booking-btn">Book</button>
+                        </div>
+                        <div class="appointment-board">
+                            <p class="booking-day">Wed 06/5</p>
+                            <ul class="appointments-times">
+                                <li>12:00 PM</li>
+                                <li><del>01:00 PM</del></li>
+                                <li>03:00 PM</li>
+                                <li><del>05:00 PM</del></li>
+                                <li>More</li>
+                            </ul>
+                            <button class="booking-btn">Book</button>
+                        </div>
+                        <div class="arrow">
+                            <button>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Center Card End -->
+                <!-- Center Card Start -->
+                <div class="center-card d-flex justify-content-between b-radius-10 div-border">
+                    <!-- Center Image Start -->
+                    <div class="center-details-img-container">
+                        <img src="../../public/images/mechanistic.jpg" alt="" class="center-details-img img-circle"/>
+                    </div>
+                    <!-- Center Image End -->
+
+                    <div class="center-card-info">
+                        <!-- Center Name Start -->
+                        <p class="center-name">Center <b>Eng Salah Ahmed</b></p>
+                        <!-- Center Name End -->
+
+                        <!-- Center speciality Start -->
+                        <h6 class="center-speciality">
+                            Speciality Of Electricity & Mechanic
+                        </h6>
+                        <!-- Center speciality End -->
+
+                        <!-- Center Ratings Start -->
+                        <div class="center-ratings">
+                            <!-- Ratings Start -->
+                            <span class="ratings">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <i class="far fa-star"></i>
+                            </span>
+                            <!-- Ratings End -->
+
+                            <!-- No. Of Reviews Start -->
+                            <p class="no-of-reviews m-0">
+                                Overall Ratings From 255 Visitors
+                            </p>
+                            <!-- No. Of Reviews End -->
+                            <!-- No. Of Reviews Start -->
+                            <p class="center-card-addess m-0">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Nasr City: Enozha
+                            </p>
+                            <!-- No. Of Reviews End -->
+                            <!-- No. Of Reviews Start -->
+                            <p class="center-card-phone m-0">
+                                <i class="fas fa-phone-alt"></i>
+                                16697 - Regular Call
+                            </p>
+                            <!-- No. Of Reviews End -->
+
+                        </div>
+                        <!-- Center Ratings Start -->
+                    </div>
+                    <div class="d-flex justify-content-between center-card-appoitments">
+                        <div class="arrow">
+                            <button>
+                                <i class="fas fa-arrow-left"></i>
+                            </button>
+                        </div>
+                        <div class="appointment-board">
+                            <p class="booking-day">Today</p>
+                            <ul class="appointments-times">
+                                <li>Not Available</li>
+                            </ul>
+                            <button class="booking-btn">Book</button>
+                        </div>
+                        <div class="appointment-board">
+                            <p class="booking-day">Tomorrow</p>
+                            <ul class="appointments-times">
+                                <li>12:00 PM</li>
+                                <li><del>01:00 PM</del></li>
+                                <li>03:00 PM</li>
+                                <li><del>05:00 PM</del></li>
+                                <li>More</li>
+                            </ul>
+                            <button class="booking-btn">Book</button>
+                        </div>
+                        <div class="appointment-board">
+                            <p class="booking-day">Wed 06/5</p>
+                            <ul class="appointments-times">
+                                <li>12:00 PM</li>
+                                <li><del>01:00 PM</del></li>
+                                <li>03:00 PM</li>
+                                <li><del>05:00 PM</del></li>
+                                <li>More</li>
+                            </ul>
+                            <button class="booking-btn">Book</button>
+                        </div>
+                        <div class="arrow">
+                            <button>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Center Card End -->
+                <!-- Center Card Start -->
+                <div class="center-card d-flex justify-content-between b-radius-10 div-border">
+                    <!-- Center Image Start -->
+                    <div class="center-details-img-container">
+                        <img src="../../public/images/mechanistic.jpg" alt="" class="center-details-img img-circle"/>
+                    </div>
+                    <!-- Center Image End -->
+
+                    <div class="center-card-info">
+                        <!-- Center Name Start -->
+                        <p class="center-name">Center <b>Eng Salah Ahmed</b></p>
+                        <!-- Center Name End -->
+
+                        <!-- Center speciality Start -->
+                        <h6 class="center-speciality">
+                            Speciality Of Electricity & Mechanic
+                        </h6>
+                        <!-- Center speciality End -->
+
+                        <!-- Center Ratings Start -->
+                        <div class="center-ratings">
+                            <!-- Ratings Start -->
+                            <span class="ratings">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <i class="far fa-star"></i>
+                            </span>
+                            <!-- Ratings End -->
+
+                            <!-- No. Of Reviews Start -->
+                            <p class="no-of-reviews m-0">
+                                Overall Ratings From 255 Visitors
+                            </p>
+                            <!-- No. Of Reviews End -->
+                            <!-- No. Of Reviews Start -->
+                            <p class="center-card-addess m-0">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Nasr City: Enozha
+                            </p>
+                            <!-- No. Of Reviews End -->
+                            <!-- No. Of Reviews Start -->
+                            <p class="center-card-phone m-0">
+                                <i class="fas fa-phone-alt"></i>
+                                16697 - Regular Call
+                            </p>
+                            <!-- No. Of Reviews End -->
+
+                        </div>
+                        <!-- Center Ratings Start -->
+                    </div>
+                    <div class="d-flex justify-content-between center-card-appoitments">
+                        <div class="arrow">
+                            <button>
+                                <i class="fas fa-arrow-left"></i>
+                            </button>
+                        </div>
+                        <div class="appointment-board">
+                            <p class="booking-day">Today</p>
+                            <ul class="appointments-times">
+                                <li>Not Available</li>
+                            </ul>
+                            <button class="booking-btn">Book</button>
+                        </div>
+                        <div class="appointment-board">
+                            <p class="booking-day">Tomorrow</p>
+                            <ul class="appointments-times">
+                                <li>12:00 PM</li>
+                                <li><del>01:00 PM</del></li>
+                                <li>03:00 PM</li>
+                                <li><del>05:00 PM</del></li>
+                                <li>More</li>
+                            </ul>
+                            <button class="booking-btn">Book</button>
+                        </div>
+                        <div class="appointment-board">
+                            <p class="booking-day">Wed 06/5</p>
+                            <ul class="appointments-times">
+                                <li>12:00 PM</li>
+                                <li><del>01:00 PM</del></li>
+                                <li>03:00 PM</li>
+                                <li><del>05:00 PM</del></li>
+                                <li>More</li>
+                            </ul>
+                            <button class="booking-btn">Book</button>
+                        </div>
+                        <div class="arrow">
+                            <button>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Center Card End -->
+                <!-- Center Card Start -->
+                <div class="center-card d-flex justify-content-between b-radius-10 div-border">
+                    <!-- Center Image Start -->
+                    <div class="center-details-img-container">
+                        <img src="../../public/images/mechanistic.jpg" alt="" class="center-details-img img-circle"/>
+                    </div>
+                    <!-- Center Image End -->
+
+                    <div class="center-card-info">
+                        <!-- Center Name Start -->
+                        <p class="center-name">Center <b>Eng Salah Ahmed</b></p>
+                        <!-- Center Name End -->
+
+                        <!-- Center speciality Start -->
+                        <h6 class="center-speciality">
+                            Speciality Of Electricity & Mechanic
+                        </h6>
+                        <!-- Center speciality End -->
+
+                        <!-- Center Ratings Start -->
+                        <div class="center-ratings">
+                            <!-- Ratings Start -->
+                            <span class="ratings">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <i class="far fa-star"></i>
+                            </span>
+                            <!-- Ratings End -->
+
+                            <!-- No. Of Reviews Start -->
+                            <p class="no-of-reviews m-0">
+                                Overall Ratings From 255 Visitors
+                            </p>
+                            <!-- No. Of Reviews End -->
+                            <!-- No. Of Reviews Start -->
+                            <p class="center-card-addess m-0">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Nasr City: Enozha
+                            </p>
+                            <!-- No. Of Reviews End -->
+                            <!-- No. Of Reviews Start -->
+                            <p class="center-card-phone m-0">
+                                <i class="fas fa-phone-alt"></i>
+                                16697 - Regular Call
+                            </p>
+                            <!-- No. Of Reviews End -->
+
+                        </div>
+                        <!-- Center Ratings Start -->
+                    </div>
+                    <div class="d-flex justify-content-between center-card-appoitments">
+                        <div class="arrow">
+                            <button>
+                                <i class="fas fa-arrow-left"></i>
+                            </button>
+                        </div>
+                        <div class="appointment-board">
+                            <p class="booking-day">Today</p>
+                            <ul class="appointments-times">
+                                <li>Not Available</li>
+                            </ul>
+                            <button class="booking-btn">Book</button>
+                        </div>
+                        <div class="appointment-board">
+                            <p class="booking-day">Tomorrow</p>
+                            <ul class="appointments-times">
+                                <li>12:00 PM</li>
+                                <li><del>01:00 PM</del></li>
+                                <li>03:00 PM</li>
+                                <li><del>05:00 PM</del></li>
+                                <li>More</li>
+                            </ul>
+                            <button class="booking-btn">Book</button>
+                        </div>
+                        <div class="appointment-board">
+                            <p class="booking-day">Wed 06/5</p>
+                            <ul class="appointments-times">
+                                <li>12:00 PM</li>
+                                <li><del>01:00 PM</del></li>
+                                <li>03:00 PM</li>
+                                <li><del>05:00 PM</del></li>
+                                <li>More</li>
+                            </ul>
+                            <button class="booking-btn">Book</button>
+                        </div>
+                        <div class="arrow">
+                            <button>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Center Card End -->
+                <!-- Center Card Start -->
+                <div class="center-card d-flex justify-content-between b-radius-10 div-border">
+                    <!-- Center Image Start -->
+                    <div class="center-details-img-container">
+                        <img src="../../public/images/mechanistic.jpg" alt="" class="center-details-img img-circle"/>
+                    </div>
+                    <!-- Center Image End -->
+
+                    <div class="center-card-info">
+                        <!-- Center Name Start -->
+                        <p class="center-name">Center <b>Eng Salah Ahmed</b></p>
+                        <!-- Center Name End -->
+
+                        <!-- Center speciality Start -->
+                        <h6 class="center-speciality">
+                            Speciality Of Electricity & Mechanic
+                        </h6>
+                        <!-- Center speciality End -->
+
+                        <!-- Center Ratings Start -->
+                        <div class="center-ratings">
+                            <!-- Ratings Start -->
+                            <span class="ratings">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <i class="far fa-star"></i>
+                            </span>
+                            <!-- Ratings End -->
+
+                            <!-- No. Of Reviews Start -->
+                            <p class="no-of-reviews m-0">
+                                Overall Ratings From 255 Visitors
+                            </p>
+                            <!-- No. Of Reviews End -->
+                            <!-- No. Of Reviews Start -->
+                            <p class="center-card-addess m-0">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Nasr City: Enozha
+                            </p>
+                            <!-- No. Of Reviews End -->
+                            <!-- No. Of Reviews Start -->
+                            <p class="center-card-phone m-0">
+                                <i class="fas fa-phone-alt"></i>
+                                16697 - Regular Call
+                            </p>
+                            <!-- No. Of Reviews End -->
+
+                        </div>
+                        <!-- Center Ratings Start -->
+                    </div>
+                    <div class="d-flex justify-content-between center-card-appoitments">
+                        <div class="arrow">
+                            <button>
+                                <i class="fas fa-arrow-left"></i>
+                            </button>
+                        </div>
+                        <div class="appointment-board">
+                            <p class="booking-day">Today</p>
+                            <ul class="appointments-times">
+                                <li>Not Available</li>
+                            </ul>
+                            <button class="booking-btn">Book</button>
+                        </div>
+                        <div class="appointment-board">
+                            <p class="booking-day">Tomorrow</p>
+                            <ul class="appointments-times">
+                                <li>12:00 PM</li>
+                                <li><del>01:00 PM</del></li>
+                                <li>03:00 PM</li>
+                                <li><del>05:00 PM</del></li>
+                                <li>More</li>
+                            </ul>
+                            <button class="booking-btn">Book</button>
+                        </div>
+                        <div class="appointment-board">
+                            <p class="booking-day">Wed 06/5</p>
+                            <ul class="appointments-times">
+                                <li>12:00 PM</li>
+                                <li><del>01:00 PM</del></li>
+                                <li>03:00 PM</li>
+                                <li><del>05:00 PM</del></li>
+                                <li>More</li>
+                            </ul>
+                            <button class="booking-btn">Book</button>
+                        </div>
+                        <div class="arrow">
+                            <button>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Center Card End -->
+            </div>
+        </div>
+        <!-- Centers Cards Container End -->
+
+    </div>
+</body>
+</html>

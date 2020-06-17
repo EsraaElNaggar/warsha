@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
+    <link rel="stylesheet" href="../style.css">
+    <title>Appointment Reservation</title>
+</head>
+<body>
+    
+    <!-- Appointment Reservation Page Start -->
+    <section class="d-flex justify-content-around appointment-reservation">
+        <!-- Appointment Reservation Info Start -->
+        <div class="reservation-info b-radius-10 div-border">
+            
+            <!-- Center Info Start -->
+            <div class="d-flex justify-content-around">
+                <!-- Center Image Start -->
+                <div class="center-img-container">
+                    <img src="../../public/images/mechanistic.jpg" alt="" class="center-img img-circle"/>
+                </div>
+                <!-- Center Image End -->
+
+                <div class="center-info">
+                    <!-- Center Name Start -->
+                    <p class="center-name">Center <b>Eng Salah Ahmed</b></p>
+                    <!-- Center Name End -->
+
+                    <!-- Center speciality Start -->
+                    <p>Mechanistic</p>
+                    <!-- Center speciality End -->
+                </div>
+            </div>
+            <!-- Center Info End -->
+
+            <!-- Appointment Date Start -->
+            <div class="appointment-date">
+                <p>Tomorrow 05 May - 08:00 PM, <b>Appointment Reservation</b></p>
+            </div>
+            <!-- Appointment Date End -->
+
+        </div>
+        <!-- Appointment Reservation Info End -->
+
+        <!-- Appointment Form Start -->
+        <div class="appointment-form b-radius-10 div-border">
+            <p class="appointment-form-title">Enter Your Info.</p>
+            <form>
+                <div class="appointment-form-input-container">
+                    <i class="fas fa-user-alt"></i>
+                    <input type="text" name="clientName" id="clientName" value="Mona" placeholder="Full Client Name"/>
+                </div>
+            
+                <div class="appointment-form-input-container">
+                    <i class="fas fa-phone-alt"></i>
+                    +2<input type="text" class="appointment-form-input" name="clientNumber" id="clientNumber" value="01156492345" placeholder="Mobile Number"/>
+                </div>
+
+                <div class="appointment-form-input-container">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" class="appointment-form-input" name="clientEmail" id="clientEmail" value="sydeny254@gmail.com" placeholder="Email Address (Optional)"/>
+                </div>
+
+                <div class="appointment-form-checkbox">
+                    <input type="checkbox" name="anotherClient" id="anotherClient"/> 
+                    I'm looking on behalf of another client.
+                </div>
+                
+                <div class="d-flex justify-content-between appointment-btns"> 
+                    <button type="submit" class="submit-appointment-form">Book</button>
+                    <button type="button" class="cancel-appointment-form">Cancel</button>
+                </div>
+            </form>
+        </div>
+        <!-- Appointment Form End -->
+    </section>
+    <!-- Appointment Reservation Page End -->
+
+</body>
+</html>

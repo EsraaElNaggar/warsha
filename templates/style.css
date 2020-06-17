@@ -1,0 +1,375 @@
+
+
+
+/* appointment reservation page */
+
+.appointment-reservation, .center-details-container{
+    margin: 5%;
+    padding: 5%;
+}
+.reservation-info{
+    height: fit-content;
+    padding: 0 0 1.5%;
+}
+.reservation-info, .appointment-form{
+    width: 45%;
+}
+.b-radius-10{
+    border-radius: 10px;
+}
+.div-border, .center-img{
+    border: 1px solid grey;
+}
+.center-img{
+    width: 100px;
+    height: 100px;
+    position: relative;
+    bottom: 15px;
+}
+.center-details-img{
+    width: 100px;
+    height: 100px;
+    position: relative;
+}
+.img-circle{
+    border-radius: 50%;
+}
+.center-img-container{
+    width: 15%;
+}
+.center-info{
+    width: 65%;
+    margin: auto 0;
+}
+.center-name{
+    padding: 3% 0 1%;
+    margin: 0;
+}
+.appointment-date{
+    background-color: lightgray;
+    padding: 2% 2% 0.1%;
+    margin: 2% 0;
+    text-align: center;
+}
+.appointment-form{
+    padding-bottom: 3%;
+}
+.appointment-form-title, .booking-info-title{
+    text-align: center;
+    background-color: lightgray;
+    border-bottom: 1px solid grey;
+    border-radius: 10px 10px 0 0;
+    margin-bottom: 8%;
+    padding: 0.5% 0;
+}
+.appointment-form-input-container{
+    border-bottom: 1px solid grey;
+    padding: 0.7%;
+}
+.appointment-form-input-container input{
+    border: 0;
+}
+.appointment-form-checkbox, .appointment-form-input-container{
+    width: 80%;
+    margin: 8% auto;
+}
+.appointment-btns{
+    width: 80%;
+    margin: auto;
+}
+.submit-appointment-form, .cancel-appointment-form{
+    border-radius: 7px;
+    padding: 0.5%;
+    border: 1px solid grey;
+}
+.submit-appointment-form{
+    width: 55%;
+    background-color: lightgray;
+}
+.cancel-appointment-form{
+    width: 35%;
+}
+
+/* center details */
+.center-details{
+    width: 55%;
+    height: fit-content;
+} 
+.booking-info{
+    width: 40%;
+    height: fit-content;
+}
+.center-basic-details{
+    margin-bottom: 20px;
+    padding: 3%;
+    height: fit-content;
+}
+.center-details-img-container, .center-basic-info{
+    display: inline-block;
+    vertical-align: top;
+}
+.center-basic-name{
+    line-height: 25px;
+    font-size: 22px;
+    color: rgb(128, 129, 132);
+}
+.no-of-views{
+    font-size: 15px;
+    font-weight: 600;
+    color: rgb(116, 116, 112);
+    padding: 0 5px;
+}
+.center-speciality{
+    margin-bottom: 5%;
+    white-space: nowrap;
+}
+.ratings{
+    color: rgb(255, 182, 36);
+}
+.no-of-reviews, .center-card-addess, 
+.center-card-phone, .confirm-phone,
+.confirm-notify{
+    font-size: 12px;
+    color: rgb(128, 129, 132);
+    margin: 4px 10px;
+}
+.reviews-link{
+    text-decoration: none;
+    color: rgb(0, 112, 205);
+    font-size: 12px;
+}
+.most-recent-review{
+    background-color: lightgray;
+    border-radius: 3px;
+    margin: 5% 0 0;
+    padding: 2% 3%;
+    height: fit-content;
+}
+.most-recent-review-content::before, .most-recent-review-content::after{
+    content: '``';
+    font-size: 25px;
+    color: black;
+}
+.most-recent-review-date{
+    font-size: 12px;
+    color: rgb(128, 129, 132);
+    margin: 4px 10px;
+}
+.center-about, .center-services{
+    padding: 3% 3% 1%;
+    margin-bottom: 20px;
+    height: fit-content;
+}
+.about-title, .services-title, .subaddress{
+    font-size: 15px;
+    color: rgb(109, 110, 112);
+    font-weight: 700;
+    padding: 0 12px;
+}
+.about-conent{
+    padding: 2% 0 0 6%;
+}
+.services-conent{
+    padding: 4% 0 4% 6%;
+}
+.service-tag{
+    background-color: lightgray;
+    padding: 5px;
+    color: grey;
+    border-radius: 6px;
+}
+.booking-info-title{
+    margin-bottom: 3%;
+}
+.border-y{
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+}
+.text-center{
+    text-align: center;
+}
+.booking-appointments-title{
+    text-align: center;
+    font-weight: 500;
+    padding-top: 10px;
+}
+.appoitments-content{
+    background-color: lightgray;
+}
+.appointment-board{
+    background-color: white;
+    width: 23%;
+    text-align: center;
+    margin: 15px 3px;
+    border: 1px solid grey;
+    font-size: 16px;
+    height: 190px;
+}
+.appointments-times{
+    list-style: none;
+    text-align: center;
+    padding: 5px;
+    height: 128px;
+    margin: 5px;
+    font-size: 16px;
+}
+.booking-btn{
+    width: 100%;
+    height: 26px;
+    padding: 2px;
+    border: 0;
+    background-color: gray;
+}
+.booking-day{
+    border-bottom: 1px solid grey;
+    padding: 1.5px;
+    height: 24px;
+    margin: 0;
+    font-size: 14px;
+}
+.arrow{
+    margin: auto;
+    width: fit-content;
+}
+.arrow button{
+    border-radius: 4px;
+    background-color: white;
+    border: 1px solid grey;
+    color: grey;
+}
+.width20{
+    width: 20%;
+}
+.width20 i{
+    font-size: 3rem;
+} 
+
+/* booking confirmation */
+
+/* search result */
+.search-filters{
+    position: fixed;
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid grey;
+    width: 10rem;
+    font-size: 15px;
+    margin-left: 20px;
+}
+.filters-title{
+    margin: 0;
+    padding: 4% 7%;
+    /* border-bottom: 1px solid grey; */
+    background-color: lightgray;
+    border-radius: 8px 8px 0 0;
+}
+.search-filters ul{
+    list-style: none;
+}
+.filters > li{
+    border-top: 1px solid grey;
+    padding: 8% 7%;
+    white-space: nowrap;
+}
+.filter-arrow{
+    float: right;
+}
+.filter-options{
+    border-top: 1px solid grey;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+.filter-options > li{
+    padding: 3px 0;;
+}
+/* .cards-container{
+    width: max-content;
+} */
+.no-of--all-centers{
+    font-size: 12px;
+    color: rgb(128, 129, 132);
+}
+.sort-options{
+    border-radius: 5px;
+    padding: 5px;
+}
+.center-card{
+    padding: 3% 2%;
+    margin-bottom: 20px;
+}
+.center-card-img{
+    width: 50px;
+    height: 50px;
+}
+.center-card-info{
+    width: 33%;
+}
+.center-card-appoitments{
+    width: 50%;
+}
+.m-auto{
+    margin: auto;
+}
+
+/* appointment confirmation */
+.confirm-card,.booking-details{
+    border-radius: 10px;
+    width: 49%;
+    height: fit-content;
+}
+.confirm-img{
+    position: relative;
+}
+.confirm-img img{
+    border-radius: 10px 10px 0 0;
+}
+.confirm-img p, .confirm-img span{
+    position: absolute;
+    color: white;
+}
+.confirm-img p{
+    bottom: 20px;
+    text-align: center;
+    width: 100%;
+}
+.confirm-img span{
+    font-size: 50px;
+    left: 250px;
+    bottom: 75px;
+}
+/* .booking-details{
+    border-radius: 10px;
+    width: 48%;
+} */
+.booking-details-title{
+    border-bottom: 1px solid grey;
+}
+.s-15{
+    font-size: 24px;
+}
+.booking-details-info, .booking-details-title{
+    padding: 15px;
+    color: grey;
+}
+.line{
+    height: 1px;
+    border-bottom: 1px solid grey;
+    width: 94%;
+    margin: auto;
+}
+.booking-details-info > span:nth-child(1){
+    width: 20%;
+    margin-right: 7%;
+    font-weight: 500;
+    white-space: nowrap;
+}
+.thanks{
+    margin: 10px auto;
+}
+.thanks > p{
+    color: grey;
+    margin: 0;
+}
+.c-green{
+    color: mediumseagreen;
+}
