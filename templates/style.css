@@ -233,9 +233,7 @@ nav button:hover{
   background-color: #00072D;
   box-shadow: 0px 2px 9px #00072D;
 }
-.navUser{
-  box-shadow: none;
-}
+.navUser{box-shadow: none;}
 
 /* ? transparent nav */
 nav.tr{ background-color: #0000006b; }
