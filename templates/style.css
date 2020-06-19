@@ -343,6 +343,9 @@ section.appointment-reservation form{
     border-bottom: 1px solid grey;
     padding: 0.7%;
 }
+.appointment-form-input-container i{
+  margin-right: 5%;
+}
 .appointment-form-input-container input{border: 0;}
 .appointment-form-checkbox, .appointment-form-input-container{
     width: 80%;
