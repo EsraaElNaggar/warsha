@@ -15,7 +15,6 @@ font-family: 'Pacifico', cursive;
 body{
     margin: 0;
     padding: 0;
-    /* overflow: hidden; */
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
 }
@@ -40,6 +39,7 @@ body{
     font-size: 85px;
     font-weight: 100;
     margin: auto;
+    text-decoration: none;
 }
 .logLeft h1 span, .logo span{
     background-color: white;
@@ -277,7 +277,7 @@ section.logWrap.appointment-reservation{
   background-image: none;
   align-items: flex-start;
   padding: 2% 10%;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   background-color: #00072D;
 }
 section.appointment-reservation form{
@@ -369,7 +369,7 @@ section.appointment-reservation form{
 
 /* ? center details */
 .center-details-container{
-  background-color: #00073D;
+  background-color: #00072D;
   padding: 1.2% 9%;
   box-sizing: content-box;
 }
@@ -459,8 +459,8 @@ section.appointment-reservation form{
 }
 
 .border-y{
-    border-top: 1px solid #1A73D8;
-    border-bottom: 1px solid #1A73D8;
+    border-top: 1px solid #1A73E8;
+    border-bottom: 1px solid #1A73E8;
 }
 .booking-info{
     width: 40%;
@@ -490,7 +490,7 @@ section.appointment-reservation form{
   padding-top: 10px;
 }
 .appoitments-content{
-    background-color: #1A73D8;
+    background-color: #1A73E8;
 }
 .arrow{
     margin: auto;
@@ -545,10 +545,8 @@ section.appointment-reservation form{
   background-color: #FC9D6B;
 }
 .booking-btn:hover{
-  background-color: #00073D;
+  background-color: #00072D;
 }
-
-
 .width20{width: 20%;}
 .width20 i{font-size: 3rem;} 
 
@@ -631,7 +629,7 @@ section.appointment-confirmation .firstPart{
   margin-left: 1%;
 }
 .booking-details-title{
-  color: #1A73D8 !important;
+  color: #1A73E8 !important;
   border: none !important;
   font-size: x-large;
   font-weight: 600;  
@@ -755,6 +753,36 @@ section.appointment-confirmation .firstPart{
     margin: auto 0;
 }
 
+
+/* TODO Footer */
+footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5% 10%;
+  background-color: #1A73E8;
+}
+footer a{
+  text-decoration: none;
+  color: white;
+  font-size: small;
+}
+footer .logo{
+  text-decoration: none;
+  margin: 0;
+  font-size: xx-large;
+  color: white;
+}
+footer .logo span{
+  font-size: xx-large;
+  padding: 2% 5%;
+  color: #1A73E8;
+}
+footer i{
+  color: white;
+  font-size: x-large;
+  margin: 0 4px;
+}
 
 /*TODO animation */
 .animation {
