@@ -1,12 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Leckerli+One&family=Open+Sans&family=Oswald&family=Pacifico&family=Roboto&display=swap');
 
+myhelptools{
+  color: #00072D;
+  color:#1A73E8;
+  color:#FC9D6B;
+  color: #CCC5B9;
+  font-family: 'Oswald', sans-serif;
+  font-family: 'Leckerli One', cursive;
+font-family: 'Pacifico', cursive;
+}
+
 *{outline: none}
 
 body{
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    /* overflow: hidden; */
     box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
 }
 
 /* TODO form 1 */
@@ -49,7 +60,7 @@ body{
     display: flex;
     flex-direction: column;
     width: 30%;
-    padding: 45px;
+    padding: 3%;
     border-radius: 10%;
     background:white;
     color: #1A73E8;
@@ -59,10 +70,12 @@ body{
   font-weight: 300;
 }
 .form .lFTitle{
-    text-align: center;
-    text-transform: uppercase;
-    margin-bottom: 15px;
-    margin-top: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: x-large;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  margin-top: 0;
 }
 .form .form-field {
     height: 46px;
@@ -78,7 +91,7 @@ body{
 .form .form-field:focus {
     border-color: #0f7ef1;
 }
-.form > .formBtn {
+.form > .formBtn, .formBtn {
     padding: 12px;
     border: 0;
     background-color: #1A73E8; 
@@ -150,7 +163,7 @@ body{
   width: 60%;
   padding: 3% 3%;
 }
-.contWrap h2{
+.contWrap h2, .appointment-reservation .form .lFTitle{
   text-align: left !important;
   font-size: xx-large;
   font-weight: 800;
@@ -196,11 +209,12 @@ nav {
   background-color: #00072D;
   display: flex;
   justify-content: space-between;
+  box-shadow: 0px 0px 5px #CCC5B9;
 }
 nav .parts{
   display: flex;
   justify-content: space-around;
-  margin: 0 10%;
+  margin: auto 10%;
 }
 nav .parts .logo{
   font-size: 25px;
@@ -213,7 +227,7 @@ nav .parts .logo span{
 }
 nav .parts div{
   width: fit-content;
-  margin: 5% 10px;
+  margin: 3% 10px;
 }
 nav a, .navUser {
   font-size: smaller;
@@ -255,17 +269,34 @@ nav.white .logo span{
 
 /* ? appointment reservation page */
 
-.appointment-reservation, .center-details-container{
+/* .appointment-reservation, .center-details-container{
     margin: 5%;
     padding: 5%;
+} */
+section.logWrap.appointment-reservation{
+  background-image: none;
+  align-items: flex-start;
+  padding: 2% 10%;
+  justify-content: space-between;
+  background-color: #00072D;
+}
+section.appointment-reservation form{
+  width: 50%;
+  border-radius: 20px;
+  box-shadow: 0px 0px 5px #CCC5B9;
+}
+.appointment-reservation .form .lFTitle{
+  text-align: center !important;
 }
 .reservation-info{
-    height: fit-content;
-    padding: 0 0 1.5%;
+  background-color: white;
+  border-radius: 20px;
+  height: fit-content;
+  padding: 0 0 1.5%;
 }
 .reservation-info, .appointment-form{width: 45%;}
 .b-radius-10{border-radius: 10px;}
-.div-border, .center-img{border: 1px solid grey;}
+/* .div-border, .center-img{border: 1px solid grey;} */
 .center-img{
     width: 100px;
     height: 100px;
@@ -286,7 +317,11 @@ nav.white .logo span{
 .center-name{
     padding: 3% 0 1%;
     margin: 0;
+    font-size: medium !important;
+    color: #253031 !important;
 }
+.center-name b{color:#1A73E8}
+.center-info p{font-size: small; color: #1A73E8;}
 .appointment-date{
     background-color: lightgray;
     padding: 2% 2% 0.1%;
@@ -309,37 +344,46 @@ nav.white .logo span{
 .appointment-form-input-container input{border: 0;}
 .appointment-form-checkbox, .appointment-form-input-container{
     width: 80%;
-    margin: 8% auto;
+    margin: 3% auto;
 }
 .appointment-btns{
     width: 80%;
-    margin: auto;
+    margin: 2% auto;
 }
 .submit-appointment-form, .cancel-appointment-form{
     border-radius: 7px;
-    padding: 0.5%;
-    border: 1px solid grey;
 }
 .submit-appointment-form{
-    width: 55%;
-    background-color: lightgray;
+  width: 70%;
+  border-bottom: 5px solid lightgrey;
 }
-.cancel-appointment-form{width: 35%;}
+.cancel-appointment-form{
+  width: 25%;
+  background-color: lightgray;
+  border-bottom: 5px solid #1A73E8;
+}
+.submit-appointment-form:hover,
+.cancel-appointment-form:hover{
+  border: none;
+}
 
 /* ? center details */
+.center-details-container{
+  background-color: #00073D;
+  padding: 1.2% 9%;
+  box-sizing: content-box;
+}
 .center-details{
     width: 55%;
     height: fit-content;
 } 
-.booking-info{
-    width: 40%;
-    height: fit-content;
-}
 .center-basic-details{
-    margin-bottom: 20px;
+    margin-bottom: 1.5%;
     padding: 3%;
     height: fit-content;
+    background-color: white;
 }
+
 .center-details-img-container, .center-basic-info{
     display: inline-block;
     vertical-align: top;
@@ -349,6 +393,7 @@ nav.white .logo span{
     font-size: 22px;
     color: rgb(128, 129, 132);
 }
+
 .no-of-views{
     font-size: 15px;
     font-weight: 600;
@@ -379,11 +424,11 @@ nav.white .logo span{
     padding: 2% 3%;
     height: fit-content;
 }
-.most-recent-review-content::before, .most-recent-review-content::after{
+/* .most-recent-review-content::before, .most-recent-review-content::after{
     content: '``';
     font-size: 25px;
     color: black;
-}
+} */
 .most-recent-review-date{
     font-size: 12px;
     color: rgb(128, 129, 132);
@@ -391,14 +436,18 @@ nav.white .logo span{
 }
 .center-about, .center-services{
     padding: 3% 3% 1%;
-    margin-bottom: 20px;
+    margin-bottom: 1.5%;
     height: fit-content;
+    background-color: white;
 }
 .about-title, .services-title, .subaddress{
     font-size: 15px;
-    color: rgb(109, 110, 112);
     font-weight: 700;
     padding: 0 12px;
+    color:#1A73E8;
+}
+.title-services-title, .title-about-title, .title-subaddress{
+  color:#1A73E8;
 }
 .about-conent{padding: 2% 0 0 6%;}
 .services-conent{padding: 4% 0 4% 6%;}
@@ -408,50 +457,40 @@ nav.white .logo span{
     color: grey;
     border-radius: 6px;
 }
-.booking-info-title{margin-bottom: 3%;}
+
 .border-y{
-    border-top: 1px solid grey;
-    border-bottom: 1px solid grey;
+    border-top: 1px solid #1A73D8;
+    border-bottom: 1px solid #1A73D8;
 }
-.text-center{text-align: center;}
+.booking-info{
+    width: 40%;
+    height: fit-content;
+    background-color: white;
+}
+.booking-info-title{
+  color: white;
+  font-size: larger;
+  font-weight: 600;
+  background-color: #1A73E8;
+  border: none;
+  margin-bottom: 3%;
+}
+.text-center{
+  font-family: 'Oswald', sans-serif;
+  font-size: larger;
+  color: #1A73E8;
+  text-align: center;  
+}
 .booking-appointments-title{
-    text-align: center;
-    font-weight: 500;
-    padding-top: 10px;
+  font-family: 'Oswald', sans-serif;
+  font-size: larger;
+  color: #1A73E8;
+  text-align: center;
+  font-weight: 500;
+  padding-top: 10px;
 }
 .appoitments-content{
-    background-color: lightgray;
-}
-.appointment-board{
-    background-color: white;
-    width: 23%;
-    text-align: center;
-    margin: 15px 3px;
-    border: 1px solid grey;
-    font-size: 16px;
-    height: 190px;
-}
-.appointments-times{
-    list-style: none;
-    text-align: center;
-    padding: 5px;
-    height: 128px;
-    margin: 5px;
-    font-size: 16px;
-}
-.booking-btn{
-    width: 100%;
-    height: 26px;
-    padding: 2px;
-    border: 0;
-    background-color: gray;
-}
-.booking-day{
-    border-bottom: 1px solid grey;
-    padding: 1.5px;
-    height: 24px;
-    margin: 0;
-    font-size: 14px;
+    background-color: #1A73D8;
 }
 .arrow{
     margin: auto;
@@ -460,9 +499,56 @@ nav.white .logo span{
 .arrow button{
     border-radius: 4px;
     background-color: white;
-    border: 1px solid grey;
-    color: grey;
+    border: none;
+    border-bottom: 3px solid #FC9D6B;
+    color: #FC9D6B;
 }
+.arrow button:hover{
+  border: none;
+}
+.appointment-board{
+  overflow: hidden;
+    background-color: white;
+    width: 23%;
+    text-align: center;
+    margin: 15px 3px;
+    font-size: 16px;
+    height: 190px;
+    border-radius: 5px;
+}
+.appointment-board:hover{
+  box-shadow: 0px 0px 7px #00072D;
+}
+.booking-day{
+  padding: 1.5px;
+  height: 24px;
+  margin: 0;
+  font-size: 14px;
+  font-weight: bolder;
+  color: #1A73E8;
+  border-bottom: 1px solid #1A73e8;
+}
+.appointments-times{
+  list-style: none;
+  text-align: center;
+  padding: 5px;
+  height: 128px;
+  margin: 5px;
+  font-size: 14px;
+}
+.booking-btn{
+  margin: 0;
+  width: 100%;
+  padding: 2px;
+  border: 0;
+  color: white;
+  background-color: #FC9D6B;
+}
+.booking-btn:hover{
+  background-color: #00073D;
+}
+
+
 .width20{width: 20%;}
 .width20 i{font-size: 3rem;} 
 
@@ -518,13 +604,44 @@ nav.white .logo span{
 .m-auto{margin: auto;}
 
 /* ? appointment confirmation */
-.confirm-card,.booking-details{
-    border-radius: 10px;
-    width: 49%;
-    height: fit-content;
+section.appointment-confirmation{
+  display: flex;
+  flex-flow: column;
+  padding: 2%;
+  justify-content: flex-start;
+  background-color: #00072D;
+  align-items: center;
+  height: max-content;
 }
+section.appointment-confirmation .firstPart{
+  margin: 2% auto;
+}
+.confirm-card, .booking-details{
+  overflow: hidden;
+  background-color: white;
+  width: 55%;
+  border-radius: 20px;
+  transition: .2s;
+}
+.confirm-card{
+  height: fit-content;
+}
+.booking-details{
+  padding: 3%;
+  margin-left: 1%;
+}
+.booking-details-title{
+  color: #1A73D8 !important;
+  border: none !important;
+  font-size: x-large;
+  font-weight: 600;  
+}
+.booking-details .spanKey{
+  font-family: 'Oswald', sans-serif;
+}
+
 .confirm-img{position: relative;}
-.confirm-img img{border-radius: 10px 10px 0 0;}
+.confirm-img img{border-radius: 20px 20px 0 0;}
 .confirm-img p, .confirm-img span{
     position: absolute;
     color: white;
@@ -557,12 +674,12 @@ nav.white .logo span{
     font-weight: 500;
     white-space: nowrap;
 }
-.thanks{margin: 10px auto;}
+/* .thanks{margin: 10px auto;} */
 .thanks > p{
     color: grey;
     margin: 0;
 }
-.c-green{color: mediumseagreen;}
+.c-green{color: #FC9D6B;}
 
 
 /* ? clients appointments list */
@@ -686,7 +803,7 @@ nav.white .logo span{
   height: 100vh;
   background: white;
   color: black;
-  font-family: arial, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   overflow: hidden;
 }
 .covidHelpMsg {
