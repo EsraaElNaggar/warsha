@@ -231,7 +231,7 @@ nav .parts div{
 }
 nav a, .navUser {
   font-size: smaller;
-  text-decoration: none;
+  text-decoration: none !important;
   color: #1A73E8;
 }
 nav button, .navUser{
