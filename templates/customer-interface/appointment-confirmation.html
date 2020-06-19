@@ -1,96 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
     <link rel="stylesheet" href="../style.css">
     <title>Appoitment Confirmation</title>
 </head>
+
 <body>
+    <nav class="white">
+        <div class="parts">
+            <h1 class="logo"><span>W</span>arsha</h1>
+        </div>
+        <div class="parts">
+            <div><a href="">Home</a></div>
+            <div><a href="">About us</a></div>
+            <div><a href="">Contact us</a></div>
+            <div class="navUser">fName</div>
+        </div>
+    </nav>
 
     <!-- Appointment Confirmation Start -->
-    <section class="d-flex justify-content-between container mt-5">
-        <!-- Confirmation Card Start -->
-        <div class="confirm-card div-border">
-            <div class="confirm-img">
-                <img width="100%" height="200" src="../../public/images/confirm.jpg" alt="">
-                <span><i class="far fa-check-circle"></i></span>
-                <p>Your booking was successfully submitted!</p>
+    <section class=" appointment-confirmation">
+        <div class="firstPart d-flex justify-content-between container">
+            <!-- Confirmation Card Start -->
+            <div class="confirm-card div-border">
+                <div class="confirm-img">
+                    <img width="100%" height="200" src="../../public/assets/confirm.jpg" alt="">
+                    <span><i class="far fa-check-circle"></i></span>
+                    <p>Your booking was successfully submitted!</p>
+                </div>
+                <p class="confirm-notify m-4">
+                    <i class="far fa-envelope pr-2"></i>
+                    We notified Center Bla Bla of your booking
+                </p>
+                <p class="confirm-phone m-4">
+                    <i class="fas fa-phone-alt pr-2"></i>
+                    Center number: 0125778612
+                </p>
             </div>
-            <p class="confirm-notify m-4">
-                <i class="far fa-envelope pr-2"></i>
-                We notified Center Bla Bla of your booking
+            <!-- Confirmation Card End -->
+            <!-- Booking Details Start -->
+            <div class="booking-details div-border">
+                <!-- Booking Details Title Start -->
+                <p class="booking-details-title">
+                    <i class="fas fa-calendar-check pr-2 s-15"></i>
+                    Booking Details
+                </p>
+                <!-- Booking Details Title End -->
+                <div class="booking-details-info d-flex">
+                    <span class="spanKey">
+                        Client Name
+                    </span>
+                    <span>
+                        Mona Mohamed
+                    </span>
+                </div>
+                <div class="line"></div>
+                <div class="booking-details-info d-flex">
+                    <span class="spanKey">
+                        Booking Date
+                    </span>
+                    <span>
+                        05 May . 08:00 PM . Appointment reservation
+                    </span>
+                </div>
+                <div class="line"></div>
+                <div class="booking-details-info d-flex">
+                    <span class="spanKey">
+                        Waiting Time
+                    </span>
+                    <span>
+                        19 minutes
+                    </span>
+                </div>
+                <div class="line"></div>
+                <div class="booking-details-info d-flex">
+                    <span class="spanKey">
+                        Center Address
+                    </span>
+                    <span>
+                        50 Mohy Eldin Abo ElEzz Street Same
+                        Building As Alfa Labs And Beside KFC.
+                    </span>
+                </div>
+            </div>
+            <!-- Booking Details End -->
+
+        </div>
+        <!-- Thanks For Booking Start -->
+        <div class="thanks">
+            <p class="text-center">
+                Thank you for using <i class="c-green">Warsha</i>, Catch roads again soon!
             </p>
-            <p class="confirm-phone m-4">
-                <i class="fas fa-phone-alt pr-2"></i>
-                Center number: 0125778612
+            <p class="text-center">
+                If you have any inquiry please call
+                <i class="fas fa-phone-alt c-green"></i>
+                16576
             </p>
         </div>
-        <!-- Confirmation Card End -->
-        <!-- Booking Details Start -->
-        <div class="booking-details div-border">
-            <!-- Booking Details Title Start -->
-            <p class="booking-details-title">
-                <i class="fas fa-calendar-check pr-2 s-15"></i>
-                Booking Details
-            </p>
-            <!-- Booking Details Title End -->
-            <div class="booking-details-info d-flex">
-                <span>
-                    Client Name
-                </span>
-                <span>
-                    Mona Mohamed
-                </span>
-            </div>
-            <div class="line"></div>
-            <div class="booking-details-info d-flex">
-                <span>
-                    Booking Date
-                </span>
-                <span>
-                    05 May . 08:00 PM . Appointment reservation
-                </span>
-            </div>
-            <div class="line"></div>
-            <div class="booking-details-info d-flex">
-                <span>
-                    Waiting Time
-                </span>
-                <span>
-                    19 minutes
-                </span>
-            </div>
-            <div class="line"></div>
-            <div class="booking-details-info d-flex">
-                <span>
-                    Center Address
-                </span>
-                <span>
-                    50 Mohy Eldin Abo ElEzz Street Same
-                    Building As Alfa Labs And Beside KFC.
-                </span>
-            </div>
-        </div>
-        <!-- Booking Details End -->
+        <!-- Thanks For Booking End -->
+
     </section>
-
-    <!-- Thanks For Booking Start -->
-    <div class="thanks">
-        <p class="text-center">
-            Think you for using <i class="c-green">Warsha</i>, Catch roads again soon!
-        </p>
-        <p class="text-center">
-            If you have any inquiry please call 
-            <i class="fas fa-phone-alt c-green"></i> 
-            16576
-        </p>
-    </div>
-    <!-- Thanks For Booking End -->
-
-    <!-- Appointment Confirmation Start -->
-
+    <!-- Appointment Confirmation End -->
 </body>
+
 </html>
