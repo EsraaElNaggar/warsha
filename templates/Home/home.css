@@ -1,0 +1,118 @@
+.banner-shape{
+    border-top: 70vh solid var(--backcolor);
+    border-right: 20vh solid transparent; 
+    width: 75%;
+    position: relative;
+    margin-bottom:10vh ;
+}
+.banner-introduction{
+    z-index: 5;
+    position: absolute;
+    top: 0px;
+    left: 25vh;
+    width: 40%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 3rem;
+    text-transform: capitalize;
+    padding-top: 4rem;
+}
+.banner-introduction div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.banner-introduction span{
+    background-color: var(--frontcolor);
+    color: white;
+    display: inline-block;
+    padding: 2rem 1rem;
+    margin-right:0.5rem ;
+    border-radius: 50%;
+}
+.angle-down{
+    color: var(--frontcolor);
+    font-size: 4rem;
+}
+.banner-image{
+    z-index: 5;
+    position: absolute;
+    top: 0px;
+    right: 25vh;
+    width: 30%;
+    height: 65vh;
+    margin-top: 5vh;
+    background-image: url("./home-banner.png");
+    background-size: cover;
+}
+.why-us{
+    height: 45vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 8vh;
+}
+.why-us section{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.why-us section img{
+    height: 25vh;
+}
+.why-us section h3{
+    text-align: center;
+    font-size: 2rem;
+    margin: 0.6rem;
+    color: var(--frontcolor);
+}
+.why-us section p{
+    text-align: center;
+    font-size: 1.2rem;
+    width: 50%;
+    margin: auto; 
+}
+.quick-booking{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40vh;
+    
+}
+
+.quick-booking h2{
+    font-size: 2.5rem;
+}
+.quick-booking div{
+    width: 70%;
+    margin: 2rem 0px;
+    display: flex;
+    justify-content:space-around ;
+}
+.quick-booking div select{
+    border-color: white;
+    outline: none;
+    border-bottom: 0.2rem solid var(--frontcolor);
+    font-size: 1.5rem;
+    padding: 0px 5px;
+    width: 20%;
+    text-transform: capitalize;
+}
+.quick-booking div option{
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+}
+.quick-booking div button{
+    border: none;
+    color: white;
+    background-color: var(--frontcolor);
+    padding:1rem;
+    font-size: 1.5rem;
+    border-radius: 50%;
+}

@@ -1,0 +1,17 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+:root{
+    --backcolor : lightgrey;
+    --frontcolor : cornflowerblue;
+}
+.full-height-container{
+    height: 100vh;
+}
+body{
+    font-size: 62.5%;
+}
