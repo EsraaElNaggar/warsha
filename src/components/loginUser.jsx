@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Joi from "joi-browser";
+import Joi, { errors } from "joi-browser";
+import Input from './input';
 
 class LoginUser extends Component {
     state = {
@@ -29,7 +30,7 @@ class LoginUser extends Component {
             return;
         }
         this.setState({ errors: {} });
-        this.login(this.state.account);
+        // this.login(this.state.account);
     };
 
     validate = () => {
@@ -55,10 +56,9 @@ class LoginUser extends Component {
     render() {
         return (
             <React.Fragment>
-                <div className="logWrap ">
+                <div className="logWrap " style={{ backgroundImage: `url(/assets/bg2.png)` }}>
                     <div className="logLeft">
-                        <a><span>W</span>arsha</a>
-
+                        <a href="#"><span>W</span>arsha</a>
                         <h2><strong> Welcome Back !</strong></h2>
                         <p>Find the <span>Nearest</span> mechanic..</p>
                         <p className="pBook">Book online now !</p>
@@ -68,23 +68,21 @@ class LoginUser extends Component {
                     <form className="form animation a1" onSubmit={this.handleSubmit}>
                         <h2 className="lFTitle animation a1">Login</h2>
 
-                        <input
+                        <Input
                             type="email"
                             name="userEmail"
                             id="userEmail"
-                            placeholder="Email Address" className="form-field animation a2"
+                            placeholder="Email Address"
+                            className="form-field animation a2"
                             value={this.state.account.userEmail}
                             error={this.state.errors.userEmail}
                             onChange={this.handleChange}
+                            errorClasses="myError animation a2"
                             autofocus
                             autoComplete="on"
                         />
-                        {error && <div for="userEmail"
-                            className="myError animation a2">
-                            {this.state.errors.userEmail}
-                        </div>}
 
-                        <input
+                        <Input
                             type="password"
                             name="userPassword"
                             id="userPassword"
@@ -93,11 +91,8 @@ class LoginUser extends Component {
                             error={this.state.errors.userPassword}
                             onChange={this.handleChange}
                             className="form-field animation a3"
+                            errorClasses="myError animation a3"
                         />
-                        {error && <div for="userPassword"
-                            className="myError animation a2">
-                            {this.state.errors.userPassword}
-                        </div>}
 
                         <button className="formBtn animation a4">Login</button>
 
@@ -110,7 +105,7 @@ class LoginUser extends Component {
                     </form>
                 </div>
 
-            </React.Fragment>
+            </React.Fragment >
         );
     }
 }
