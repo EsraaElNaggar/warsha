@@ -271,21 +271,16 @@ nav.white .logo span{
 
 /* ? appointment reservation page */
 
-/* .appointment-reservation, .center-details-container{
-    margin: 5%;
-    padding: 5%;
-} */
 section.logWrap.appointment-reservation{
+  height: auto;
   background-image: none;
   align-items: flex-start;
-  padding: 2% 10%;
-  /* justify-content: space-between; */
+  padding: 5% 10%;
   background-color: #00072D;
 }
 section.appointment-reservation form{
   width: 50%;
   border-radius: 20px;
-  box-shadow: 0px 0px 5px #CCC5B9;
 }
 .appointment-reservation .form .lFTitle{
   text-align: center !important;
@@ -346,7 +341,7 @@ section.appointment-reservation form{
 .appointment-form-input-container i{
   margin-right: 5%;
 }
-.appointment-form-input-container input{border: 0;}
+.appointment-form-input-container input{border: 0; width: inherit;}
 .appointment-form-checkbox, .appointment-form-input-container{
     width: 80%;
     margin: 3% auto;
@@ -481,7 +476,7 @@ section.appointment-reservation form{
   margin-bottom: 3%;
 }
 .bg-booking-info{
-  background: #1a73e829;
+  background: #1A73E829;
 }
 .bg-booking-info p{
   margin-bottom: 0;
@@ -537,7 +532,7 @@ section.appointment-reservation form{
   font-size: 14px;
   font-weight: bolder;
   color: #1A73E8;
-  border-bottom: 1px solid #1A73e8;
+  border-bottom: 1px solid #1A73E8;
 }
 .appointments-times{
   list-style: none;
@@ -764,36 +759,188 @@ section.appointment-confirmation .firstPart{
     margin: auto 0;
 }
 
+/* TODO center profile */
+.tab {
+  overflow: hidden;
+  padding: 0 10%;
+  background-color: #f1f1f1;
+}
+.tab .tabLinks {
+  background-color: #f1f1f1;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+.tab .tabLinks.active {
+  color: black !important;
+  background-color: #ccc !important;
+}
+.tabContent {
+  display: flex;
+  flex-direction: column;
+  padding: 2% 10%;
+  border-top: none;
+  background-color: #00072d;
+}
+.tabContentTitle{
+  padding: 1% 3%;
+  border-radius: 10px 10px 0 0;
+  margin: 0;
+  color: white;
+  background-color: #1A73E8;
+}
+.profile-center-details{
+  display: flex;
+  align-items: flex-start;
+  text-align: center;
+  padding: 20px;
+  border-radius: 0 0 10px 10px;
+  background-color: white;
+}
+.div1-3 {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+}
+.div1-3 .name-img {
+  display: flex;
+  flex-direction: row;
+}
+.div1-3 .name-img .center-img {
+  width: 100px;
+  margin: 0 10px;
+  height: 100px;
+  border-radius: 50%;
+}
+.profile-center-name{
+  font-size: 22px;
+  color: rgb(128, 129, 132);
+}
+.phone-address {
+  width: max-content;
+  border: 1px solid #ccc;
+  margin: 20px 0;
+  padding: 0 20px;
+  border-radius: 10%;
+}
+.div2-3, .div3-3{
+  flex: 1;
+  text-align: -webkit-center;
+}
+.div3-3 .share-Prof{
+  background-color: #03e9f4;
+  border: hidden;
+  width: 100px;
+  height: 50px;
+  border-radius: 10%;
+}
+.center-table {
+  border: 1px solid white;
+  border-left: hidden;
+  border-right: hidden;
+  border-collapse: separate;
+  border-spacing: 0 15px;
+  width: 90px;
+}
+.td-center {
+  padding: 0 30px;
+}
+.options {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 25%;
+  margin: 1% auto;
+  border-radius: 10px;
+  background-color: #1A73E8;
+}
+.option {
+  padding: 10px 1px;
+  color: #00072d;
+  font-size: larger;
+  width: 100%;
+  text-decoration: none !important;
+  border-bottom: 5px solid #1A73E8;
+}
+.option.active, .option:hover{
+  color: white !important;
+  border-bottom: 5px solid white !important;
+}
+.profile-center-info {
+  text-align: center;
+  margin: 1%;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: white;
+}
+.specialities {
+    display: flex;
+    justify-content: space-around;
+}
+
 
 /* TODO Footer */
 footer{
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 5% 10%;
+  flex-flow: column;
+  justify-content: space-around;
+  text-align: center;
+  padding: 2% 10% 0% 10%;
+  color: white;
   background-color: #1A73E8;
 }
-footer a{
+.footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer a{
   text-decoration: none;
   color: white;
   font-size: small;
 }
-footer .logo{
+.footer a:hover{
+  color: #00072D;
+  text-decoration: none;
+}
+.footer .logo{
   text-decoration: none;
   margin: 0;
   font-size: xx-large;
   color: white;
 }
-footer .logo span{
+.footer .logo span{
   font-size: xx-large;
   padding: 2% 5%;
   color: #1A73E8;
 }
-footer i{
+.footer i{
   color: white;
   font-size: x-large;
   margin: 0 4px;
 }
+footer p{
+  margin-top: 1%;
+  margin-bottom: 0;
+  font-size: smaller;
+}
+
+
+
+
+
+
+
+
+
+
 
 /*TODO animation */
 .animation {
