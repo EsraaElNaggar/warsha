@@ -45,7 +45,7 @@
     width: 30%;
     height: 65vh;
     margin-top: 5vh;
-    background-image: url("./home-banner.png");
+    background-image: url("/HomeImages/home-banner.png");
     background-size: cover;
 }
 .why-us{
