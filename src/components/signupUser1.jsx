@@ -58,6 +58,7 @@ class SignUpUser1 extends Component {
         }
         this.setState({ errors: {} });
         // logic registration
+        this.props.handleNext(this.state.account)
     }
 
 
@@ -71,7 +72,7 @@ class SignUpUser1 extends Component {
                         <p>Find the <span>Nearest</span> mechanic..</p>
                         <p className="pBook">Book online now !</p>
                     </div>
-                    <form className="form animation a1" >
+                    <form className="form animation a1" onSubmit={this.handleSubmit}>
                         <h2 className="lFTitle animation a1">Sign Up</h2>
                         <Input
                             type="text"
@@ -82,8 +83,8 @@ class SignUpUser1 extends Component {
                             value={this.state.account.fName}
                             error={this.state.errors.fName}
                             onChange={this.handleChange}
-                            errorClasses="myError animation a1"
-                            autofocus
+                            errorClasses="myError "
+                            autoFocus
                             autoComplete="on"
                         />
 
@@ -96,7 +97,7 @@ class SignUpUser1 extends Component {
                             value={this.state.account.lName}
                             error={this.state.errors.lName}
                             onChange={this.handleChange}
-                            errorClasses="myError animation a1"
+                            errorClasses="myError "
                         />
 
                         <Input
@@ -108,7 +109,7 @@ class SignUpUser1 extends Component {
                             value={this.state.account.userEmail}
                             error={this.state.errors.userEmail}
                             onChange={this.handleChange}
-                            errorClasses="myError animation a2"
+                            errorClasses="myError "
                             autoComplete="on"
                         />
 
@@ -121,7 +122,7 @@ class SignUpUser1 extends Component {
                             value={this.state.account.userPassword}
                             error={this.state.errors.userPassword}
                             onChange={this.handleChange}
-                            errorClasses="myError animation a3"
+                            errorClasses="myError "
                         />
 
                         <Input
@@ -133,10 +134,10 @@ class SignUpUser1 extends Component {
                             value={this.state.account.cPassword}
                             error={this.state.errors.cPassword}
                             onChange={this.handleChange}
-                            errorClasses="myError animation a3"
+                            errorClasses="myError "
                         />
 
-                        <button className="formBtn animation a4">sign up</button>
+                        <button type="submit" className="formBtn animation a4" >sign up</button>
                         <div id="or" className="animation a5">
                             <span id="s1"></span>
                             <p>or</p>
