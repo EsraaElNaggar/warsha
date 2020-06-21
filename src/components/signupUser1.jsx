@@ -2,16 +2,24 @@ import React, { Component } from 'react';
 import Joi from "joi-browser";
 import Input from './input';
 
-class LoginUser extends Component {
+class SignUpUser1 extends Component {
     state = {
         account: {
+            fName: "",
+            lName: "",
             userEmail: "",
             userPassword: "",
+            cPassword: ""
         },
         errors: {}
-    };
-
+    }
     schema = {
+        fName: Joi.string()
+            .required()
+            .label("First Name"),
+        lName: Joi.string()
+            .required()
+            .label("Last Name"),
         userEmail: Joi.string()
             .email({ minDomainAtoms: 2 })
             .label("Email"),
@@ -20,19 +28,8 @@ class LoginUser extends Component {
             .min(9)
             .max(30)
             .label("Password"),
+        cPassword: Joi.ref('userPassword')
     };
-
-    handleSubmit = e => {
-        e.preventDefault();
-        const errors = this.validate();
-        if (errors) {
-            this.setState({ errors });
-            return;
-        }
-        this.setState({ errors: {} });
-        // this.login(this.state.account);
-    };
-
     validate = () => {
         const result = Joi.validate(this.state.account, this.schema, {
             abortEarly: false
@@ -46,12 +43,23 @@ class LoginUser extends Component {
         }
         return errors;
     };
-
     handleChange = ({ target }) => {
         const account = { ...this.state.account };
         account[target.id] = target.value;
         this.setState({ account });
     };
+    handleSubmit = e => {
+        e.preventDefault();
+
+        const errors = this.validate();
+        if (errors) {
+            this.setState({ errors });
+            return;
+        }
+        this.setState({ errors: {} });
+        // logic registration
+    }
+
 
     render() {
         return (
@@ -59,14 +67,37 @@ class LoginUser extends Component {
                 <div className="logWrap " style={{ backgroundImage: `url(/assets/bg2.png)` }}>
                     <div className="logLeft">
                         <a href="#"><span>W</span>arsha</a>
-                        <h2><strong> Welcome Back !</strong></h2>
+                        <h2><strong> Welcome to Warsha !</strong></h2>
                         <p>Find the <span>Nearest</span> mechanic..</p>
                         <p className="pBook">Book online now !</p>
                     </div>
+                    <form className="form animation a1" >
+                        <h2 className="lFTitle animation a1">Sign Up</h2>
+                        <Input
+                            type="text"
+                            name="fName"
+                            id="fName"
+                            placeholder="First Name"
+                            className="form-field animation a1"
+                            value={this.state.account.fName}
+                            error={this.state.errors.fName}
+                            onChange={this.handleChange}
+                            errorClasses="myError animation a1"
+                            autofocus
+                            autoComplete="on"
+                        />
 
-
-                    <form className="form animation a1" onSubmit={this.handleSubmit}>
-                        <h2 className="lFTitle animation a1">Login</h2>
+                        <Input
+                            type="text"
+                            name="lName"
+                            id="lName"
+                            placeholder="Last Name"
+                            className="form-field animation a1"
+                            value={this.state.account.lName}
+                            error={this.state.errors.lName}
+                            onChange={this.handleChange}
+                            errorClasses="myError animation a1"
+                        />
 
                         <Input
                             type="email"
@@ -78,7 +109,6 @@ class LoginUser extends Component {
                             error={this.state.errors.userEmail}
                             onChange={this.handleChange}
                             errorClasses="myError animation a2"
-                            autofocus
                             autoComplete="on"
                         />
 
@@ -87,27 +117,38 @@ class LoginUser extends Component {
                             name="userPassword"
                             id="userPassword"
                             placeholder="Password"
+                            className="form-field animation a3"
                             value={this.state.account.userPassword}
                             error={this.state.errors.userPassword}
                             onChange={this.handleChange}
-                            className="form-field animation a3"
                             errorClasses="myError animation a3"
                         />
 
-                        <button className="formBtn animation a4">Login</button>
+                        <Input
+                            type="password"
+                            name="cPassword"
+                            id="cPassword"
+                            placeholder="Confirm Password"
+                            className="form-field animation a3"
+                            value={this.state.account.cPassword}
+                            error={this.state.errors.cPassword}
+                            onChange={this.handleChange}
+                            errorClasses="myError animation a3"
+                        />
 
+                        <button className="formBtn animation a4">sign up</button>
                         <div id="or" className="animation a5">
                             <span id="s1"></span>
                             <p>or</p>
                             <span id="s2"></span>
                         </div>
-                        <span className="animation a6">New to Warsha? <a href="#">join now</a></span>
+                        <span className="animation a6">Already on Warsha? <a href="#"> Login</a></span>
                     </form>
-                </div>
 
-            </React.Fragment >
+                </div>
+            </React.Fragment>
         );
     }
 }
 
-export default LoginUser;
+export default SignUpUser1;

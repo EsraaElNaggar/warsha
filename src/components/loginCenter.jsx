@@ -2,20 +2,20 @@ import React, { Component } from 'react';
 import Joi from "joi-browser";
 import Input from './input';
 
-class LoginUser extends Component {
+class LoginCenter extends Component {
     state = {
         account: {
-            userEmail: "",
-            userPassword: "",
+            centerEmail: "",
+            centerPassword: "",
         },
         errors: {}
     };
 
     schema = {
-        userEmail: Joi.string()
+        centerEmail: Joi.string()
             .email({ minDomainAtoms: 2 })
             .label("Email"),
-        userPassword: Joi.string()
+        centerPassword: Joi.string()
             .required()
             .min(9)
             .max(30)
@@ -60,8 +60,8 @@ class LoginUser extends Component {
                     <div className="logLeft">
                         <a href="#"><span>W</span>arsha</a>
                         <h2><strong> Welcome Back !</strong></h2>
-                        <p>Find the <span>Nearest</span> mechanic..</p>
-                        <p className="pBook">Book online now !</p>
+                        <p>Check your <span>Appointments</span> ...</p>
+                        <p className="pBook">Provide new services now !</p>
                     </div>
 
 
@@ -70,12 +70,12 @@ class LoginUser extends Component {
 
                         <Input
                             type="email"
-                            name="userEmail"
-                            id="userEmail"
+                            name="centerEmail"
+                            id="centerEmail"
                             placeholder="Email Address"
                             className="form-field animation a2"
-                            value={this.state.account.userEmail}
-                            error={this.state.errors.userEmail}
+                            value={this.state.account.centerEmail}
+                            error={this.state.errors.centerEmail}
                             onChange={this.handleChange}
                             errorClasses="myError animation a2"
                             autofocus
@@ -84,11 +84,11 @@ class LoginUser extends Component {
 
                         <Input
                             type="password"
-                            name="userPassword"
-                            id="userPassword"
+                            name="centerPassword"
+                            id="centerPassword"
                             placeholder="Password"
-                            value={this.state.account.userPassword}
-                            error={this.state.errors.userPassword}
+                            value={this.state.account.centerPassword}
+                            error={this.state.errors.centerPassword}
                             onChange={this.handleChange}
                             className="form-field animation a3"
                             errorClasses="myError animation a3"
@@ -110,4 +110,4 @@ class LoginUser extends Component {
     }
 }
 
-export default LoginUser;
+export default LoginCenter;
