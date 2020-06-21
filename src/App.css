@@ -8,7 +8,7 @@ myhelptools{
   color: #CCC5B9;
   font-family: 'Oswald', sans-serif;
   font-family: 'Leckerli One', cursive;
-font-family: 'Pacifico', cursive;
+  font-family: 'Pacifico', cursive;
 }
 
 *{outline: none}
@@ -1723,4 +1723,246 @@ footer p{
   50% {
     transform: translateY(-28px);
   }
+}
+
+/******************************/
+/*********Talal's Shit*********/
+/******************************/
+:root{
+  --grey:#CCC5B9;
+  --dark-grey:#253031;
+  --blue:#1A73D8;
+  --dark-blue:#00072D;
+  --black:#0E0E0E;
+  --salamon:#fc9d6b;
+}
+/******************************/
+/*************Home*************/
+/******************************/
+.Talal-banner-shape{
+  border-top: 70vh solid var(--grey);
+  border-right: 20vh solid transparent; 
+  width: 75%;
+  position: relative;
+  margin-bottom:10vh ;
+}
+.Talal-banner-introduction{
+  z-index: 5;
+  position: absolute;
+  top: 0px;
+  left: 25vh;
+  width: 40%;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 3rem;
+  text-transform: capitalize;
+  padding-top: 4rem;
+}
+.Talal-banner-introduction div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Talal-banner-introduction span{
+  background-color: var(--blue);
+  color: white;
+  display: inline-block;
+  padding: 2rem 1rem;
+  margin-right:0.5rem ;
+  border-radius: 50%;
+}
+.Talal-angle-down{
+  color: var(--blue);
+  font-size: 4rem;
+}
+.Talal-banner-image{
+  z-index: 5;
+  position: absolute;
+  top: 0px;
+  right: 25vh;
+  width: 30%;
+  height: 65vh;
+  margin-top: 5vh;
+  background-size: cover;
+}
+.why-us{
+  height: 45vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 8vh;
+}
+.why-us section{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.why-us section img{
+  height: 25vh;
+}
+.why-us section h3{
+  text-align: center;
+  font-size: 2rem;
+  margin: 0.6rem;
+  color: var(--blue);
+}
+.why-us section p{
+  text-align: center;
+  font-size: 1.2rem;
+  width: 50%;
+  margin: auto; 
+}
+.quick-booking{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 40vh;
+  
+}
+
+.quick-booking h2{
+  font-size: 2.5rem;
+}
+.quick-booking div{
+  width: 70%;
+  margin: 2rem 0px;
+  display: flex;
+  justify-content:space-around ;
+}
+.quick-booking div select{
+  border-color: white;
+  outline: none;
+  border-bottom: 0.2rem solid var(--blue);
+  font-size: 1.5rem;
+  padding: 0px 5px;
+  width: 20%;
+  text-transform: capitalize;
+}
+.quick-booking div option{
+  outline: none;
+  border: none;
+  text-transform: capitalize;
+}
+.quick-booking div button{
+  border: none;
+  color: white;
+  background-color: var(--blue);
+  padding:1rem;
+  font-size: 1.5rem;
+  border-radius: 50%;
+}
+/******************************/
+/***********About Us***********/
+/******************************/
+.aboutus{
+  font-family: sans-serif;
+}
+.aboutus .Talal-banner-introduction{
+  font-size: 1.2rem;
+  text-align: center;
+}
+.aboutus .Talal-banner-introduction h2{
+  font-size: 2rem;
+  font-weight: 500;
+  font-family: 'Leckerli One', cursive;
+}
+.aboutus .about-us-team h2{
+  font-size: 2rem;
+  font-weight: 500;
+  font-family: 'Leckerli One', cursive;  
+  text-align: center;
+  color: var(--blue);
+  margin:4rem 0px;
+}
+.aboutus .person-card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.aboutus .person-card .person-pic{
+  width: 50%;
+  height: 40vh;
+  background-color: aquamarine;
+}
+.aboutus .person-card .person-quote{
+  width: 50%;
+  height: 40vh;
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.aboutus .person-card .person-quote h2{
+  font-size:1.4rem;
+  margin:0.5rem 0px;
+}
+.aboutus .quote-marks{
+  margin: 0.5rem;
+
+}
+.aboutus .person-pic{
+  display: flex;
+  justify-content: flex-end;
+}
+.aboutus .person-card .person-pic div{
+  background-color: rgba(255, 255, 255, 0.452);
+  background-image: url("/demo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 50%;
+  height: 100%;
+}
+.aboutus .person-card:nth-child(odd) .person-pic{
+  display: flex;
+  justify-content: flex-start;
+}
+
+
+
+.aboutus .person-card:nth-child(2) .person-pic{
+  background-color: var(--blue);
+}
+.aboutus .person-card:nth-child(2) .person-quote h2{
+  color: var(--blue);
+}
+.aboutus .person-card:nth-child(2) .quote-marks{
+  color: var(--blue);
+}
+
+.aboutus .person-card:nth-child(3) .person-pic{
+  background-color: var(--dark-grey);
+}
+.aboutus .person-card:nth-child(3) .quote-marks{
+  color: var(--dark-grey);
+}
+.aboutus .person-card:nth-child(3) .person-quote h2{
+  color: var(--dark-grey);
+}
+
+.aboutus .person-card:nth-child(4) .person-pic{
+  background-color: var(--dark-blue);
+}
+.aboutus .person-card:nth-child(4) .quote-marks{
+  color: var(--dark-blue);
+}
+.aboutus .person-card:nth-child(4) .person-quote h2{
+  color: var(--dark-blue);
+}
+
+.aboutus .person-card:nth-child(5) .person-pic{
+  background-color: var(--black);
+}
+.aboutus .person-card:nth-child(5) .quote-marks{
+  color: var(--black);
+}
+.aboutus .person-card:nth-child(5) .person-quote h2{
+  color: var(--black);
 }
