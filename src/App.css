@@ -159,6 +159,10 @@ body{
 a.logo:hover{
   text-decoration: none;
 }
+.form1Wrap.myHeight{
+  height: 100vh;
+  padding:2% 0;
+}
 
 /* TODO contactUs */
 .contWrap{background-color: #00072D; padding: 0%;}
