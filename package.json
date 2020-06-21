@@ -17,15 +17,11 @@
     "react-dnd": "^5.0.0",
     "react-dnd-html5-backend": "^3.0.2",
     "react-dom": "^16.13.1",
-<<<<<<< HEAD
     "react-hook-form": "^5.7.2",
-    "react-scripts": "3.4.1",
-    "yup": "^0.29.1"
-=======
+    "yup": "^0.29.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "react-tag-input": "^6.4.3"
->>>>>>> 32cfa59019c3dc11d89443d07a21c6ae0449c791
   },
   "scripts": {
     "start": "react-scripts start",
