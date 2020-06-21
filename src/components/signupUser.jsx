@@ -41,7 +41,6 @@ class SignupUser extends Component {
             carYear: user.carYear,
             bool2: !this.state.bool2,
             bool3: !this.state.bool3,
-
         })
     }
     handleNext3 = (user) => {
@@ -54,7 +53,7 @@ class SignupUser extends Component {
     }
 
     handleSubmit = () => {
-        console.log(this.state.account);
+        console.log(this.state);
     }
 
     render() {

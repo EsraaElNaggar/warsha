@@ -114,7 +114,7 @@ class SignUpUser2 extends Component {
     render() {
         return (
             <React.Fragment>
-                <div className="form1Wrap">
+                <div className="form1Wrap myHeight">
                     <a href="#" className="logo animation a1"><span>W</span>arsha</a>
                     <h2 className="animation a1"> Welcome to our website !</h2>
                     <p className="let animation a1">Let’s start with your profile and car information.</p>

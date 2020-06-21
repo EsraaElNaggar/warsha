@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Input from './input';
+import Input from './common/input';
 
 class SignUpUser3 extends Component {
     state = {
@@ -24,7 +24,7 @@ class SignUpUser3 extends Component {
     render() {
         return (
             <React.Fragment>
-                <div className="form1Wrap">
+                <div className="form1Wrap myHeight">
                     <a href="#" className="logo animation a1"><span>W</span>arsha</a>
                     <h2 className="animation a1">
                         Welcome to our website !
@@ -32,7 +32,7 @@ class SignUpUser3 extends Component {
                     <p className="let animation a1">
                         Let’s start with your profile and car information.
                     </p>
-                    <form className="form animation a2">
+                    <form className="form animation a2" onSubmit={this.handleSubmit}>
                         <Input
                             type="text"
                             name="address"
@@ -56,7 +56,7 @@ class SignUpUser3 extends Component {
                         </select>
                         <div htmlFor="area" className="myError animation a5"></div>
 
-                        <button className="formBtn animation a6">Submit</button>
+                        <button type="submit" className="formBtn animation a6">Submit</button>
                     </form>
                 </div>
             </React.Fragment>
