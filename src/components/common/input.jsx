@@ -13,7 +13,7 @@ const Input = props => {
                 value={value}
                 onChange={onChange}
             />
-            {error && <div for={name}
+            {error && <div htmlFor={name}
                 className={errorClasses}>
                 {error}
             </div>}

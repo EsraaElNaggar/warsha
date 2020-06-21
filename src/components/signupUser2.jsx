@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 
-class SignupUser2 extends Component {
+class SignUpUser2 extends Component {
     state = {
+        account: {
+            carBrand: "",
+            carModel: "",
+            carYear: "",
+        },
         carBrand: [
             { name: "Abarth" },
             { name: "Alfa Romeo" },
@@ -95,38 +100,64 @@ class SignupUser2 extends Component {
         ]
     };
 
+    handleChange = ({ target }) => {
+        const account = { ...this.state.account };
+        account[target.id] = target.value;
+        this.setState({ account });
+    };
+
+    handleSubmit = e => {
+        e.preventDefault();
+        this.props.handleNext(this.state.account)
+    };
+
     render() {
         return (
             <React.Fragment>
-                <div class="form1Wrap">
-                    <a href="#" class="logo animation a1"><span>W</span>arsha</a>
-                    <h2 class="animation a1"> Welcome to our website !</h2>
-                    <p class="let animation a1">Let’s start with your profile and car information.</p>
+                <div className="form1Wrap myHeight">
+                    <a href="#" className="logo animation a1"><span>W</span>arsha</a>
+                    <h2 className="animation a1"> Welcome to our website !</h2>
+                    <p className="let animation a1">Let’s start with your profile and car information.</p>
 
-                    <form class="form animation a2">
-                        <label for="brand" class="animation a2"></label>
-                        <select name="brand" id="brand" class="form-field animation a2" autofocus>
-                            <option value="">Select your car brand (e.g. Ford)</option>
+                    <form className="form animation a2" onSubmit={this.handleSubmit}>
+                        <select
+                            onChange={this.handleChange}
+                            name="brand"
+                            id="brand"
+                            className="form-field animation a2"
+                            autoFocus
+                        >
+                            <option value="">Select your car brand (e.g. Ford)
+                            </option>
                             {this.state.carBrand.map(brand => (
-                                <option value={brand.name}>{brand.name}</option>
+                                <option value={brand.name} >
+                                    {brand.name}
+                                </option>
                             ))}
                         </select>
 
-                        <label for="model" class="animation a3"></label>
-                        <select name="model" id="model" class="form-field animation a3">
+                        <select
+                            onChange={this.handleChange}
+                            name="model"
+                            id="model"
+                            className="form-field animation a3"
+                        >
                             <option value="">
                                 Select your car model (e.g. Ford)
                             </option>
                         </select>
 
-                        <label for="year" class="animation a4"></label>
-                        <select name="year" id="year" class="form-field animation a4">
+                        <select
+                            onChange={this.handleChange}
+                            name="year"
+                            id="year"
+                            className="form-field animation a4">
                             <option value="">
                                 Select your car year
-                                </option>
+                            </option>
                         </select>
 
-                        <button class="formBtn animation a5">Next</button>
+                        <button type="submit" className="formBtn animation a5">Next</button>
                     </form>
                 </div>
             </React.Fragment>
@@ -134,4 +165,4 @@ class SignupUser2 extends Component {
     }
 }
 
-export default SignupUser2;
+export default SignUpUser2;

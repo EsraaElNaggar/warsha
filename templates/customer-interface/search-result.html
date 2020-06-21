@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
     <link rel="stylesheet" href="../style.css">
     <title>Search Result</title>
 </head>
+
 <body>
     <div class="container row pt-3 m-auto">
-        
+
         <!-- Filters Container Start -->
         <div class="col-3">
             <div class="search-filters">
@@ -53,17 +56,17 @@
                     </li>
                     <li>
                         <i class="far fa-calendar pr-2"></i>
-                            Year
+                        Year
                         <i class="fas fa-caret-right filter-arrow"></i>
                     </li>
                     <li>
                         <i class="far fa-calendar-alt pr-2"></i>
-                            Availability
+                        Availability
                         <i class="fas fa-caret-right filter-arrow"></i>
                     </li>
                     <li>
                         <i class="fas fa-tools pr-2"></i>
-                            Remote Check
+                        Remote Check
                         <i class="fas fa-caret-right filter-arrow"></i>
                     </li>
                 </ul>
@@ -82,6 +85,11 @@
                     <div>
                         <select id="sort" name="sort" class="sort-options">
                             <option value="default" selected>Select Option</option>
+                            <!-- {this.state.options.map(opt => (
+                            <option value={opt.value}>
+                                {opt.name}
+                            </option>
+                            ))} -->
                             <option value="best-match">Best Match</option>
                             <option value="top-rated">Top Rated</option>
                             <option value="price-low-to-hight">Price Low To Hight</option>
@@ -90,12 +98,12 @@
                     </div>
                     <!-- Sort Options End -->
                 </div>
-                
+
                 <!-- Center Card Start -->
                 <div class="center-card d-flex justify-content-between b-radius-10 div-border">
                     <!-- Center Image Start -->
                     <div class="center-details-img-container">
-                        <img src="../../public/images/mechanistic.jpg" alt="" class="center-details-img img-circle"/>
+                        <img src="../../public/assets/mechanistic.jpg" alt="" class="center-details-img img-circle" />
                     </div>
                     <!-- Center Image End -->
 
@@ -190,7 +198,7 @@
                 <div class="center-card d-flex justify-content-between b-radius-10 div-border">
                     <!-- Center Image Start -->
                     <div class="center-details-img-container">
-                        <img src="../../public/images/mechanistic.jpg" alt="" class="center-details-img img-circle"/>
+                        <img src="../../public/assets/mechanistic.jpg" alt="" class="center-details-img img-circle" />
                     </div>
                     <!-- Center Image End -->
 
@@ -285,7 +293,7 @@
                 <div class="center-card d-flex justify-content-between b-radius-10 div-border">
                     <!-- Center Image Start -->
                     <div class="center-details-img-container">
-                        <img src="../../public/images/mechanistic.jpg" alt="" class="center-details-img img-circle"/>
+                        <img src="../../public/assets/mechanistic.jpg" alt="" class="center-details-img img-circle" />
                     </div>
                     <!-- Center Image End -->
 
@@ -380,7 +388,7 @@
                 <div class="center-card d-flex justify-content-between b-radius-10 div-border">
                     <!-- Center Image Start -->
                     <div class="center-details-img-container">
-                        <img src="../../public/images/mechanistic.jpg" alt="" class="center-details-img img-circle"/>
+                        <img src="../../public/assets/mechanistic.jpg" alt="" class="center-details-img img-circle" />
                     </div>
                     <!-- Center Image End -->
 
@@ -475,7 +483,7 @@
                 <div class="center-card d-flex justify-content-between b-radius-10 div-border">
                     <!-- Center Image Start -->
                     <div class="center-details-img-container">
-                        <img src="../../public/images/mechanistic.jpg" alt="" class="center-details-img img-circle"/>
+                        <img src="../../public/assets/mechanistic.jpg" alt="" class="center-details-img img-circle" />
                     </div>
                     <!-- Center Image End -->
 
@@ -570,7 +578,7 @@
                 <div class="center-card d-flex justify-content-between b-radius-10 div-border">
                     <!-- Center Image Start -->
                     <div class="center-details-img-container">
-                        <img src="../../public/images/mechanistic.jpg" alt="" class="center-details-img img-circle"/>
+                        <img src="../../public/assets/mechanistic.jpg" alt="" class="center-details-img img-circle" />
                     </div>
                     <!-- Center Image End -->
 
@@ -667,4 +675,5 @@
 
     </div>
 </body>
+
 </html>

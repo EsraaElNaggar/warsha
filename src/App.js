@@ -1,16 +1,21 @@
-import React from 'react';
-import './App.css';
-import Filter from './components/filter';
-import AboutUs from './components/aboutus';
-import Dropdown from './components/dropdown';
+import React from "react";
+import AddReviewUser from "./components/addReviewUser";
+import AddAppointmentCenter from "./components/addAppointmentCenter";
+import ChangePasswordUser from "./components/changePasswordUser";
+import EditProfileUser from "./components/editProfileUser";
+import ContactUS from "./components/contactUs";
+import EditProfileCenter from "./components/editProfileCenter";
+import ReviewsCenter from "./components/reviewsCenter";
+import AppointmentsUser from "./components/appointmentsUser";
+
 function App() {
-  let carBrands = ["Audi","BMW","Ford","Lamborgini","Ferrari"];
-  let carModel = ["blah", "blah1","blah2","blah3"]
-  let carYear = [2010, 2011 ,2012,2013]
+ 
   return (
-    <>
-    <Dropdown header={"HKi"} list={carBrands}/>
-    </>
+    <React.Fragment>
+      <h1>working</h1>
+      <AppointmentsUser></AppointmentsUser>
+    </React.Fragment>
+
   );
 }
 
