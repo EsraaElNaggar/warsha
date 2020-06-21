@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.css";
 import AddReviewUser from "./components/addReviewUser";
 import AddAppointmentCenter from "./components/addAppointmentCenter";
 import ChangePasswordUser from "./components/changePasswordUser";
