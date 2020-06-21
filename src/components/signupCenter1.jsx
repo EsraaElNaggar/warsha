@@ -2,33 +2,37 @@ import React, { Component } from 'react';
 import Joi from "joi-browser";
 import Input from './input';
 
-class SignUpUser1 extends Component {
+class SignupCenter1 extends Component {
     state = {
         account: {
-            fName: "",
-            lName: "",
-            userEmail: "",
-            userPassword: "",
+            centerName: "",
+            ownerName: "",
+            phoneNumber: "",
+            centerEmail: "",
+            centerPassword: "",
             cPassword: ""
         },
         errors: {}
     }
     schema = {
-        fName: Joi.string()
+        centerName: Joi.string()
             .required()
-            .label("First Name"),
-        lName: Joi.string()
+            .label("Center Name"),
+        ownerName: Joi.string()
             .required()
-            .label("Last Name"),
-        userEmail: Joi.string()
+            .label("Owner Name"),
+        phoneNumber: Joi.number()
+            .required()
+            .label('Phone Number'),
+        centerEmail: Joi.string()
             .email({ minDomainAtoms: 2 })
             .label("Email"),
-        userPassword: Joi.string()
+        centerPassword: Joi.string()
             .required()
             .min(9)
             .max(30)
             .label("Password"),
-        cPassword: Joi.ref('userPassword')
+        cPassword: Joi.ref('centerPassword')
     };
     validate = () => {
         const result = Joi.validate(this.state.account, this.schema, {
@@ -45,7 +49,12 @@ class SignUpUser1 extends Component {
     };
     handleChange = ({ target }) => {
         const account = { ...this.state.account };
-        account[target.id] = target.value;
+        if (target.files) {
+            account[target.id] = target.files[0];
+        }
+        else {
+            account[target.id] = target.value;
+        }
         this.setState({ account });
     };
     handleSubmit = e => {
@@ -75,12 +84,12 @@ class SignUpUser1 extends Component {
                         <h2 className="lFTitle animation a1">Sign Up</h2>
                         <Input
                             type="text"
-                            name="fName"
-                            id="fName"
-                            placeholder="First Name"
+                            name="centerName"
+                            id="centerName"
+                            placeholder="Center Name"
                             className="form-field animation a1"
-                            value={this.state.account.fName}
-                            error={this.state.errors.fName}
+                            value={this.state.account.centerName}
+                            error={this.state.errors.centerName}
                             onChange={this.handleChange}
                             errorClasses="myError animation a1"
                             autofocus
@@ -89,24 +98,36 @@ class SignUpUser1 extends Component {
 
                         <Input
                             type="text"
-                            name="lName"
-                            id="lName"
-                            placeholder="Last Name"
+                            name="ownerName"
+                            id="ownerName"
+                            placeholder="Owner Name"
                             className="form-field animation a1"
-                            value={this.state.account.lName}
-                            error={this.state.errors.lName}
+                            value={this.state.account.ownerName}
+                            error={this.state.errors.ownerName}
                             onChange={this.handleChange}
                             errorClasses="myError animation a1"
                         />
 
                         <Input
+                            type="number"
+                            name="phoneNumber"
+                            id="phoneNumber"
+                            placeholder="Phone number"
+                            className="form-field animation a2"
+                            value={this.state.account.phoneNumber}
+                            error={this.state.errors.phoneNumber}
+                            onChange={this.handleChange}
+                            errorClasses="myError animation a2"
+                        />
+
+                        <Input
                             type="email"
-                            name="userEmail"
-                            id="userEmail"
+                            name="centerEmail"
+                            id="centerEmail"
                             placeholder="Email Address"
                             className="form-field animation a2"
-                            value={this.state.account.userEmail}
-                            error={this.state.errors.userEmail}
+                            value={this.state.account.centerEmail}
+                            error={this.state.errors.centerEmail}
                             onChange={this.handleChange}
                             errorClasses="myError animation a2"
                             autoComplete="on"
@@ -114,12 +135,12 @@ class SignUpUser1 extends Component {
 
                         <Input
                             type="password"
-                            name="userPassword"
-                            id="userPassword"
+                            name="centerPassword"
+                            id="centerPassword"
                             placeholder="Password"
                             className="form-field animation a3"
-                            value={this.state.account.userPassword}
-                            error={this.state.errors.userPassword}
+                            value={this.state.account.centerPassword}
+                            error={this.state.errors.centerPassword}
                             onChange={this.handleChange}
                             errorClasses="myError animation a3"
                         />
@@ -151,4 +172,4 @@ class SignUpUser1 extends Component {
     }
 }
 
-export default SignUpUser1;
+export default SignupCenter1;

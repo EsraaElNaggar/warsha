@@ -12,8 +12,8 @@ class ErrorPage extends Component {
                 />
                 <main className='covidUnivers'>
                     <React.Fragment>
-                        {_.times(80, () => (
-                            <img className='covid' src="/assets/covid.png" />
+                        {_.times(80, (i) => (
+                            <img className='covid' src="/assets/covid.png" alt='covid' key={i} />
                         ))}
                     </React.Fragment>
                     <article className='covidHelpMsg'>

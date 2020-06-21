@@ -5,22 +5,24 @@ import Footer from './footer';
 
 class AppointmentForm extends Component {
     state = {
-        appRes: {
+        data: {
             centerName: 'Eng Salah Ahmed',
             centerProf: 'Mechanistic',
             clientName: 'Mona',
             clientNumber: '01156492345',
-            clientEmail: 'sydeny254@gmail.com'
+            clientEmail: 'sydeny254@gmail.com',
+            resDate: 'Tomorrow 05 May - 08:00 PM'
         }
     }
     handleChange = ({ target }) => {
-        const appRes = { ...this.state.appRes };
-        appRes[target.id] = target.value;
+        const data = { ...this.state.data };
+        data[target.id] = target.value;
 
-        this.setState({ appRes });
+        this.setState({ data });
     }
 
     render() {
+        const { centerName, centerProf, clientName, clientNumber, clientEmail, resDate } = this.state.data;
         return (
             <React.Fragment>
                 <Nav
@@ -33,12 +35,12 @@ class AppointmentForm extends Component {
                                 <img src="/assets/mechanistic.jpg" alt="" className="center-img img-circle" />
                             </div>
                             <div className="center-info">
-                                <p className="center-name">Center <b>{this.state.appRes.centerName}</b></p>
-                                <p>{this.state.appRes.centerProf}</p>
+                                <p className="center-name">Center <b>{centerName}</b></p>
+                                <p>{centerProf}</p>
                             </div>
                         </div>
                         <div className="appointment-date">
-                            <p>Tomorrow 05 May - 08:00 PM, <b>Appointment Reservation</b></p>
+                            <p>{resDate}, <b>Appointment Reservation</b></p>
                         </div>
                     </div>
                     <form className="form">
@@ -49,7 +51,7 @@ class AppointmentForm extends Component {
                                 type="text"
                                 name="clientName"
                                 id="clientName"
-                                value={this.state.appRes.clientName}
+                                value={clientName}
                                 onChange={this.handleChange}
                                 placeholder="Full Client Name"
                             />
@@ -63,7 +65,7 @@ class AppointmentForm extends Component {
                                 className="appointment-form-input"
                                 name="clientNumber"
                                 id="clientNumber"
-                                value={this.state.appRes.clientNumber}
+                                value={clientNumber}
                                 onChange={this.handleChange}
                                 placeholder="Mobile Number"
                             />
@@ -76,7 +78,7 @@ class AppointmentForm extends Component {
                                 className="appointment-form-input"
                                 name="clientEmail"
                                 id="clientEmail"
-                                value={this.state.appRes.clientEmail}
+                                value={clientEmail}
                                 onChange={this.handleChange}
                                 placeholder="Email Address (Optional)"
                             />

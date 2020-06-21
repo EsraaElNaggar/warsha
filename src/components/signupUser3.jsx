@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
 import Input from './input';
 
-class SignupUser3 extends Component {
-    state = {}
+class SignUpUser3 extends Component {
+    state = {
+        account: {
+            address: "",
+            city: "",
+            area: ""
+        }
+
+    }
     render() {
         return (
             <React.Fragment>
@@ -21,19 +28,12 @@ class SignupUser3 extends Component {
                             id="address"
                             placeholder="Address"
                             className="form-field animation a2"
-                            value={this.state.account.fName}
-                            error={this.state.errors.fName}
+                            value={this.state.account.address}
+                            error={this.state.errors.address}
                             onChange={this.handleChange}
                             errorClasses="myError animation a2"
                             autofocus
                         />
-
-                        <select name="country" id="country" className="form-field animation a3">
-                            <option value="">Country</option>
-                        </select>
-                        <div for="country"
-                            className="myError animation a3">
-                        </div>
 
                         <select name="city" id="city" className="form-field animation a4">
                             <option value="">City</option>
@@ -53,4 +53,4 @@ class SignupUser3 extends Component {
     }
 }
 
-export default SignupUser3;
+export default SignUpUser3;

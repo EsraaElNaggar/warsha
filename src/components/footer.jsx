@@ -1,7 +1,6 @@
 import React from 'react';
 
-const Footer = props => {
-    const { className } = props;
+const Footer = () => {
     return (
         <React.Fragment>
             <footer>
@@ -11,8 +10,8 @@ const Footer = props => {
                     <div><a href="">Contact us</a></div>
                     <div><a href="">Warsha for Centers</a></div>
                     <div>
-                        {/* <a href=""><i class="fab fa-facebook"></i></a> */}
-                        {/* <a href=""><i class="fab fa-twitter"></i></a> */}
+                        {/* <a href=""><i className="fab fa-facebook"></i></a> */}
+                        {/* <a href=""><i className="fab fa-twitter"></i></a> */}
                     </div>
                 </div>
                 <p>Copyright © 2020 Warsha. All Rights Reserved.</p>
