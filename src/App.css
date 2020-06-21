@@ -474,10 +474,10 @@ section.appointment-reservation form{
 .about-conent{padding: 2% 0 0 6%;}
 .services-conent{padding: 4% 0 4% 6%;}
 .service-tag{
-    background-color: lightgray;
-    padding: 5px;
-    color: grey;
-    border-radius: 6px;
+  padding: 5px;
+  color: #00072D;
+  border-radius: 6px;
+  background-color: #1A73E829;
 }
 .border-y{
     border-top: 1px solid #1A73E8;
