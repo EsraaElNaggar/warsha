@@ -31,14 +31,14 @@ class Nav extends Component {
                         <h1 className="logo"><span>W</span>arsha</h1>
                     </div>
                     <div className="parts">
-                        <div><a href="">Home</a></div>
-                        <div><a href="">About us</a></div>
-                        <div><a href="">Contact us</a></div>
+                        <div><Link to="">Home</Link></div>
+                        <div><Link to="">About us</Link></div>
+                        <div><Link to="">Contact us</Link></div>
                         <button onClick={this.toggle} className="navUser">fName</button>
                         <div className={(this.state.isActive) ? "dropNav activedrop " : "dropNav "} >
-                            <a className="itemNavCont dropdown-item" href="/myProfile">My Profile</a>
+                            <link className="itemNavCont dropdown-item" to="/myProfile">My Profile</link>
                             <div className="dropdown-divider"></div>
-                            <a className="itemNavCont dropdown-item" onClick={this.onClick} href="/landingPage">Sign Out</a>
+                            <link className="itemNavCont dropdown-item" onClick={this.onClick} to="/landingPage">Sign Out</link>
                         </div>
                     </div>
                 </nav>
