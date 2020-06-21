@@ -6,9 +6,10 @@ myhelptools{
   color:#1A73E8;
   color:#FC9D6B;
   color: #CCC5B9;
+  font-family: 'Open Sans', sans-serif;
   font-family: 'Oswald', sans-serif;
   font-family: 'Leckerli One', cursive;
-font-family: 'Pacifico', cursive;
+  font-family: 'Pacifico', cursive;
 }
 
 *{outline: none !important}
@@ -292,7 +293,7 @@ nav.white .logo span{
   color: white;
 }
 
-/* ? appointment reservation page */
+/* Todo appointment reservation page */
 
 section.logWrap.appointment-reservation{
   height: auto;
@@ -390,7 +391,7 @@ section.appointment-reservation form{
   border: none;
 }
 
-/* ? center details */
+/* TODO center details */
 .center-details-container{
   background-color: #00072D;
   padding: 1.2% 9%;
@@ -406,7 +407,6 @@ section.appointment-reservation form{
     height: fit-content;
     background-color: white;
 }
-
 .center-details-img-container, .center-basic-info{
     display: inline-block;
     vertical-align: top;
@@ -416,7 +416,6 @@ section.appointment-reservation form{
     font-size: 22px;
     color: rgb(128, 129, 132);
 }
-
 .no-of-views{
     font-size: 15px;
     font-weight: 600;
@@ -480,7 +479,6 @@ section.appointment-reservation form{
     color: grey;
     border-radius: 6px;
 }
-
 .border-y{
     border-top: 1px solid #1A73E8;
     border-bottom: 1px solid #1A73E8;
@@ -582,9 +580,8 @@ section.appointment-reservation form{
 .width20{width: 20%;}
 .width20 i{font-size: 3rem;} 
 
-/* TODO booking confirmation */
 
-/* ? search result */
+/* TODO search result */
 .search-filters{
     position: fixed;
     background-color: white;
@@ -622,8 +619,10 @@ section.appointment-reservation form{
     padding: 5px;
 }
 .center-card{
-    padding: 3% 2%;
-    margin-bottom: 20px;
+  padding: 3% 2%;
+  margin-bottom: 20px;
+  background-color: #8ba2bd1c;
+  border-radius: 10px;
 }
 .center-card-img{
     width: 50px;
@@ -633,7 +632,8 @@ section.appointment-reservation form{
 .center-card-appoitments{width: 50%;}
 .m-auto{margin: auto;}
 
-/* ? appointment confirmation */
+/* TODO appointment confirmation */
+
 section.appointment-confirmation{
   display: flex;
   flex-flow: column;
@@ -712,7 +712,7 @@ section.appointment-confirmation .firstPart{
 .c-green{color: #FC9D6B;}
 
 
-/* ? clients appointments list */
+/* TODO clients appointments list */
 .appointments-tabs, .appointments-status{
     border-radius: 10px;
     height: fit-content;
@@ -748,7 +748,7 @@ section.appointment-confirmation .firstPart{
 #appointments-table tr:last-child{border-bottom: 0;}
 .appointments-day td:first-child span{font-weight: 500;}
 
-/* ? current appointments day */
+/* TODO current appointments day */
 .day-appointments-list{
     width: 70%;
     height: fit-content;
@@ -784,6 +784,10 @@ section.appointment-confirmation .firstPart{
   background-color: transparent;
   margin: auto 0;
 }
+
+
+
+
 
 /* TODO Tags */
 .CenterSignTagsLabels{
@@ -915,6 +919,7 @@ section.appointment-confirmation .firstPart{
     margin: 0 0 5px;
   }
 }
+
 
 /* TODO Footer */
 footer{
