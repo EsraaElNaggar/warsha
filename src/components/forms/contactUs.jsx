@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
+import { Link } from 'react-router-dom';
 
 const ContactUsSchema = yup.object().shape({
   name: yup
@@ -46,9 +47,9 @@ const ContactUs = () => {
   return (
     <React.Fragment>
       <div className="contWrap">
-        <a href="#" className="logo animation a1">
+        <Link to="#" className="logo animation a1">
           <span>W</span>arsha
-        </a>
+        </Link>
         <form onSubmit={handleSubmit(onSubmit)} className="form animation a1">
           <h2 className="lFTitle animation a1">Contact us</h2>
           <p>Fill this form, so we could contact you as soon as possible</p>

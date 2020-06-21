@@ -106,26 +106,31 @@ class SignUpUser2 extends Component {
         this.setState({ account });
     };
 
+    handleSubmit = e => {
+        e.preventDefault();
+        this.props.handleNext(this.state.account)
+    };
+
     render() {
         return (
             <React.Fragment>
-                <div className="form1Wrap">
+                <div className="form1Wrap myHeight">
                     <a href="#" className="logo animation a1"><span>W</span>arsha</a>
                     <h2 className="animation a1"> Welcome to our website !</h2>
                     <p className="let animation a1">Let’s start with your profile and car information.</p>
 
-                    <form className="form animation a2">
+                    <form className="form animation a2" onSubmit={this.handleSubmit}>
                         <select
                             onChange={this.handleChange}
                             name="brand"
                             id="brand"
                             className="form-field animation a2"
-                            autofocus
+                            autoFocus
                         >
                             <option value="">Select your car brand (e.g. Ford)
                             </option>
                             {this.state.carBrand.map(brand => (
-                                <option value={brand.name}>
+                                <option value={brand.name} >
                                     {brand.name}
                                 </option>
                             ))}
@@ -152,7 +157,7 @@ class SignUpUser2 extends Component {
                             </option>
                         </select>
 
-                        <button className="formBtn animation a5">Next</button>
+                        <button type="submit" className="formBtn animation a5">Next</button>
                     </form>
                 </div>
             </React.Fragment>
