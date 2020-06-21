@@ -1,11 +1,11 @@
-.banner-shape{
+.Talal-banner-shape{
     border-top: 70vh solid var(--backcolor);
     border-right: 20vh solid transparent; 
     width: 75%;
     position: relative;
     margin-bottom:10vh ;
 }
-.banner-introduction{
+.Talal-banner-introduction{
     z-index: 5;
     position: absolute;
     top: 0px;
@@ -20,12 +20,12 @@
     text-transform: capitalize;
     padding-top: 4rem;
 }
-.banner-introduction div{
+.Talal-banner-introduction div{
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.banner-introduction span{
+.Talal-banner-introduction span{
     background-color: var(--frontcolor);
     color: white;
     display: inline-block;
@@ -33,11 +33,11 @@
     margin-right:0.5rem ;
     border-radius: 50%;
 }
-.angle-down{
+.Talal-angle-down{
     color: var(--frontcolor);
     font-size: 4rem;
 }
-.banner-image{
+.Talal-banner-image{
     z-index: 5;
     position: absolute;
     top: 0px;
