@@ -18,6 +18,7 @@ class ReviewsCenter extends Component {
                   <img
                     className="center-img"
                     src="./imgs//right-section-image.jpg"
+                    alt=""
                   />
                   <p>Center El Yosr</p>
                 </div>
@@ -52,7 +53,7 @@ class ReviewsCenter extends Component {
             </div>
             <div className="center-info center-reviews">
               <div>
-                <img className="circle" src="./imgs/right-section-image.jpg" />
+                <img className="circle" src="./imgs/right-section-image.jpg" alt=""/>
               </div>
               <div className="flex-col">
                 <div>
@@ -81,7 +82,7 @@ class ReviewsCenter extends Component {
             </div>
             <div className="center-info center-reviews">
               <div>
-                <img className="circle" src="./imgs/right-section-image.jpg" />
+                <img className="circle" src="./imgs/right-section-image.jpg" alt=""/>
               </div>
               <div className="flex-col">
                 <div>
@@ -110,7 +111,7 @@ class ReviewsCenter extends Component {
             </div>
             <div className="center-info center-reviews">
               <div>
-                <img className="circle" src="./imgs/right-section-image.jpg" />
+                <img className="circle" src="./imgs/right-section-image.jpg" alt=""/>
               </div>
               <div className="flex-col">
                 <div>
