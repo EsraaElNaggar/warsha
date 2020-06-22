@@ -144,7 +144,7 @@ class SignUpUser1 extends Component {
                             <p>or</p>
                             <span id="s2"></span>
                         </div>
-                        <span className="animation a6">Already on Warsha? <Link to="#"> Login</Link></span>
+                        <span className="animation a6">Already on Warsha? <Link to="/login"> Login</Link></span>
                     </form>
 
                 </div>

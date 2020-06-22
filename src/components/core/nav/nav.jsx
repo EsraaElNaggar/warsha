@@ -4,7 +4,7 @@ import SubNavAuthonticated from "./subnav-authonticated";
 import SubNav from "./subnav";
 
 import { getFromStorage } from './../../../_utils/local-storage';
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class Nav extends Component {
 
@@ -29,13 +29,13 @@ class Nav extends Component {
               <span>W</span>arsha
             </h1>
             <div>
-              <a href="hh">Home</a>
+              <Link to="/">Home</Link>
             </div>
             <div>
-              <NavLink to="aboutus">About us</NavLink>
+              <Link to="/aboutus">About us</Link>
             </div>
             <div>
-              <a href="hh">Contact us</a>
+              <Link to="/contactus">Contact us</Link>
             </div>
           </div>
           {

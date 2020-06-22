@@ -34,6 +34,9 @@ import Home from './components/core/home/home';
 import ErrorPage from './components/core/error';
 import AboutUs from './components/core/aboutus';
 import CustomerProfile from './components/customer/customer_profile/customer-profile';
+import ContactUs from './components/forms/contactUs';
+import LoginCenter from './components/Authentication/login-center';
+import SignupCenter from './components/Authentication/signup-center';
 
 class App extends Component {
   state = {  }
@@ -53,13 +56,22 @@ class App extends Component {
             <Route path="/home" exact component={Home}/>
 
             {/* About Us */}
-            <Route path="/aboutus" exact component={AboutUs}/>  
+            <Route path="/aboutus" exact component={AboutUs}/>
+
+            {/* Contact Us */}
+            <Route path="/contactus" exact component={ContactUs}/>  
 
             {/* My Profile */}
             <Route path="/myprofile" component={CustomerProfile}/>  
 
 
           {/* Center Interface */}
+
+            {/* LogIn */}
+            <Route path="/centerlogin" component={LoginCenter}/>
+
+            {/* SignUp */}
+            <Route path="/centersignup" component={SignupCenter}/>
 
 
 

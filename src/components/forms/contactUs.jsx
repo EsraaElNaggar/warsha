@@ -67,7 +67,7 @@ const ContactUs = () => {
                 id="name"
                 placeholder="Full Name"
                 className="form-field animation a2"
-                autofocus
+                autoFocus
                 ref={register}
               />
               {errors.name && (

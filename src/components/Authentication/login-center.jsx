@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Joi from "joi-browser";
 import Input from './../common/input';
+import { Link } from 'react-router-dom';
 
 class LoginCenter extends Component {
     state = {
@@ -101,7 +102,7 @@ class LoginCenter extends Component {
                             <p>or</p>
                             <span id="s2"></span>
                         </div>
-                        <span className="animation a6">New to Warsha? <a href="#">join now</a></span>
+                        <span className="animation a6">New to Warsha? <Link to="/centersignup">Join now</Link></span>
                     </form>
                 </div>
 

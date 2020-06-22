@@ -102,7 +102,7 @@ class LoginUser extends Component {
                             <p>or</p>
                             <span id="s2"></span>
                         </div>
-                        <span className="animation a6">New to Warsha? <Link to="#">join now</Link></span>
+                        <span className="animation a6">New to Warsha? <Link to="/signup">Join now</Link></span>
                     </form>
                 </div>
 

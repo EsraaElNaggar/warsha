@@ -1,12 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const SubNav = props => {
    
     return ( 
         <React.Fragment>
-            <div class="parts">
-                <div><a href="">Warsha for Centers</a></div>
-                <div><a href="">Login</a></div>
+            <div className="parts">
+                <div><Link to="/centersignup">Warsha for Centers</Link></div>
+                <div><Link to="/login">Login</Link></div>
                 <button href="">Sign up</button>
             </div>
         </React.Fragment>
