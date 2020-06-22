@@ -39,3 +39,52 @@ class SearchBar extends Component {
 }
  
 export default SearchBar;
+
+
+
+// let {speciality, district, area} = props; 
+//     speciality = speciality.map((index,item)=>{
+//         return (
+//             <option key={item} value={item}>{item}</option>
+//         )
+//     })
+//     district = district.map((index,item)=>{
+//         return (
+//             <option key={item} value={item}>{item}</option>
+//         )
+//     })
+//     area = area.map((index,item)=>{
+//         return (
+//             <option key={item} value={item}>{item}</option>
+//         )
+//     })
+
+//         return ( 
+//             <React.Fragment>
+//                 <article class="quick-booking">
+//                     <h2>Book Now</h2>
+//                     <div>
+//                         <select name="sepcialization" id="spec">
+//                             <option>speciality</option>
+//                             {
+//                                 speciality
+//                             }
+//                         </select>
+//                         <select name="district" id="district">
+//                             <option>district</option>
+//                             {
+//                                 district
+//                             }
+//                         </select>
+
+//                         <select name="area" id="area">
+//                             <option>area</option>
+//                            {
+//                                area
+//                            }
+//                         </select>
+//                         <button><i class="fas fa-search"></i></button>
+//                     </div>
+//                 </article>
+//             </React.Fragment>
+//         );

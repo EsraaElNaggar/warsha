@@ -8,7 +8,7 @@ class EditProfileCenter extends Component {
         <div>
           <div className="tab">
             <button className="tablinks active">Profile</button>
-            <button className="tablinks">Appointments</button>
+            {/* <button className="tablinks">Appointments</button> */}
           </div>
           <div className="tabcontent">
             <h3>Profile</h3>

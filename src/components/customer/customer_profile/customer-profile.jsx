@@ -1,4 +1,10 @@
 import React, { Component } from "react";
+<<<<<<< HEAD:src/components/asideMenuProfileUser.jsx
+import ChangePasswordUser from "./forms/changePasswordUser";
+import EditProfileUser from "./editProfileUser";
+import AppointmentsUser from "./appointmentsUser";
+=======
+>>>>>>> 028d4e87d120a950e39c04d385966b8b81411eb2:src/components/customer/customer_profile/customer-profile.jsx
 
 import ChangePasswordUser from '../../forms/changePasswordUser';
 import CustomerProfileDetails from './customer-profile-details';
