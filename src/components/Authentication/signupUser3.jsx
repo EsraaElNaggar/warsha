@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Input from './common/input';
+import Input from '../common/input';
 
 class SignUpUser3 extends Component {
     state = {
@@ -46,15 +46,25 @@ class SignUpUser3 extends Component {
                             autoFocus
                         />
 
-                        <select name="city" id="city" className="form-field animation a4">
-                            <option value="">City</option>
+                        <select
+                            value={this.state.data.city}
+                            onChange={this.handleChange}
+                            name="city"
+                            id="city"
+                            className="form-field animation a4"
+                        >
+                            <option value="0">City</option>
                         </select>
-                        <div htmlFor="city" className="myError animation a4"></div>
 
-                        <select name="area" id="area" className="form-field animation a5">
-                            <option value="">Area</option>
+                        <select
+                            value={this.state.data.area}
+                            onChange={this.handleChange}
+                            name="area"
+                            id="area"
+                            className="form-field animation a5"
+                        >
+                            <option value="0">Area</option>
                         </select>
-                        <div htmlFor="area" className="myError animation a5"></div>
 
                         <button type="submit" className="formBtn animation a6">Submit</button>
                     </form>

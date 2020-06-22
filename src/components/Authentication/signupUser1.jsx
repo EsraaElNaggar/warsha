@@ -1,38 +1,34 @@
 import React, { Component } from 'react';
 import Joi from "joi-browser";
-import Input from './input';
+import Input from '../common/input';
 
-class SignupCenter1 extends Component {
+class SignUpUser1 extends Component {
     state = {
         account: {
-            centerName: "",
-            ownerName: "",
-            phoneNumber: "",
-            centerEmail: "",
-            centerPassword: "",
+            fName: "",
+            lName: "",
+            userEmail: "",
+            userPassword: "",
             cPassword: ""
         },
         errors: {}
     }
     schema = {
-        centerName: Joi.string()
+        fName: Joi.string()
             .required()
-            .label("Center Name"),
-        ownerName: Joi.string()
+            .label("First Name"),
+        lName: Joi.string()
             .required()
-            .label("Owner Name"),
-        phoneNumber: Joi.number()
-            .required()
-            .label('Phone Number'),
-        centerEmail: Joi.string()
+            .label("Last Name"),
+        userEmail: Joi.string()
             .email({ minDomainAtoms: 2 })
             .label("Email"),
-        centerPassword: Joi.string()
+        userPassword: Joi.string()
             .required()
             .min(9)
             .max(30)
             .label("Password"),
-        cPassword: Joi.ref('centerPassword')
+        cPassword: Joi.ref('userPassword')
     };
     validate = () => {
         const result = Joi.validate(this.state.account, this.schema, {
@@ -49,12 +45,7 @@ class SignupCenter1 extends Component {
     };
     handleChange = ({ target }) => {
         const account = { ...this.state.account };
-        if (target.files) {
-            account[target.id] = target.files[0];
-        }
-        else {
-            account[target.id] = target.value;
-        }
+        account[target.id] = target.value;
         this.setState({ account });
     };
     handleSubmit = e => {
@@ -67,6 +58,7 @@ class SignupCenter1 extends Component {
         }
         this.setState({ errors: {} });
         // logic registration
+        this.props.handleNext(this.state.account)
     }
 
 
@@ -80,69 +72,57 @@ class SignupCenter1 extends Component {
                         <p>Find the <span>Nearest</span> mechanic..</p>
                         <p className="pBook">Book online now !</p>
                     </div>
-                    <form className="form animation a1" >
+                    <form className="form animation a1" onSubmit={this.handleSubmit}>
                         <h2 className="lFTitle animation a1">Sign Up</h2>
                         <Input
                             type="text"
-                            name="centerName"
-                            id="centerName"
-                            placeholder="Center Name"
+                            name="fName"
+                            id="fName"
+                            placeholder="First Name"
                             className="form-field animation a1"
-                            value={this.state.account.centerName}
-                            error={this.state.errors.centerName}
+                            value={this.state.account.fName}
+                            error={this.state.errors.fName}
                             onChange={this.handleChange}
-                            errorClasses="myError animation a1"
-                            autofocus
+                            errorClasses="myError "
+                            autoFocus
                             autoComplete="on"
                         />
 
                         <Input
                             type="text"
-                            name="ownerName"
-                            id="ownerName"
-                            placeholder="Owner Name"
+                            name="lName"
+                            id="lName"
+                            placeholder="Last Name"
                             className="form-field animation a1"
-                            value={this.state.account.ownerName}
-                            error={this.state.errors.ownerName}
+                            value={this.state.account.lName}
+                            error={this.state.errors.lName}
                             onChange={this.handleChange}
-                            errorClasses="myError animation a1"
-                        />
-
-                        <Input
-                            type="number"
-                            name="phoneNumber"
-                            id="phoneNumber"
-                            placeholder="Phone number"
-                            className="form-field animation a2"
-                            value={this.state.account.phoneNumber}
-                            error={this.state.errors.phoneNumber}
-                            onChange={this.handleChange}
-                            errorClasses="myError animation a2"
+                            errorClasses="myError "
                         />
 
                         <Input
                             type="email"
-                            name="centerEmail"
-                            id="centerEmail"
+                            name="userEmail"
+                            id="userEmail"
                             placeholder="Email Address"
                             className="form-field animation a2"
-                            value={this.state.account.centerEmail}
-                            error={this.state.errors.centerEmail}
+                            value={this.state.account.userEmail}
+                            error={this.state.errors.userEmail}
                             onChange={this.handleChange}
-                            errorClasses="myError animation a2"
+                            errorClasses="myError "
                             autoComplete="on"
                         />
 
                         <Input
                             type="password"
-                            name="centerPassword"
-                            id="centerPassword"
+                            name="userPassword"
+                            id="userPassword"
                             placeholder="Password"
                             className="form-field animation a3"
-                            value={this.state.account.centerPassword}
-                            error={this.state.errors.centerPassword}
+                            value={this.state.account.userPassword}
+                            error={this.state.errors.userPassword}
                             onChange={this.handleChange}
-                            errorClasses="myError animation a3"
+                            errorClasses="myError "
                         />
 
                         <Input
@@ -154,10 +134,10 @@ class SignupCenter1 extends Component {
                             value={this.state.account.cPassword}
                             error={this.state.errors.cPassword}
                             onChange={this.handleChange}
-                            errorClasses="myError animation a3"
+                            errorClasses="myError "
                         />
 
-                        <button className="formBtn animation a4">sign up</button>
+                        <button type="submit" className="formBtn animation a4" >sign up</button>
                         <div id="or" className="animation a5">
                             <span id="s1"></span>
                             <p>or</p>
@@ -172,4 +152,4 @@ class SignupCenter1 extends Component {
     }
 }
 
-export default SignupCenter1;
+export default SignUpUser1;

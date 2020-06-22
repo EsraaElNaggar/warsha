@@ -12,10 +12,12 @@ import AsideMenuProfileUser from "./components/asideMenuProfileUser";
 import ShowProfileUser from "./components/showProfileUser";
 //import Nav from "./components/core/nav";
 
+import SignupCenter from "./components/Authentication/signupCenter";
+
 function App() {
   return (
     <React.Fragment>
-      <ShowProfileUser></ShowProfileUser>
+      <SignupCenter></SignupCenter>
     </React.Fragment>
   );
 }
