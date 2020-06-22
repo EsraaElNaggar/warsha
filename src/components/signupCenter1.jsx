@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Joi from "joi-browser";
-import Input from './input';
+import Input from './common/input';
 
 class SignupCenter1 extends Component {
     state = {
@@ -67,6 +67,7 @@ class SignupCenter1 extends Component {
         }
         this.setState({ errors: {} });
         // logic registration
+        this.props.handleNext(this.state.account)
     }
 
 
@@ -80,7 +81,7 @@ class SignupCenter1 extends Component {
                         <p>Find the <span>Nearest</span> mechanic..</p>
                         <p className="pBook">Book online now !</p>
                     </div>
-                    <form className="form animation a1" >
+                    <form className="form animation a1" onSubmit={this.handleSubmit}>
                         <h2 className="lFTitle animation a1">Sign Up</h2>
                         <Input
                             type="text"
@@ -157,7 +158,7 @@ class SignupCenter1 extends Component {
                             errorClasses="myError animation a3"
                         />
 
-                        <button className="formBtn animation a4">sign up</button>
+                        <button type="submit" className="formBtn animation a4">sign up</button>
                         <div id="or" className="animation a5">
                             <span id="s1"></span>
                             <p>or</p>

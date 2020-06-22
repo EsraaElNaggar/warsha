@@ -1,432 +1,567 @@
 import React, { Component } from 'react';
-import { WithContext as ReactTags } from 'react-tag-input';
-
-
-const KeyCodes = {
-    comma: 188,
-    enter: 13,
-    SPACE: 32,
-};
-
-const delimiters = [KeyCodes.comma, KeyCodes.enter, KeyCodes.SPACE];
-const placeholder = ["Services Provided", "Car Brands", "Car Models", "Car Years"];
+import MultiSelect from "react-multi-select-component";
 
 class SignupCenter3 extends Component {
     state = {
-        services: [],
-        carBrands: [],
-        carModels: [],
-        carYears: [],
-
-
+        data: {
+            services: [],
+            carBrands: [],
+            carModels: [],
+            carYears: [],
+        },
         allServices: [
             {
-                id: '4x4 Services',
-                text: '4x4 Services'
+                label: '4x4 Services',
+                value: '4x4 Services'
             },
             {
-                id: 'Batteries',
-                text: 'Batteries'
+                label: 'Batteries',
+                value: 'Batteries'
             },
             {
-                id: 'Brakes',
-                text: 'Brakes'
+                label: 'Brakes',
+                value: 'Brakes'
             },
             {
-                id: 'Car & Truck Care',
-                text: 'Car & Truck Care'
+                label: 'Car & Truck Care',
+                value: 'Car & Truck Care'
             },
             {
-                id: 'Domestic Cars & Trucks',
-                text: 'Domestic Cars & Trucks'
+                label: 'Domestic Cars & Trucks',
+                value: 'Domestic Cars & Trucks'
             },
             {
-                id: 'Electrical Services',
-                text: 'Electrical Services'
+                label: 'Electrical Services',
+                value: 'Electrical Services'
             },
             {
-                id: 'Electronic Services',
-                text: 'Electronic Services'
+                label: 'Electronic Services',
+                value: 'Electronic Services'
             },
             {
-                id: 'Engine & Transmission',
-                text: 'Engine & Transmission'
+                label: 'Engine & Transmission',
+                value: 'Engine & Transmission'
             },
             {
-                id: 'Engine Maintenance',
-                text: 'Engine Maintenance'
+                label: 'Engine Maintenance',
+                value: 'Engine Maintenance'
             },
             {
-                id: 'Fleet Brakes',
-                text: 'Fleet Brakes'
+                label: 'Fleet Brakes',
+                value: 'Fleet Brakes'
             },
             {
-                id: 'Fleet Drive Train',
-                text: 'Fleet Drive Train'
+                label: 'Fleet Drive Train',
+                value: 'Fleet Drive Train'
             },
             {
-                id: 'Fleet Electrical',
-                text: 'Fleet Electrical'
+                label: 'Fleet Electrical',
+                value: 'Fleet Electrical'
             },
             {
-                id: 'Fleet Electronics',
-                text: 'Fleet Electronics'
+                label: 'Fleet Electronics',
+                value: 'Fleet Electronics'
             },
             {
-                id: 'Fleet Engine Work',
-                text: 'Fleet Engine Work'
+                label: 'Fleet Engine Work',
+                value: 'Fleet Engine Work'
             },
             {
-                id: 'Fleet Front End Services',
-                text: 'Fleet Front End Services'
+                label: 'Fleet Front End Services',
+                value: 'Fleet Front End Services'
             },
             {
-                id: 'Fleet General Services',
-                text: 'Fleet General Services'
+                label: 'Fleet General Services',
+                value: 'Fleet General Services'
             },
             {
-                id: 'Fleet Suspension Work',
-                text: 'Fleet Suspension Work'
+                label: 'Fleet Suspension Work',
+                value: 'Fleet Suspension Work'
             },
             {
-                id: 'Fleet Wheel Services',
-                text: 'Fleet Wheel Services'
+                label: 'Fleet Wheel Services',
+                value: 'Fleet Wheel Services'
             },
             {
-                id: 'General Services',
-                text: 'General Services'
+                label: 'General Services',
+                value: 'General Services'
             },
             {
-                id: 'Heating and Cooling Services',
-                text: 'Heating and Cooling Services'
+                label: 'Heating and Cooling Services',
+                value: 'Heating and Cooling Services'
             },
             {
-                id: 'Import Cars & Trucks',
-                text: 'Import Cars & Trucks'
+                label: 'Import Cars & Trucks',
+                value: 'Import Cars & Trucks'
             },
             {
-                id: 'Miscellaneous Services',
-                text: 'Miscellaneous Services'
+                label: 'Miscellaneous Services',
+                value: 'Miscellaneous Services'
             },
             {
-                id: 'Quick Lube Services',
-                text: 'Quick Lube Services'
+                label: 'Quick Lube Services',
+                value: 'Quick Lube Services'
             },
             {
-                id: 'Towing',
-                text: 'Towing'
+                label: 'Towing',
+                value: 'Towing'
             },
             {
-                id: 'Transmission Services',
-                text: 'Transmission Services'
+                label: 'Transmission Services',
+                value: 'Transmission Services'
             },
             {
-                id: 'Undercar Services',
-                text: 'Undercar Services'
+                label: 'Undercar Services',
+                value: 'Undercar Services'
             }
         ],
         allCarBrands: [
-            { id: "Abarth", text: "Abarth" },
-            { id: "Alfa Romeo", text: "Alfa Romeo" },
-            { id: "Asia Motors", text: "Asia Motors" },
-            { id: "Aston Martin", text: "Aston Martin" },
-            { id: "Audi", text: "Audi" },
-            { id: "Austin", text: "Austin" },
-            { id: "Autobianchi", text: "Autobianchi" },
-            { id: "Bentley", text: "Bentley" },
-            { id: "BMW", text: "BMW" },
-            { id: "Bugatti", text: "Bugatti" },
-            { id: "Buick", text: "Buick" },
-            { id: "Cadillac", text: "Cadillac" },
-            { id: "Carver", text: "Carver" },
-            { id: "Chevrolet", text: "Chevrolet" },
-            { id: "Chrysler", text: "Chrysler" },
-            { id: "Citroen", text: "Citroen" },
-            { id: "Corvette", text: "Corvette" },
-            { id: "Dacia", text: "Dacia" },
-            { id: "Daewoo", text: "Daewoo" },
-            { id: "Daihatsu", text: "Daihatsu" },
-            { id: "Daimler", text: "Daimler" },
-            { id: "Datsun", text: "Datsun" },
-            { id: "Dodge", text: "Dodge" },
-            { id: "Donkervoort", text: "Donkervoort" },
-            { id: "DS", text: "DS" },
-            { id: "Ferrari", text: "Ferrari" },
-            { id: "Fiat", text: "Fiat" },
-            { id: "Fisker", text: "Fisker" },
-            { id: "Ford", text: "Ford" },
-            { id: "FSO", text: "FSO" },
-            { id: "Galloper", text: "Galloper" },
-            { id: "Honda", text: "Honda" },
-            { id: "Hummer", text: "Hummer" },
-            { id: "Hyundai", text: "Hyundai" },
-            { id: "Infiniti", text: "Infiniti" },
-            { id: "Innocenti", text: "Innocenti" },
-            { id: "Jaguar", text: "Jaguar" },
-            { id: "Jeep", text: "Jeep" },
-            { id: "Josse", text: "Josse" },
-            { id: "Kia", text: "Kia" },
-            { id: "Lada", text: "Lada" },
-            { id: "Lamborghini", text: "Lamborghini" },
-            { id: "Lancia", text: "Lancia" },
-            { id: "Land Rover", text: "Land Rover" },
-            { id: "Landwind", text: "Landwind" },
-            { id: "Lexus", text: "Lexus" },
-            { id: "Lincoln", text: "Lincoln" },
-            { id: "Lotus", text: "Lotus" },
-            { id: "Marcos", text: "Marcos" },
-            { id: "Maserati", text: "Maserati" },
-            { id: "Maybach", text: "Maybach" },
-            { id: "Mazda", text: "Mazda" },
-            { id: "McLaren", text: "McLaren" },
-            { id: "Mega", text: "Mega" },
-            { id: "Mercedes", text: "Mercedes" },
-            { id: "Mercury", text: "Mercury" },
-            { id: "MG", text: "MG" },
-            { id: "Mini", text: "Mini" },
-            { id: "Mitsubishi", text: "Mitsubishi" },
-            { id: "Morgan", text: "Morgan" },
-            { id: "Morris", text: "Morris" },
-            { id: "Nissan", text: "Nissan" },
-            { id: "Noble", text: "Noble" },
-            { id: "Opel", text: "Opel" },
-            { id: "Peugeot", text: "Peugeot" },
-            { id: "PGO", text: "PGO" },
-            { id: "Pontiac", text: "Pontiac" },
-            { id: "Porsche", text: "Porsche" },
-            { id: "Princess", text: "Princess" },
-            { id: "Renault", text: "Renault" },
-            { id: "Rolls-Royce", text: "Rolls-Royce" },
-            { id: "Rover", text: "Rover" },
-            { id: "Saab", text: "Saab" },
-            { id: "Seat", text: "Seat" },
-            { id: "Skoda", text: "Skoda" },
-            { id: "Smart", text: "Smart" },
-            { id: "Spectre", text: "Spectre" },
-            { id: "SsangYong", text: "SsangYong" },
-            { id: "Subaru", text: "Subaru" },
-            { id: "Suzuki", text: "Suzuki" },
-            { id: "Talbot", text: "Talbot" },
-            { id: "Tesla", text: "Tesla" },
-            { id: "Think", text: "Think" },
-            { id: "Toyota", text: "Toyota" },
-            { id: "Triumph", text: "Triumph" },
-            { id: "TVR", text: "TVR" },
-            { id: "Volkswagen", text: "Volkswagen" },
-            { id: "Volvo", text: "Volvo" },
-            { id: "Yugo", text: "Yugo" },
+            {
+                label: "Abarth",
+                value: "Abarth"
+            },
+            {
+                label: "Alfa Romeo",
+                value: "Alfa Romeo"
+            },
+            {
+                label: "Asia Motors",
+                value: "Asia Motors"
+            },
+            {
+                label: "Aston Martin",
+                value: "Aston Martin"
+            },
+            {
+                label: "Audi",
+                value: "Audi"
+            },
+            {
+                label: "Austin",
+                value: "Austin"
+            },
+            {
+                label: "Autobianchi",
+                value: "Autobianchi"
+            },
+            {
+                label: "Bentley",
+                value: "Bentley"
+            },
+            {
+                label: "BMW",
+                value: "BMW"
+            },
+            {
+                label: "Bugatti",
+                value: "Bugatti"
+            },
+            {
+                label: "Buick",
+                value: "Buick"
+            },
+            {
+                label: "Cadillac",
+                value: "Cadillac"
+            },
+            {
+                label: "Carver",
+                value: "Carver"
+            },
+            {
+                label: "Chevrolet",
+                value: "Chevrolet"
+            },
+            {
+                label: "Chrysler",
+                value: "Chrysler"
+            },
+            {
+                label: "Citroen",
+                value: "Citroen"
+            },
+            {
+                label: "Corvette",
+                value: "Corvette"
+            },
+            {
+                label: "Dacia",
+                value: "Dacia"
+            },
+            {
+                label: "Daewoo",
+                value: "Daewoo"
+            },
+            {
+                label: "Daihatsu",
+                value: "Daihatsu"
+            },
+            {
+                label: "Daimler",
+                value: "Daimler"
+            },
+            {
+                label: "Datsun",
+                value: "Datsun"
+            },
+            {
+                label: "Dodge",
+                value: "Dodge"
+            },
+            {
+                label: "Donkervoort",
+                value: "Donkervoort"
+            },
+            {
+                label: "DS",
+                value: "DS"
+            },
+            {
+                label: "Ferrari",
+                value: "Ferrari"
+            },
+            {
+                label: "Fiat",
+                value: "Fiat"
+            },
+            {
+                label: "Fisker",
+                value: "Fisker"
+            },
+            {
+                label: "Ford",
+                value: "Ford"
+            },
+            {
+                label: "FSO",
+                value: "FSO"
+            },
+            {
+                label: "Galloper",
+                value: "Galloper"
+            },
+            {
+                label: "Honda",
+                value: "Honda"
+            },
+            {
+                label: "Hummer",
+                value: "Hummer"
+            },
+            {
+                label: "Hyundai",
+                value: "Hyundai"
+            },
+            {
+                label: "Infiniti",
+                value: "Infiniti"
+            },
+            {
+                label: "Innocenti",
+                value: "Innocenti"
+            },
+            {
+                label: "Jaguar",
+                value: "Jaguar"
+            },
+            {
+                label: "Jeep",
+                value: "Jeep"
+            },
+            {
+                label: "Josse",
+                value: "Josse"
+            },
+            {
+                label: "Kia",
+                value: "Kia"
+            },
+            {
+                label: "Lada",
+                value: "Lada"
+            },
+            {
+                label: "Lamborghini",
+                value: "Lamborghini"
+            },
+            {
+                label: "Lancia",
+                value: "Lancia"
+            },
+            {
+                label: "Land Rover",
+                value: "Land Rover"
+            },
+            {
+                label: "Landwind",
+                value: "Landwind"
+            },
+            {
+                label: "Lexus",
+                value: "Lexus"
+            },
+            {
+                label: "Lincoln",
+                value: "Lincoln"
+            },
+            {
+                label: "Lotus",
+                value: "Lotus"
+            },
+            {
+                label: "Marcos",
+                value: "Marcos"
+            },
+            {
+                label: "Maserati",
+                value: "Maserati"
+            },
+            {
+                label: "Maybach",
+                value: "Maybach"
+            },
+            {
+                label: "Mazda",
+                value: "Mazda"
+            },
+            {
+                label: "McLaren",
+                value: "McLaren"
+            },
+            {
+                label: "Mega",
+                value: "Mega"
+            },
+            {
+                label: "Mercedes",
+                value: "Mercedes"
+            },
+            {
+                label: "Mercury",
+                value: "Mercury"
+            },
+            {
+                label: "MG",
+                value: "MG"
+            },
+            {
+                label: "Mini",
+                value: "Mini"
+            },
+            {
+                label: "Mitsubishi",
+                value: "Mitsubishi"
+            },
+            {
+                label: "Morgan",
+                value: "Morgan"
+            },
+            {
+                label: "Morris",
+                value: "Morris"
+            },
+            {
+                label: "Nissan",
+                value: "Nissan"
+            },
+            {
+                label: "Noble",
+                value: "Noble"
+            },
+            {
+                label: "Opel",
+                value: "Opel"
+            },
+            {
+                label: "Peugeot",
+                value: "Peugeot"
+            },
+            {
+                label: "PGO",
+                value: "PGO"
+            },
+            {
+                label: "Pontiac",
+                value: "Pontiac"
+            },
+            {
+                label: "Porsche",
+                value: "Porsche"
+            },
+            {
+                label: "Princess",
+                value: "Princess"
+            },
+            {
+                label: "Renault",
+                value: "Renault"
+            },
+            {
+                label: "Rolls-Royce",
+                value: "Rolls-Royce"
+            },
+            {
+                label: "Rover",
+                value: "Rover"
+            },
+            {
+                label: "Saab",
+                value: "Saab"
+            },
+            {
+                label: "Seat",
+                value: "Seat"
+            },
+            {
+                label: "Skoda",
+                value: "Skoda"
+            },
+            {
+                label: "Smart",
+                value: "Smart"
+            },
+            {
+                label: "Spectre",
+                value: "Spectre"
+            },
+            {
+                label: "SsangYong",
+                value: "SsangYong"
+            },
+            {
+                label: "Subaru",
+                value: "Subaru"
+            },
+            {
+                label: "Suzuki",
+                value: "Suzuki"
+            },
+            {
+                label: "Talbot",
+                value: "Talbot"
+            },
+            {
+                label: "Tesla",
+                value: "Tesla"
+            },
+            {
+                label: "Think",
+                value: "Think"
+            },
+            {
+                label: "Toyota",
+                value: "Toyota"
+            },
+            {
+                label: "Triumph",
+                value: "Triumph"
+            },
+            {
+                label: "TVR",
+                value: "TVR"
+            },
+            {
+                label: "Volkswagen",
+                value: "Volkswagen"
+            },
+            {
+                label: "Volvo",
+                value: "Volvo"
+            },
+            {
+                label: "Yugo",
+                value: "Yugo"
+            },
         ]
     };
 
-    ServiceHandleDelete = (i) => {
-        let { services } = this.state;
-        services = services.filter((service, index) => index !== i);
-        this.setState({ services })
-    }
-    BrandHandleDelete = (i) => {
-        let { carBrands } = this.state;
-        carBrands = carBrands.filter((brand, index) => index !== i);
-        this.setState({ carBrands })
-    }
-    ModelHandleDelete = (i) => {
-        let { carModels } = this.state;
-        carModels = carModels.filter((model, index) => index !== i);
-        this.setState({ carModels })
-    }
-    YearHandleDelete = (i) => {
-        let { carYears } = this.state;
-        carYears = carYears.filter((year, index) => index !== i);
-        this.setState({ carYears })
+    handleSubmit = (e) => {
+        e.preventDefault();
+        this.props.handleNext(this.state.data)
     }
 
-
-    ServiceHandleAddition = (tag) => {
-        let { services } = this.state;
-        services = [...services, tag];
-        this.setState({ services })
+    handleChangeService = (e) => {
+        const data = { ...this.state.data };
+        data.services = e;
+        this.setState({ data });
+        console.log(data)
     }
-    BrandHandleAddition = (tag) => {
-        let { carBrands } = this.state;
-        carBrands = [...carBrands, tag];
-        this.setState({ carBrands })
+    handleChangeBrand = (e) => {
+        const data = { ...this.state.data };
+        data.carBrands = e;
+        this.setState({ data });
+        console.log(data)
     }
-    ModelHandleAddition = (tag) => {
-        let { carModels } = this.state;
-        carModels = [...carModels, tag];
-        this.setState({ carModels })
+    handleChangeModel = (e) => {
+        const data = { ...this.state.data };
+        data.carModels = e;
+        this.setState({ data });
+        console.log(data)
     }
-    YearHandleAddition = (tag) => {
-        let { carYears } = this.state;
-        carYears = [...carYears, tag];
-        this.setState({ carYears })
+    handleChangeYear = (e) => {
+        const data = { ...this.state.data };
+        data.carYears = e;
+        this.setState({ data });
+        console.log(data)
     }
-
-    ServiceHandleDrag = (tag, currPos, newPos) => {
-        const services = [...this.state.services];
-        const providedSer = services.slice();
-
-        providedSer.splice(currPos, 1);
-        providedSer.splice(newPos, 0, tag);
-
-        this.setState({ services: providedSer });
-    }
-
-    BrandHandleDrag = (tag, currPos, newPos) => {
-
-        const carBrands = [...this.state.carBrands];
-        const brands = carBrands.slice();
-
-        brands.splice(currPos, 1);
-        brands.splice(newPos, 0, tag);
-
-        this.setState({ carBrands: brands });
-    }
-
-    ModelHandleDrag = (tag, currPos, newPos) => {
-
-        const carModels = [...this.state.carModels];
-        const models = carModels.slice();
-
-        models.splice(currPos, 1);
-        models.splice(newPos, 0, tag);
-
-        this.setState({ carModels: models });
-    }
-
-    YearHandleDrag = (tag, currPos, newPos) => {
-
-        const carYears = [...this.state.carYears];
-        const years = carYears.slice();
-
-        years.splice(currPos, 1);
-        years.splice(newPos, 0, tag);
-
-        this.setState({ carYears: years });
-    }
-
 
     render() {
         const { allServices, allCarBrands } = this.state;
+
         return (
             <React.Fragment>
                 <div className="form1Wrap">
                     <a href="#" className="logo animation a1"><span>W</span>arsha</a>
                     <h2 className="animation a1"> Welcome to our website !</h2>
-                    <p className="let animation a1">Let’s start with your profile and your services provided informations.</p>
+                    <p className="let animation a1">And now with your services provided for which car's informations.</p>
 
-                    <form className="form animation a2">
+                    <form className="form animation a2" onSubmit={this.handleSubmit}>
                         <label htmlFor="services" className="CenterSignTagsLabels">
                             Services Provided :
                         </label>
-                        <ReactTags
-                            tags={this.state.services}
-                            name="services"
-                            suggestions={allServices}
-                            placeholder={placeholder[0]}
-                            classNames={{
-                                tags: 'tagsClass',
-                                tagInputField: 'form__field',
-                                selected: 'selectedClass',
-                                tag: 'taged-textbox__tag',
-                                remove: 'taged-textbox__remove',
-                            }}
-                            inputFieldPosition="bottom"
-                            autofocus={false}
-                            handleDelete={this.ServiceHandleDelete}
-                            handleAddition={this.ServiceHandleAddition}
-                            handleDrag={this.ServiceHandleDrag}
-                            delimiters={delimiters}
+                        <MultiSelect
+                            id="services"
+                            options={allServices}
+                            value={this.state.data.services}
+                            onChange={this.handleChangeService}
+                            labelledBy={"Service"}
                         />
 
-                        <label htmlFor="brands" className="CenterSignTagsLabels animation a3">
+                        <label htmlFor="carBrands" className="CenterSignTagsLabels">
                             Car Brands :
                         </label>
-                        <ReactTags
-                            tags={this.state.carBrands}
-                            name="brands"
-                            suggestions={allCarBrands}
-                            placeholder={placeholder[1]}
-                            classNames={{
-                                tags: 'tagsClass',
-                                tagInputField: 'form__field',
-                                selected: 'selectedClass',
-                                tag: 'taged-textbox__tag',
-                                remove: 'taged-textbox__remove',
-                            }}
-                            inputFieldPosition="bottom"
-                            autofocus={false}
-                            handleDelete={this.BrandHandleDelete}
-                            handleAddition={this.BrandHandleAddition}
-                            handleDrag={this.BrandHandleDrag}
-                            delimiters={delimiters}
+                        <MultiSelect
+                            id="carBrands"
+                            options={allCarBrands}
+                            value={this.state.data.carBrands}
+                            onChange={this.handleChangeBrand}
+                            labelledBy={"carBrands"}
                         />
 
-                        {/* <select name="brand" id="brand" className="form-field animation a3" autofocus>
-                            <option value="">Select your car brand (e.g. Ford)</option>
-                            {this.state.carBrand.map(brand => (
-                                <option value={brand.name}>{brand.name}</option>
-                            ))}
-                        </select> */}
-
-                        <label htmlFor="models" className="CenterSignTagsLabels animation a4">
+                        <label htmlFor="carModels" className="CenterSignTagsLabels">
                             Car Models :
                         </label>
-                        <ReactTags
-                            tags={this.state.carModels}
-                            name="models"
-                            // suggestions={allCarBrands}
-                            placeholder={placeholder[2]}
-                            classNames={{
-                                tags: 'tagsClass',
-                                tagInputField: 'form__field',
-                                selected: 'selectedClass',
-                                tag: 'taged-textbox__tag',
-                                remove: 'taged-textbox__remove',
-                            }}
-                            inputFieldPosition="bottom"
-                            autofocus={false}
-                            handleDelete={this.ModelHandleDelete}
-                            handleAddition={this.ModelHandleAddition}
-                            handleDrag={this.ModelHandleDrag}
-                            delimiters={delimiters}
+                        <MultiSelect
+                            id="carModels"
+                            options={allCarBrands}
+                            value={this.state.data.carModels}
+                            onChange={this.handleChangeModel}
+                            labelledBy={"carModels"}
                         />
 
-                        {/* <select name="model" id="model" className="form-field animation a4">
-                            <option value="">
-                                Select your car model (e.g. Ford)
-                            </option>
-                        </select> */}
-
-                        <label htmlFor="years" className="CenterSignTagsLabels animation a5">
+                        <label htmlFor="carModels" className="CenterSignTagsLabels">
                             Car Year :
                         </label>
-                        <ReactTags
-                            tags={this.state.carYears}
-                            name="years"
-                            // suggestions={allCarYears}
-                            placeholder={placeholder[3]}
-                            classNames={{
-                                tags: 'tagsClass',
-                                tagInputField: 'form__field',
-                                selected: 'selectedClass',
-                                tag: 'taged-textbox__tag',
-                                remove: 'taged-textbox__remove',
-                            }}
-                            inputFieldPosition="bottom"
-                            autofocus={false}
-                            handleDelete={this.YearHandleDelete}
-                            handleAddition={this.YearHandleAddition}
-                            handleDrag={this.YearHandleDrag}
-                            delimiters={delimiters}
+                        <MultiSelect
+                            id="carYears"
+                            options={allCarBrands}
+                            value={this.state.data.carYears}
+                            onChange={this.handleChangeYear}
+                            labelledBy={"carYears"}
                         />
 
-                        {/* <select name="year" id="year" className="form-field animation a5">
-                            <option value="">
-                                Select your car year
-                                </option>
-                        </select> */}
 
-                        <button className="formBtn animation a5">Next</button>
+                        <button type="submit" className="formBtn animation a5">Submit</button>
                     </form>
                 </div>
             </React.Fragment>
