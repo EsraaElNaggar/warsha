@@ -8,7 +8,7 @@ import React from "react";
 // import EditProfileCenter from "./components/editProfileCenter";
 // import ReviewsCenter from "./components/reviewsCenter";
 // import AppointmentsUser from "./components/appointmentsUser";
-import SignupCenter from "./components/signupCenter";
+import SignupCenter from "./components/Authentication/signupCenter";
 
 
 function App() {
