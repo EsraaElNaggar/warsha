@@ -1,6 +1,23 @@
 import React from 'react'
 
-export default function Home() {
+export default function Home(props) {
+
+    let {sepciality,district,area} = props; 
+    sepciality = sepciality.map((index,item)=>{
+        return (
+            <option key={item} value={item}>{item}</option>
+        )
+    })
+    district = district.map((index,item)=>{
+        return (
+            <option key={item} value={item}>{item}</option>
+        )
+    })
+    area = area.map((index,item)=>{
+        return (
+            <option key={item} value={item}>{item}</option>
+        )
+    })
     return (
         <>
             <section class="banner">
@@ -33,26 +50,23 @@ export default function Home() {
                     <h2>Book Now</h2>
                     <div>
                         <select name="sepcialization" id="spec">
-                            <option value="blah">sepciality</option>
-                            <option value="blah">Blah</option>
-                            <option value="blah">Blah</option>
-                            <option value="blah">Blah</option>
-                            <option value="blah">Blah</option>
+                            <option>sepciality</option>
+                            {
+                                sepciality
+                            }
                         </select>
                         <select name="district" id="district">
-                            <option value="blah">district</option>
-                            <option value="blah">Blah</option>
-                            <option value="blah">Blah</option>
-                            <option value="blah">Blah</option>
-                            <option value="blah">Blah</option>
+                            <option>district</option>
+                            {
+                                district
+                            }
                         </select>
 
                         <select name="area" id="area">
-                            <option value="blah">area</option>
-                            <option value="blah">Blah</option>
-                            <option value="blah">Blah</option>
-                            <option value="blah">Blah</option>
-                            <option value="blah">Blah</option>
+                            <option>area</option>
+                           {
+                               area
+                           }
                         </select>
                         <button><i class="fas fa-search"></i></button>
                     </div>

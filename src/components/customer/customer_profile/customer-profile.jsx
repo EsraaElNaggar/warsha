@@ -1,9 +1,16 @@
 import React, { Component } from "react";
+<<<<<<< HEAD:src/components/asideMenuProfileUser.jsx
 import ChangePasswordUser from "./forms/changePasswordUser";
 import EditProfileUser from "./editProfileUser";
 import AppointmentsUser from "./appointmentsUser";
+=======
+>>>>>>> 028d4e87d120a950e39c04d385966b8b81411eb2:src/components/customer/customer_profile/customer-profile.jsx
 
-class AsideMenuProfileUser extends Component {
+import ChangePasswordUser from '../../forms/changePasswordUser';
+import CustomerProfileDetails from './customer-profile-details';
+import UserAppointments from './user-appointments';
+
+class CustomerProfile extends Component {
   state = {
     pathChoice: 0
   };
@@ -45,13 +52,13 @@ class AsideMenuProfileUser extends Component {
         {(() => {
           switch (this.state.pathChoice) {
             case 1:
-              return <EditProfileUser></EditProfileUser>;
+              return <CustomerProfileDetails></CustomerProfileDetails>;
             case 2:
               return <ChangePasswordUser></ChangePasswordUser>;
             case 3:
-              return <AppointmentsUser></AppointmentsUser>;
+              return <UserAppointments></UserAppointments>;
             default:
-              return <EditProfileUser></EditProfileUser>;
+              return <CustomerProfileDetails></CustomerProfileDetails>;
           }
         })()}
       </React.Fragment>
@@ -59,4 +66,4 @@ class AsideMenuProfileUser extends Component {
   }
 }
 
-export default AsideMenuProfileUser;
+export default CustomerProfile;

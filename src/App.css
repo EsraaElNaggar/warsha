@@ -1,32 +1,35 @@
 @import url('../node_modules/@fortawesome/fontawesome-free/css/all.css');
 @import url('https://fonts.googleapis.com/css2?family=Leckerli+One&family=Open+Sans&family=Oswald&family=Pacifico&family=Roboto&display=swap');
 
-myhelptools{
-  color: #00072D;
-  color:#1A73E8;
-  color:#FC9D6B;
-  color: #CCC5B9;
-  font-family: 'Open Sans', sans-serif;
-  font-family: 'Oswald', sans-serif;
-  font-family: 'Leckerli One', cursive;
-  font-family: 'Pacifico', cursive;
+
+:root{
+  --grey:#CCC5B9;
+  --dark-grey:#253031;
+  --blue:#1A73E8;
+  --dark-blue:#00072D;
+  --black:#0E0E0E;
+  --salamon:#FC9D6B;
+  --white: white;
+  --openSans: 'Open Sans', sans-serif;
+  --oswald: 'Oswald', sans-serif;
+  --leckerliOne: 'Leckerli One', cursive;
+  --pacifico:'Pacifico', cursive;
 }
 
 *{outline: none !important}
-/* *:focus{ou} */
 
 body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Open Sans', sans-serif;
+    font-family: var(--openSans);
 }
 
 
 
 /* TODO form 1 */
 .logWrap{
-    font-family: 'Open Sans', sans-serif;
+    font-family: var(--openSans);
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -37,26 +40,26 @@ body{
 }
 
 /* ? left side form*/
-.logLeft{color: white; transition: 1s;}
+.logLeft{color: var(--white); transition: 1s;}
 .logLeft a,.logLeft a span, .logo, .logo span{
-    font-family: 'Leckerli One', cursive;
-    color: #1A73E8;
+    font-family: var(--leckerliOne);
+    color: var(--blue);
     font-size: 85px;
     font-weight: 100;
     margin: auto;
     text-decoration: none;
 }
 .logLeft a span, .logo span{
-    background-color: white;
+    background-color: var(--white);
     border-radius: 50%;
     padding: 5px 15px;
 }
-.logLeft a, .logo {font-family: 'Pacifico', cursive;}
+.logLeft a, .logo {font-family: var(--pacifico);}
 .logLeft h2{font-size: xxx-large; margin: 15px auto;}
 .logLeft p{margin: auto; font-size: x-large;}
 .logLeft p span{font-weight: 900;}
 .logLeft p.pBook, .form1Wrap p {
-    font-family: 'Oswald', sans-serif;
+    font-family: var(--oswald);
     font-size: x-large;
 }
 /* ? right side form */
@@ -67,15 +70,15 @@ body{
     width: 30%;
     padding: 3%;
     border-radius: 25px;
-    background:white;
-    color: #1A73E8;
+    background:var(--white);
+    color: var(--blue);
     transition: .2s;
 }
 .form h2 {
   font-weight: 300;
 }
 .form .lFTitle{
-  font-family: 'Open Sans', sans-serif;
+  font-family: var(--openSans);
   font-size: x-large;
   text-align: center;
   text-transform: uppercase;
@@ -86,8 +89,8 @@ body{
     height: 46px;
     padding: 0 16px;
     border:none;
-    border-bottom: 3px solid #1A73E8;
-    box-shadow: 0px 0px 2px #1A73E8;
+    border-bottom: 3px solid var(--blue);
+    box-shadow: 0px 0px 2px var(--blue);
     border-radius: 4px;
     outline: 0;
     transition: .2s;
@@ -100,9 +103,9 @@ body{
 .form > .formBtn, .formBtn {
   padding: 12px;
   border: 0;
-  background-color: #1A73E8; 
+  background-color: var(--blue); 
   border-radius: 3px;
-  color: #fff;
+  color: var(--white);
   font-size: medium;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -140,17 +143,17 @@ body{
 .form span, .form span a{
   text-align: center;
   text-decoration: none;
-  color: #1A73E8;
+  color: var(--blue);
 }
 .form span{color: #253031;}
 
 /*TODO registration */
 .form1Wrap, .contWrap{
-  font-family: 'Open Sans', sans-serif;
+  font-family: var(--openSans);
   /* height: 100vh; */
   text-align: center;
-  background-color: #00072D;
-  color: white;
+  background-color: var(--dark-blue);
+  color: var(--white);
   transition: 1s;
 }
 .form1Wrap .form, .contWrap .form{margin: auto;}
@@ -173,11 +176,11 @@ a.logo:hover{
   padding-left:5%
 }
 /* TODO contactUs */
-.contWrap{background-color: #00072D; padding: 0%;}
+.contWrap{background-color: var(--dark-blue); padding: 0%;}
 .contWrap .logo{
   font-size: 50px;
   margin: 0 0 1% 0;
-  color: #1A73E8;
+  color: var(--blue);
 }
 .contWrap .logo span{  font-size: 50px;}
 .contWrap .form{
@@ -204,7 +207,7 @@ a.logo:hover{
   flex-direction: column;
 }
 .contWrap label{
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--oswald);
   font-size: larger;
   text-align: left;
   color: #253031;
@@ -214,24 +217,25 @@ a.logo:hover{
 .contWrap .form .formBtn{
   width: 25%;
   margin: auto;
-  background-color: #FC9D6B;
+  background-color: var(--salamon);
   border-radius: 5px;
-  border-bottom: 3px solid white;
-  box-shadow: 0px 2px 9px #FC9D6B;
+  border-bottom: 3px solid var(--white);
+  box-shadow: 0px 2px 9px var(--salamon);
 }
 .contWrap .form .formBtn:hover{
-  color: #FC9D6B;
-  background-color: #fff;
-  border-bottom: 3px solid #FC9D6B;
+  color: var(--salamon);
+  background-color: var(--white);
+  border-bottom: 3px solid var(--salamon);
 }
+
 
 /*TODO nav */
 nav {
-  font-family: 'Open Sans', sans-serif;
-  background-color: #00072D;
+  font-family: var(--openSans);
+  background-color: var(--dark-blue);
   display: flex;
   justify-content: space-between;
-  box-shadow: 0px 0px 5px #CCC5B9;
+  box-shadow: 0px 0px 5px var(--grey);
 }
 nav .parts{
   display: flex;
@@ -254,20 +258,20 @@ nav .parts div{
 nav a, .navUser {
   font-size: smaller;
   text-decoration: none !important;
-  color: #1A73E8;
+  color: var(--blue);
 }
 nav button, .navUser{
   margin: auto 0 auto 20px;
-  background-color: #1A73E8;
+  background-color: var(--blue);
   border: none;
   border-radius: 25px;
   padding: 6px 20px;
-  color: white;
-  box-shadow: 0px 2px 9px #1A73E8;
+  color: var(--white);
+  box-shadow: 0px 2px 9px var(--blue);
 }
 nav button:hover{
-  background-color: #00072D;
-  box-shadow: 0px 2px 9px #00072D;
+  background-color: var(--dark-blue);
+  box-shadow: 0px 2px 9px var(--dark-blue);
 }
 .navUser{box-shadow: none;}
 
@@ -279,8 +283,8 @@ nav button:hover{
     min-width: 10rem;
     padding: 0.5rem 0;
     border-radius: 0.25rem;
-    background-color: #00072D;
-    box-shadow: 0 1px 15px #00072d42;
+    background-color: var(--dark-blue);
+    box-shadow: 0 1px 15px var(--dark-blue)42;
 }
 .activedrop{
     display: none;
@@ -289,20 +293,20 @@ nav button:hover{
 
 /* ? transparent nav */
 nav.tr{ background-color: #0000006b; }
-nav.tr a{color:white;}
-nav.tr a:hover{font-weight: 700; border-bottom: 2px solid white;}
+nav.tr a{color:var(--white);}
+nav.tr a:hover{font-weight: 700; border-bottom: 2px solid var(--white);}
 
-/* ? white nav */
-nav.white{ background-color: white; }
-nav.white a{color:#1A73E8;}
+/* ? var(--white) nav */
+nav.white{ background-color: var(--white); }
+nav.white a{color:var(--blue);}
 nav.white a:hover{
-  color:#00072D; 
+  color:var(--dark-blue); 
   font-weight: 700; 
-  border-bottom: 2px solid #00072D;
+  border-bottom: 2px solid var(--dark-blue);
 }
 nav.white .logo span{ 
-  background-color: #1A73E8;
-  color: white;
+  background-color: var(--blue);
+  color: var(--white);
 }
 
 /* Todo appointment reservation page */
@@ -312,7 +316,7 @@ section.logWrap.appointment-reservation{
   background-image: none;
   align-items: flex-start;
   padding: 5% 10%;
-  background-color: #00072D;
+  background-color: var(--dark-blue);
 }
 section.appointment-reservation form{
   width: 50%;
@@ -322,7 +326,7 @@ section.appointment-reservation form{
   text-align: center !important;
 }
 .reservation-info{
-  background-color: white;
+  background-color: var(--white);
   border-radius: 20px;
   height: fit-content;
   padding: 0 0 1.5%;
@@ -353,8 +357,8 @@ section.appointment-reservation form{
     font-size: medium !important;
     color: #253031 !important;
 }
-.center-name b{color:#1A73E8}
-.center-info p{font-size: small; color: #1A73E8;}
+.center-name b{color:var(--blue)}
+.center-info p{font-size: small; color: var(--blue);}
 .appointment-date{
     background-color: lightgray;
     padding: 2% 2% 0.1%;
@@ -396,7 +400,7 @@ section.appointment-reservation form{
 .cancel-appointment-form{
   width: 25%;
   background-color: lightgray;
-  border-bottom: 5px solid #1A73E8;
+  border-bottom: 5px solid var(--blue);
 }
 .submit-appointment-form:hover,
 .cancel-appointment-form:hover{
@@ -405,7 +409,7 @@ section.appointment-reservation form{
 
 /* TODO center details */
 .center-details-container{
-  background-color: #00072D;
+  background-color: var(--dark-blue);
   padding: 1.2% 9%;
   box-sizing: content-box;
 }
@@ -417,7 +421,7 @@ section.appointment-reservation form{
     margin-bottom: 1.5%;
     padding: 3%;
     height: fit-content;
-    background-color: white;
+    background-color: var(--white);
 }
 .center-details-img-container, .center-basic-info{
     display: inline-block;
@@ -431,7 +435,7 @@ section.appointment-reservation form{
 .no-of-views{
     font-size: 15px;
     font-weight: 600;
-    color: rgb(116, 116, 112);
+    color: #747470;
     padding: 0 5px;
 }
 .center-speciality{
@@ -452,7 +456,7 @@ section.appointment-reservation form{
     font-size: 12px;
 }
 .most-recent-review{
-    background-color: #1A73E829;
+    background-color: #1A73e829;
     border-radius: 10px;
     margin: 5% 0 0;
     padding: 2% 3%;
@@ -472,44 +476,44 @@ section.appointment-reservation form{
     padding: 3% 3% 1%;
     margin-bottom: 1.5%;
     height: fit-content;
-    background-color: white;
+    background-color: var(--white);
 }
 .about-title, .services-title, .subaddress{
     font-size: 15px;
     font-weight: 700;
     padding: 0 12px;
-    color:#1A73E8;
+    color:var(--blue);
 }
 .title-services-title, .title-about-title, .title-subaddress{
-  color:#1A73E8;
+  color:var(--blue);
 }
 .about-conent{padding: 2% 0 0 6%;}
 .services-conent{padding: 4% 0 4% 6%;}
 .service-tag{
   padding: 5px;
-  color: #00072D;
+  color: var(--dark-blue);
   border-radius: 6px;
-  background-color: #1A73E829;
+  background-color: #1A73e829;
 }
 .border-y{
-    border-top: 1px solid #1A73E8;
-    border-bottom: 1px solid #1A73E8;
+    border-top: 1px solid var(--blue);
+    border-bottom: 1px solid var(--blue);
 }
 .booking-info{
     width: 40%;
     height: fit-content;
-    background-color: white;
+    background-color: var(--white);
 }
 .booking-info-title{
-  color: white;
+  color: var(--white);
   font-size: larger;
   font-weight: 600;
-  background-color: #1A73E8;
+  background-color: var(--blue);
   border: none;
   margin-bottom: 3%;
 }
 .bg-booking-info{
-  background: #1A73E829;
+  background: #1A73e829;
 }
 .bg-booking-info p{
   margin-bottom: 0;
@@ -518,21 +522,21 @@ section.appointment-reservation form{
   width:auto !important;
 }
 .text-center{
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--oswald);
   font-size: larger;
-  color: #1A73E8;
+  color: var(--blue);
   text-align: center;  
 }
 .booking-appointments-title{
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--oswald);
   font-size: larger;
-  color: #1A73E8;
+  color: var(--blue);
   text-align: center;
   font-weight: 500;
   padding-top: 10px;
 }
 .appoitments-content{
-    background-color: #1A73E8;
+    background-color: var(--blue);
 }
 .arrow{
     margin: auto;
@@ -540,17 +544,17 @@ section.appointment-reservation form{
 }
 .arrow button{
     border-radius: 4px;
-    background-color: white;
+    background-color: var(--white);
     border: none;
-    border-bottom: 3px solid #FC9D6B;
-    color: #FC9D6B;
+    border-bottom: 3px solid var(--salamon);
+    color: var(--salamon);
 }
 .arrow button:hover{
   border: none;
 }
 .appointment-board{
   overflow: hidden;
-    background-color: white;
+    background-color: var(--white);
     width: 23%;
     text-align: center;
     margin: 15px 3px;
@@ -559,7 +563,7 @@ section.appointment-reservation form{
     border-radius: 5px;
 }
 .appointment-board:hover{
-  box-shadow: 0px 0px 7px #00072D;
+  box-shadow: 0px 0px 7px var(--dark-blue);
 }
 .booking-day{
   padding: 1.5px;
@@ -567,8 +571,8 @@ section.appointment-reservation form{
   margin: 0;
   font-size: 14px;
   font-weight: bolder;
-  color: #1A73E8;
-  border-bottom: 1px solid #1A73E8;
+  color: var(--blue);
+  border-bottom: 1px solid var(--blue);
 }
 .appointments-times{
   list-style: none;
@@ -583,11 +587,11 @@ section.appointment-reservation form{
   width: 100%;
   padding: 2px;
   border: 0;
-  color: white;
-  background-color: #FC9D6B;
+  color: var(--white);
+  background-color: var(--salamon);
 }
 .booking-btn:hover{
-  background-color: #00072D;
+  background-color: var(--dark-blue);
 }
 .width20{width: 20%;}
 .width20 i{font-size: 3rem;} 
@@ -597,7 +601,7 @@ section.appointment-reservation form{
 .search-filters{
     position: fixed;
     top: 3vh;
-    background-color: white;
+    background-color: var(--white);
     border-radius: 8px;
     border: 1px solid grey;
     width: 10rem;
@@ -612,7 +616,7 @@ section.appointment-reservation form{
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #1A73E8;
+    color: var(--blue);
     font-size: 1.2rem;
 }
 .search-filters ul{list-style: none;}
@@ -665,7 +669,7 @@ section.appointment-confirmation{
   flex-flow: column;
   padding: 2%;
   justify-content: flex-start;
-  background-color: #00072D;
+  background-color: var(--dark-blue);
   align-items: center;
   height: max-content;
 }
@@ -674,7 +678,7 @@ section.appointment-confirmation .firstPart{
 }
 .confirm-card, .booking-details{
   overflow: hidden;
-  background-color: white;
+  background-color: var(--white);
   width: 55%;
   border-radius: 20px;
   transition: .2s;
@@ -687,20 +691,20 @@ section.appointment-confirmation .firstPart{
   margin-left: 1%;
 }
 .booking-details-title{
-  color: #1A73E8 !important;
+  color: var(--blue) !important;
   border: none !important;
   font-size: x-large;
   font-weight: 600;  
 }
 .booking-details .spanKey{
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--oswald);
 }
 
 .confirm-img{position: relative;}
 .confirm-img img{border-radius: 20px 20px 0 0;}
 .confirm-img p, .confirm-img span{
     position: absolute;
-    color: white;
+    color: var(--white);
 }
 .confirm-img p{
     bottom: 20px;
@@ -735,29 +739,37 @@ section.appointment-confirmation .firstPart{
     color: grey;
     margin: 0;
 }
-.c-green{color: #FC9D6B;}
+.c-green{color: var(--salamon);}
 
 
 /* TODO clients appointments list */
 .appointments-tabs, .appointments-status{
     border-radius: 10px;
     height: fit-content;
-    width: 15%;
+    width: 16%;
 }
 .appointments-tabs > ul, .appointments-status > ul{
-    list-style: none;
+  list-style: none;
     padding: 0;
     margin: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 7px 0px var(--dark-blue);
 }
 .appointments-tabs > ul > li, .appointments-status > ul > li{
-    text-align: center;
+    text-align: left;
     padding: 15px;
     white-space: pre-line;
-    color: grey;
+    color: var(--dark-grey);
+}
+.appointments-tabs > ul > li:hover, .appointments-status > ul > li:hover{
+  background-color: #1A73e829;
 }
 .selected-tab{
-    background-color: lightgray;
-    border-radius: 10px 10px 0 0;
+background-color: var(--blue)!important;
+    color: var(--white) !important;
+    text-align: center !important;
 }
 .appointments-table-container{
     border-radius: 10px;
@@ -766,9 +778,12 @@ section.appointment-confirmation .firstPart{
 #appointments-table{
     border-collapse: collapse;
     width: 100%;
+    border-radius: 10px;
+    background-color: #1A73e829;
+    box-shadow: 0 7px 0px var(--dark-blue);
 }
 #appointments-table tbody{border-radius: 10px;}
-#appointments-table tr:nth-child(even){background-color: #f2f2f2;}
+#appointments-table tr:nth-child(even){background-color: white;}
 #appointments-table td{padding: 10px 2px 10px 50px;}
 #appointments-table tr{border-bottom: 1px solid #ddd;}
 #appointments-table tr:last-child{border-bottom: 0;}
@@ -776,39 +791,71 @@ section.appointment-confirmation .firstPart{
 
 /* TODO current appointments day */
 .day-appointments-list{
-    width: 70%;
-    height: fit-content;
+  width: 70%;
+  height: fit-content;
 }
 .client-appointment{
-    padding: 20px 50px;
-    width: 100%;
+  padding: 20px 50px;
+  width: 100%;
+  border-radius: 10px;
+  background-color: #1A73e829;
+  box-shadow: 0 7px 0px var(--dark-blue);
 }
 .appointment-client-details{
-    border: 1px solid grey;
-    border-bottom: 0;
-    padding: 10px;
-    width: 100%;
+  border: none;
+  border-bottom: 0;
+  padding: 10px;
+  width: 100%;
 }
 .appointment-client-details span:first-child{
-    font-weight: 500;
-    padding-right: 25px;
+  font-weight: 500;
+  padding-right: 25px;
+  font-family: var(--oswald);
+  font-size: x-large;
 }
 .client-card-btns{
-    width: 100%;
+  width: 100%;
 }
-.client-card-btns > button{
-    border: 1px solid grey;
-    background-color: transparent;
-    width: 50%;
-    padding: 8px;
+.checkInBtn, .noShowBtn{
+  width: 50%;
+  padding: 3%;
+  margin: auto 1%;
+  color: var(--white);
+  background-color: var(--blue);
+  border-radius: 5px;
+  border: none;
+  border-bottom: 3px solid var(--white);
+  box-shadow: 0px 0px 2px var(--blue);
+}
+.noShowBtn{
+  background-color: var(--salamon);
+  box-shadow: 0px 0px 2px var(--salamon);
+}
+.checkInBtn:hover{
+  color: var(--blue);
+  background-color: var(--white);
+  border-bottom: 3px solid var(--blue);
+}
+.noShowBtn:hover{
+  color: var(--salamon);
+  background-color: var(--white);
+  border-bottom: 3px solid var(--salamon);
+}
+.client-card-btns > button i{
+margin-right: 5%;
 }
 .client-appointment > button{
   height: fit-content;
   width: 23%;
   padding: 10px 5px;
-  border: 1px solid grey;
-  background-color: transparent;
+  border: none;
+  border-radius: 5px;
+  color: var(--white);
+  background-color: var(--blue);
   margin: auto 0;
+}
+.client-appointment > button:hover{
+  background-color: var(--dark-blue);
 }
 
 
@@ -872,7 +919,7 @@ section.appointment-confirmation .firstPart{
   font-family: inherit;
   width: 100%;
   border: 0;
-  border-bottom: 2px solid #1A73E8;
+  border-bottom: 2px solid var(--blue);
   outline: 0;
   color: #253031;
   padding: 7px 0;
@@ -897,8 +944,8 @@ section.appointment-confirmation .firstPart{
   display: inline-flex;
 }
 .pagination li a.page-link{
-  color: #fff;
-  background-color: #1A73E8;
+  color: var(--white);
+  background-color: var(--blue);
   font-size: 23px;
   font-weight: 600;
   line-height: 27.5px;
@@ -916,13 +963,13 @@ section.appointment-confirmation .firstPart{
 .pagination li.active a.page-link,
 .pagination li a.page-link:hover,
 .pagination li.active a.page-link:hover{
-  color: #fff;
+  color: var(--white);
   background-color: transparent;
-  text-shadow: 0 0 2px #1A73E8;
+  text-shadow: 0 0 2px var(--blue);
 }
 .pagination li a.page-link:before{
   content: '';
-  background-color: #FC9D6B;
+  background-color: var(--salamon);
   height: 100%;
   width: 100%;
   border-radius: 50%;
@@ -954,8 +1001,8 @@ footer{
   justify-content: space-around;
   text-align: center;
   padding: 2% 10% 0% 10%;
-  color: white;
-  background-color: #1A73E8;
+  color: var(--white);
+  background-color: var(--blue);
 }
 .footer{
   display: flex;
@@ -964,26 +1011,26 @@ footer{
 }
 .footer a{
   text-decoration: none;
-  color: white;
+  color: var(--white);
   font-size: small;
 }
 .footer div a:hover{
-  color: #00072D;
+  color: var(--dark-blue);
   text-decoration: none;
 }
 .footer .logo{
   text-decoration: none;
   margin: 0;
   font-size: xx-large;
-  color: white;
+  color: var(--white);
 }
 .footer .logo span{
   font-size: xx-large;
   padding: 2% 5%;
-  color: #1A73E8;
+  color: var(--blue);
 }
 .footer i{
-  color: white;
+  color: var(--white);
   font-size: x-large;
   margin: 0 4px;
 }
@@ -1038,9 +1085,9 @@ footer p{
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: white;
+  background: var(--white);
   color: black;
-  font-family: 'Open Sans', sans-serif;
+  font-family: var(--openSans);
   overflow: hidden;
 }
 .covidHelpMsg {
@@ -1048,7 +1095,7 @@ footer p{
   width: 600px;
   max-width: 100%;
   margin: 20px;
-  background: white;
+  background: var(--white);
   padding: 60px 40px;
   text-align: center;
   box-shadow: -10px 10px 67px -12px rgba(0, 0, 0, 0.2);
@@ -1073,16 +1120,16 @@ footer p{
   text-decoration: none;
   cursor: pointer;
   font-weight: bold;
-  color: white;
+  color: var(--white);
   border: 3px solid #595959;
   background: transparent;
   color: #595959;
   box-shadow: 0px 0px 15px #595959;
 }
 .covidHelpMsg button:hover {
-  border: 3px solid #fff;
+  border: 3px solid var(--white);
   background-color: #595959;
-  color: #fff;
+  color: var(--white);
 }
 .covid {
   position: absolute;
@@ -1697,14 +1744,7 @@ footer p{
 /******************************/
 /*********Talal's Shit*********/
 /******************************/
-:root{
-  --grey:#CCC5B9;
-  --dark-grey:#253031;
-  --blue:#1A73D8;
-  --dark-blue:#00072D;
-  --black:#0E0E0E;
-  --salamon:#fc9d6b;
-}
+
 /******************************/
 /*************Home*************/
 /******************************/
@@ -1737,7 +1777,7 @@ footer p{
 }
 .Talal-banner-introduction span{
   background-color: var(--blue);
-  color: white;
+  color: var(--white);
   display: inline-block;
   padding: 2rem 1rem;
   margin-right:0.5rem ;
@@ -1805,7 +1845,7 @@ footer p{
   justify-content:space-around ;
 }
 .quick-booking div select{
-  border-color: white;
+  border-color: var(--white);
   outline: none;
   border-bottom: 0.2rem solid var(--blue);
   font-size: 1.5rem;
@@ -1820,7 +1860,7 @@ footer p{
 }
 .quick-booking div button{
   border: none;
-  color: white;
+  color: var(--white);
   background-color: var(--blue);
   padding:1rem;
   font-size: 1.5rem;
@@ -1839,12 +1879,12 @@ footer p{
 .aboutus .Talal-banner-introduction h2{
   font-size: 2rem;
   font-weight: 500;
-  font-family: 'Leckerli One', cursive;
+  font-family: var(--leckerliOne);
 }
 .aboutus .about-us-team h2{
   font-size: 2rem;
   font-weight: 500;
-  font-family: 'Leckerli One', cursive;  
+  font-family: var(--leckerliOne);  
   text-align: center;
   color: var(--blue);
   margin:4rem 0px;
@@ -1961,7 +2001,7 @@ footer p{
 }
 .Talal-dropdown ul li:hover{
   background-color: var(--grey);
-  color:white ;
+  color:var(--white) ;
 }
 .collapse-Talal-dropdown{
   max-height: 0px;

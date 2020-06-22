@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import SignUpUser1 from './signupUser1';
-import SignUpUser2 from './signupUser2';
-import SignUpUser3 from './signupUser3';
+import SignUpUser1 from './signup-user1';
+import SignUpUser2 from './signup-user2';
+import SignUpUser3 from './signup-user3';
 
 class SignupUser extends Component {
     state = {
@@ -28,7 +28,7 @@ class SignupUser extends Component {
             lName: user.lName,
             userEmail: user.userEmail,
             userPassword: user.userPassword,
-            cPassword: user.cPassword,
+            cPassword: user.confirmPassword,
             bool1: !this.state.bool1,
             bool2: !this.state.bool2,
         })

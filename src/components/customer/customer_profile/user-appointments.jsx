@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import "../../node_modules/@fortawesome/fontawesome-free/css/all.css";
+
 import { toNumber } from "lodash";
 
-class AppointmentsUser extends Component {
+class UserAppointments extends Component {
   state = {
     appointmentsData: [
       {
@@ -73,4 +73,4 @@ class AppointmentsUser extends Component {
   }
 }
 
-export default AppointmentsUser;
+export default UserAppointments;

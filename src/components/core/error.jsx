@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import _ from "lodash";
 
-import Nav from './nav';
+import Nav from './nav/nav';
 
 class ErrorPage extends Component {
     render() {
