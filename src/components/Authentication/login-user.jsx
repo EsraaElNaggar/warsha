@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Joi from "joi-browser";
-import Input from './input';
+import Input from './../common/input';
+import { Link } from 'react-router-dom';
 
 class LoginUser extends Component {
     state = {
@@ -58,7 +59,7 @@ class LoginUser extends Component {
             <React.Fragment>
                 <div className="logWrap " style={{ backgroundImage: `url(/assets/bg2.png)` }}>
                     <div className="logLeft">
-                        <a href="#"><span>W</span>arsha</a>
+                        <Link to="#"><span>W</span>arsha</Link>
                         <h2><strong> Welcome Back !</strong></h2>
                         <p>Find the <span>Nearest</span> mechanic..</p>
                         <p className="pBook">Book online now !</p>
@@ -101,7 +102,7 @@ class LoginUser extends Component {
                             <p>or</p>
                             <span id="s2"></span>
                         </div>
-                        <span className="animation a6">New to Warsha? <a href="#">join now</a></span>
+                        <span className="animation a6">New to Warsha? <Link to="#">join now</Link></span>
                     </form>
                 </div>
 

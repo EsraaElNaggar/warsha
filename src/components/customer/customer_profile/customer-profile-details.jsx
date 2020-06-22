@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class ShowProfileUser extends Component {
+class CustomerProfileDetails extends Component {
   state = {
     userData: {
       firstName: "Ahmed",
@@ -58,4 +58,4 @@ class ShowProfileUser extends Component {
   }
 }
 
-export default ShowProfileUser;
+export default CustomerProfileDetails;

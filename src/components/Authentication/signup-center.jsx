@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import SignupCenter1 from './signupCenter1';
-import SignupCenter2 from './signupCenter2';
-import SignupCenter3 from './signupCenter3';
+import SignupCenter1 from './signup-center1';
+import SignupCenter2 from './signup-center2';
+import SignupCenter3 from './signup-center3';
 
 class SignupCenter extends Component {
     state = {

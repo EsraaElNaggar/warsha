@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Joi from "joi-browser";
 import Input from '../common/input';
+import { Link } from 'react-router-dom';
 
 class SignUpUser1 extends Component {
     state = {
@@ -9,7 +10,7 @@ class SignUpUser1 extends Component {
             lName: "",
             userEmail: "",
             userPassword: "",
-            cPassword: ""
+            confirmPassword: ""
         },
         errors: {}
     }
@@ -28,7 +29,7 @@ class SignUpUser1 extends Component {
             .min(9)
             .max(30)
             .label("Password"),
-        cPassword: Joi.ref('userPassword')
+        confirmPassword: Joi.ref('userPassword')
     };
     validate = () => {
         const result = Joi.validate(this.state.account, this.schema, {
@@ -67,7 +68,7 @@ class SignUpUser1 extends Component {
             <React.Fragment>
                 <div className="logWrap " style={{ backgroundImage: `url(/assets/bg2.png)` }}>
                     <div className="logLeft">
-                        <a href="#"><span>W</span>arsha</a>
+                        <Link to="#"><span>W</span>arsha</Link>
                         <h2><strong> Welcome to Warsha !</strong></h2>
                         <p>Find the <span>Nearest</span> mechanic..</p>
                         <p className="pBook">Book online now !</p>
@@ -127,12 +128,12 @@ class SignUpUser1 extends Component {
 
                         <Input
                             type="password"
-                            name="cPassword"
-                            id="cPassword"
+                            name="confirmPassword"
+                            id="confirmPassword"
                             placeholder="Confirm Password"
                             className="form-field animation a3"
-                            value={this.state.account.cPassword}
-                            error={this.state.errors.cPassword}
+                            value={this.state.account.confirmPassword}
+                            error={this.state.errors.confirmPassword}
                             onChange={this.handleChange}
                             errorClasses="myError "
                         />
@@ -143,7 +144,7 @@ class SignUpUser1 extends Component {
                             <p>or</p>
                             <span id="s2"></span>
                         </div>
-                        <span className="animation a6">Already on Warsha? <a href="#"> Login</a></span>
+                        <span className="animation a6">Already on Warsha? <Link to="#"> Login</Link></span>
                     </form>
 
                 </div>
