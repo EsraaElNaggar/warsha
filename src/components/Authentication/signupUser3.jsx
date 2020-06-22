@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Input from './common/input';
+import Input from '../common/input';
 
 class SignUpUser3 extends Component {
     state = {
