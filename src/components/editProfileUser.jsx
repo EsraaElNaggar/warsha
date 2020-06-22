@@ -3,10 +3,14 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 
 const EditProfileSchema = yup.object().shape({
-  username: yup
+  firstname: yup
     .string()
     .required()
-    .test("len", "Very short username ", val => val.length >= 2),
+    .test("len", "Very short first name ", val => val.length >= 2),
+  lastname: yup
+    .string()
+    .required()
+    .test("len", "Very short last name ", val => val.length >= 2),
   email: yup
     .string()
     .required()
@@ -28,13 +32,13 @@ const EditProfileSchema = yup.object().shape({
     .string()
     .required()
     .test("len", "Very short year length", val => val.length === 4),
-  country: yup.string().required(),
   city: yup.string().required(),
   area: yup.string().required()
 });
 
 const EditProfileUser = () => {
-  const [userName, setUserName] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
   const [brand, setBrand] = useState("");
@@ -42,7 +46,8 @@ const EditProfileUser = () => {
   const [year, setYear] = useState("");
 
   const onSubmit = data => {
-    setUserName(data.userName);
+    setFirstName(data.firstName);
+    setLastName(data.lastName);
     setEmail(data.email);
     setAddress(data.address);
     setBrand(data.brand);
@@ -59,11 +64,11 @@ const EditProfileUser = () => {
   return (
     <React.Fragment>
       <div className="body">
-        <div className="content">
+        {/* <div className="content">
           <div className="active">Profile</div>
           <div>My Appointemets</div>
           <div>Change Password</div>
-        </div>
+        </div> */}
         <div className="login-box top-space">
           <h2>Manage profile</h2>
           <form onSubmit={handleSubmit(onSubmit)}>
@@ -71,13 +76,25 @@ const EditProfileUser = () => {
               <input
                 className="input"
                 type="text"
-                name="username"
+                name="firstname"
                 ref={register}
               />
-              {errors.username && (
-                <p style={{ color: "red" }}>{errors.username.message}</p>
+              {errors.firstname && (
+                <p style={{ color: "red" }}>{errors.firstname.message}</p>
               )}
-              <label>Username</label>
+              <label>First name</label>
+            </div>
+            <div className="user-box">
+              <input
+                className="input"
+                type="text"
+                name="lastname"
+                ref={register}
+              />
+              {errors.lastname && (
+                <p style={{ color: "red" }}>{errors.lastname.message}</p>
+              )}
+              <label>Last name</label>
             </div>
             <div className="user-box">
               <input
@@ -102,15 +119,6 @@ const EditProfileUser = () => {
                 <p style={{ color: "red" }}>{errors.address.message}</p>
               )}
               <div className="position">
-                <select name="country" className="option-styling">
-                  <option>Country</option>
-                  <option>Unitd kingdom</option>
-                  <option>United States</option>
-                  <option>Beru</option>
-                </select>
-                {errors.country && (
-                  <p style={{ color: "red" }}>{errors.country.message}</p>
-                )}
                 <select name="city" className="option-styling">
                   <option>City</option>
                   <option>Unitd kingdom</option>

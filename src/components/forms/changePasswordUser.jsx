@@ -33,11 +33,11 @@ const ChangePasswordUser = () => {
   return (
     <React.Fragment>
       <div className="body">
-        <div className="content">
+        {/* <div className="content">
           <div>Profile</div>
           <div>My Appointemets</div>
           <div className="active">Change Password</div>
-        </div>
+        </div> */}
         <div className="login-box pass">
           <h2>Change Password</h2>
           <form onSubmit={handleSubmit(onSubmit)}>
