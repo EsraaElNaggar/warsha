@@ -10,14 +10,18 @@ import ReviewsCenter from "./components/reviewsCenter";
 import AppointmentsUser from "./components/appointmentsUser";
 import AsideMenuProfileUser from "./components/asideMenuProfileUser";
 import ShowProfileUser from "./components/showProfileUser";
+import MainProfileDataCenter from "./components/mainProfileDataCenter";
 //import Nav from "./components/core/nav";
 
 import SignupCenter from "./components/Authentication/signupCenter";
+import ShowProfileCenter from "./components/showProfileCenter";
 
 function App() {
   return (
     <React.Fragment>
-      <SignupCenter></SignupCenter>
+      {/* <ShowProfileCenter></ShowProfileCenter> */}
+      {/* <EditProfileCenter></EditProfileCenter> */}
+      <MainProfileDataCenter></MainProfileDataCenter>
     </React.Fragment>
   );
 }
