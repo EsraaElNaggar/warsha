@@ -61,7 +61,6 @@ class SignupUser extends Component {
         return (
             <React.Fragment>
                 {bool1 && <SignUpUser1
-                    display={this.state.bool}
                     handleNext={this.handleNext1}
                 />}
                 {bool2 && <SignUpUser2
