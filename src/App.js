@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import AddReviewUser from "./components/addReviewUser";
-import AddAppointmentCenter from "./components/addAppointmentCenter";
-import ChangePasswordUser from "./components/changePasswordUser";
+import AddReviewUser from "./components/forms/addReviewUser";
+import AddAppointmentCenter from "./components/forms/addAppointmentCenter";
+import ChangePasswordUser from "./components/forms/changePasswordUser";
 import EditProfileUser from "./components/editProfileUser";
-import ContactUS from "./components/contactUs";
+import ContactUS from "./components/forms/contactUs";
 import EditProfileCenter from "./components/editProfileCenter";
 import ReviewsCenter from "./components/reviewsCenter";
 import AppointmentsUser from "./components/appointmentsUser";

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ChangePasswordUser from "./changePasswordUser";
+import ChangePasswordUser from "./forms/changePasswordUser";
 import EditProfileUser from "./editProfileUser";
 import AppointmentsUser from "./appointmentsUser";
 
