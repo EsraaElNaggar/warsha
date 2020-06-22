@@ -1,38 +1,23 @@
 import React from 'react'
 
-export default function AppointmentCard() {
+export default function AppointmentCard(props) {
+    let {day,time} = props
     return (
-        <div class="table-size">
-            <table class="table  ">
-                <thead>
-                    <tr>
-                        <th scope="col .th-sm">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+        <div class="appointment-board">
+        <p class="booking-day">{day}</p>
+        <ul class="appointments-times">
+            {time.map((t,index)=>{
+                if(t.isAvalible){
+                    return(
+                        <li key={index}>{t.value}</li>
+                    )
+                }
+                return(
+                <li key={index}><del>{t.value}</del></li>
+                )
+            })}
+        </ul>
+        <button class="booking-btn">Book</button>
+    </div>
     )
 }

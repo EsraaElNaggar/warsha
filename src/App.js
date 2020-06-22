@@ -1,20 +1,23 @@
 import React from "react";
-import AddReviewUser from "./components/addReviewUser";
-import AddAppointmentCenter from "./components/addAppointmentCenter";
-import ChangePasswordUser from "./components/changePasswordUser";
-import EditProfileUser from "./components/editProfileUser";
-import ContactUS from "./components/contactUs";
-import EditProfileCenter from "./components/editProfileCenter";
-import ReviewsCenter from "./components/reviewsCenter";
-import AppointmentsUser from "./components/appointmentsUser";
 import AppointmentCard from "./components/appointmentCard";
 
 function App() {
- 
+ let list = [
+   {day:"Tomorrow",
+    time:[{value:"11:00am",isAvalible:true},{value:"12:00pm",isAvalible:false},{value:"1:00pm",isAvalible:true}
+    ,{value:"2:00pm",isAvalible:true},{value:"4:00pm",isAvalible:false},{value:"5:00pm",isAvalible:false}]}
+  ]
   return (
     <React.Fragment>
       <h1>working</h1>
-      <AppointmentCard/>
+
+      {
+        list.map((item,index)=>{
+          return(
+            <AppointmentCard key={index} day={item.day} time={item.time}/>
+          )
+        })
+      }
     </React.Fragment>
 
   );
