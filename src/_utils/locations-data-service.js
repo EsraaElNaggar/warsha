@@ -38,15 +38,15 @@ const areas = [
     {
         city: 'Alexandria',
         areas: [
-            { name: "Miami" },
-            { name: "Sidi Beshr" },
-            { name: "Loran" },
-            { name: "Sidi Gaber" },
-            { name: "Keliopatra" },
-            { name: "Sporting" },
-            { name: "Ibrahimia" },
-            { name: "El Shatby" },
-            { name: "Mahatet El Raml" }
+            "Miami",
+            "Sidi Beshr",
+            "Loran",
+            "Sidi Gaber",
+            "Keliopatra",
+            "Sporting",
+            "Ibrahimia",
+            "El Shatby",
+            "Mahatet El Raml"
         ]
     }
 ];
