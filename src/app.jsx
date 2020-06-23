@@ -38,8 +38,14 @@ import ContactUs from './components/forms/contactUs';
 import LoginCenter from './components/Authentication/login-center';
 import SignupCenter from './components/Authentication/signup-center';
 import SearchResult from './components/customer/search_result/search-result';
+import MainProfileDataCenter from './components/mainProfileDataCenter';
+import AddAppointmentCenter from './components/forms/addAppointmentCenter';
+import CenterAppointments from './components/center/center_appointments_List/center-appointments';
+import Appointment from './components/center/appointments_day/appointment';
+import AppointmentsDay from './components/center/appointments_day/appointments-day';
 import FilterList from './components/filterList';
 import CenterProfile from './components/customer/center_profile/center-profile';
+
 
 class App extends Component {
   state = {
@@ -117,7 +123,20 @@ class App extends Component {
           {/* SignUp */}
           <Route path="/centersignup" component={SignupCenter} />
 
+          {/* Center Profile */}
+          <Route path="/centerprofile" component={MainProfileDataCenter} />
 
+          {/* Add Appointments */}
+          <Route path="/addappointments" component={AddAppointmentCenter} />
+
+          {/* Appointments */}
+          <Route path="/appointment" component={Appointment} />
+
+          {/* Appointments Day */}
+          <Route path="/appointmentday" component={AppointmentsDay} />
+
+          {/* Center Apointments */}
+          <Route path="/centerappointments" component={CenterAppointments} />
 
           {/* NotFound Page */}
           <Route path="/notfound" component={ErrorPage} />
