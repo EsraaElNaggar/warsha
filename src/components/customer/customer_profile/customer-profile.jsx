@@ -15,47 +15,49 @@ class CustomerProfile extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="body">
+        <div className="body d-flex justify-content-between">
           <div className="content">
-            <div
-              style={{ cursor: "pointer" }}
-              onClick={() => {
-                this.setRenderComponent(1);
-              }}
-            >
-              Profile
-            </div>
-            <div
-              style={{ cursor: "pointer" }}
-              onClick={() => {
-                this.setRenderComponent(3);
-              }}
-            >
-              My Appointemets
-            </div>
-            <div
-              style={{ cursor: "pointer" }}
-              onClick={() => {
-                this.setRenderComponent(2);
-              }}
-            >
-              Change Password
-            </div>
+            <ul>
+              <li className="selected-tab"
+                onClick={() => {
+                  this.setRenderComponent(1);
+                }}
+              >
+                Profile
+              </li>
+              <hr className="m-0" />
+              <li
+                onClick={() => {
+                  this.setRenderComponent(3);
+                }}
+              >
+                My Appointemets
+              </li>
+              <hr className="m-0" />
+              <li
+                onClick={() => {
+                  this.setRenderComponent(2);
+                }}
+              >
+                Change Password
+              </li>
+            </ul>
           </div>
+
+          {(() => {
+            switch (this.state.pathChoice) {
+              case 1:
+                return <CustomerProfileDetails />;
+              case 2:
+                return <ChangePasswordUser />;
+              case 3:
+                return <UserAppointments />;
+              default:
+                return <CustomerProfileDetails />;
+            }
+          })()}
         </div>
-        {(() => {
-          switch (this.state.pathChoice) {
-            case 1:
-              return <CustomerProfileDetails></CustomerProfileDetails>;
-            case 2:
-              return <ChangePasswordUser></ChangePasswordUser>;
-            case 3:
-              return <UserAppointments></UserAppointments>;
-            default:
-              return <CustomerProfileDetails></CustomerProfileDetails>;
-          }
-        })()}
-      </React.Fragment>
+      </React.Fragment >
     );
   }
 }

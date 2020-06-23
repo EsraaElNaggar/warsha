@@ -38,36 +38,35 @@ class UserAppointments extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="body">
-          <table className="table">
-            <tbody>
-              <tr className="tr">
-                <th className="th">Center Name</th>
-                <th className="th">Center Address</th>
-                <th className="th">Appointement Details</th>
-              </tr>
-
-              {this.state.appointmentsData.map((appointment, i) => (
-                <React.Fragment key={i}>
-                  <tr className="tr">
-                    <td className="td">{appointment.centerName}</td>
-                    <td className="td">{appointment.centerAddress}</td>
-                    <td className="td">
-                      <p>{appointment.appointementDetails}</p>
-                      <div className="col-flex">
-                        <i className="far fa-check-circle" />
-                        <button key={i} onClick={() => this.deleteHandler(i)}>
-                          <i className="fas fa-window-close" />
-                        </button>
-                        <button className="button">Report problem</button>
-                      </div>
-                    </td>
-                  </tr>
-                </React.Fragment>
-              ))}
-            </tbody>
-          </table>
-        </div>
+        <table className="table login-box top-space">
+          <thead>
+            <tr className="tr">
+              <th className="th">Center Name</th>
+              <th className="th">Center Address</th>
+              <th className="th">Appointement Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            {this.state.appointmentsData.map((appointment, i) => (
+              <React.Fragment key={i}>
+                <tr className="tr">
+                  <td className="td">{appointment.centerName}</td>
+                  <td className="td">{appointment.centerAddress}</td>
+                  <td className="td appDet">
+                    <p>{appointment.appointementDetails}</p>
+                    <div className="col-flex">
+                      {/* <i className="fas fa-check-square" /> */}
+                      <button className="appDel" key={i} onClick={() => this.deleteHandler(i)}>
+                        <i className="fas fa-window-close" />
+                      </button>
+                      <button className="appRep">Report problem</button>
+                    </div>
+                  </td>
+                </tr>
+              </React.Fragment>
+            ))}
+          </tbody>
+        </table>
       </React.Fragment>
     );
   }
