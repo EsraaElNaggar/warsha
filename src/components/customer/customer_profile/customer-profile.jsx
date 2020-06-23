@@ -1,7 +1,4 @@
 import React, { Component } from "react";
-import ChangePasswordUser from "./forms/changePasswordUser";
-import EditProfileUser from "./editProfileUser";
-import AppointmentsUser from "./appointmentsUser";
 
 import ChangePasswordUser from '../../forms/changePasswordUser';
 import CustomerProfileDetails from './customer-profile-details';

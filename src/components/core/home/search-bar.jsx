@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
 class SearchBar extends Component {
-    state = {  }
-    render() { 
-        return ( 
+    state = {}
+    render() {
+        return (
             <React.Fragment>
                 <article class="quick-booking">
                     <h2>Book Now</h2>
@@ -37,7 +37,7 @@ class SearchBar extends Component {
         );
     }
 }
- 
+
 export default SearchBar;
 
 

@@ -50,7 +50,7 @@ class SignupCenter2 extends Component {
         return (
             <React.Fragment>
                 <div className="form1Wrap myHeight">
-                    <a href="#" className="logo animation a1"><span>W</span>arsha</a>
+                    <a href="/" className="logo animation a1"><span>W</span>arsha</a>
                     <h2 className="animation a1"> Welcome to our website !</h2>
                     <p className="let animation a1">Let's start with your location informations.</p>
 

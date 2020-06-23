@@ -8,26 +8,26 @@ import { Link } from "react-router-dom";
 
 class Nav extends Component {
 
-  state={
+  state = {
     token: ''
   }
 
-  componentDidMount(){
+  componentDidMount() {
     const token = getFromStorage('authToken');
 
     if (token) {
-      this.setState({token});
+      this.setState({ token });
     }
   }
-  
+
   render() {
     return (
       <React.Fragment>
         <nav className={this.props.className}>
           <div className="parts">
-            <h1 className="logo">
+            <Link to="/" className="logo">
               <span>W</span>arsha
-            </h1>
+            </Link>
             <div>
               <Link to="/">Home</Link>
             </div>
@@ -39,9 +39,9 @@ class Nav extends Component {
             </div>
           </div>
           {
-            this.token? 
-            <SubNavAuthonticated/>
-            : <SubNav/>
+            this.token ?
+              <SubNavAuthonticated />
+              : <SubNav />
           }
         </nav>
       </React.Fragment>
