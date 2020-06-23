@@ -240,6 +240,7 @@ a.logo:hover{
   text-align: left;
   color: #253031;
   margin: 15% 0;
+  width: fit-content;
 }
 .contWrap .form textarea{height: auto; margin-bottom: 0;}
 .contWrap .form .formBtn, .changeBtn {
