@@ -11,15 +11,15 @@ class Header extends Component {
                 <Nav className="white"/>
                 
                 {/* Banner */}
-                <section class="banner">
-                    <article class="Talal-banner-shape"></article>
-                    <article class="Talal-banner-introduction">
+                <section className="banner">
+                    <article className="Talal-banner-shape"></article>
+                    <article className="Talal-banner-introduction">
                         <div>
                             <span>Find</span> the best mechanics in Egypt
                         </div> 
-                        <i class="fas fa-angle-down Talal-angle-down"></i>
+                        <i className="fas fa-angle-down Talal-angle-down"></i>
                     </article>
-                    <article class="Talal-banner-image"></article>
+                    <article className="Talal-banner-image"></article>
                 </section>
             </React.Fragment>
          );

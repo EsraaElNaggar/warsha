@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import Joi from "joi-browser";
-import Input from '../common/input';
 import { Link } from 'react-router-dom';
+
+import Joi from "joi-browser";
+
+import Input from '../common/input';
 
 class SignUpUser1 extends Component {
     state = {
@@ -13,7 +15,8 @@ class SignUpUser1 extends Component {
             confirmPassword: ""
         },
         errors: {}
-    }
+    };
+
     schema = {
         fName: Joi.string()
             .required()
@@ -31,6 +34,8 @@ class SignUpUser1 extends Component {
             .label("Password"),
         confirmPassword: Joi.ref('userPassword')
     };
+
+    // validate all inputs
     validate = () => {
         const result = Joi.validate(this.state.account, this.schema, {
             abortEarly: false
@@ -44,29 +49,34 @@ class SignUpUser1 extends Component {
         }
         return errors;
     };
+
+    // input values handler
     handleChange = ({ target }) => {
         const account = { ...this.state.account };
         account[target.id] = target.value;
         this.setState({ account });
     };
+
+    // form submit handler
     handleSubmit = e => {
         e.preventDefault();
 
+        // validate form inputs
         const errors = this.validate();
         if (errors) {
             this.setState({ errors });
             return;
         }
         this.setState({ errors: {} });
-        // logic registration
-        this.props.handleNext(this.state.account)
-    }
 
+        // pass data to parent signup
+        this.props.handleNext(this.state.account)
+    };
 
     render() {
         return (
             <React.Fragment>
-                <div className="logWrap " style={{ backgroundImage: `url(/assets/bg2.png)` }}>
+                <div className="logWrap" style={{ backgroundImage: `url(/assets/bg2.png)` }}>
                     <div className="logLeft">
                         <Link to="#"><span>W</span>arsha</Link>
                         <h2><strong> Welcome to Warsha !</strong></h2>
@@ -146,7 +156,6 @@ class SignUpUser1 extends Component {
                         </div>
                         <span className="animation a6">Already on Warsha? <Link to="/login"> Login</Link></span>
                     </form>
-
                 </div>
             </React.Fragment>
         );

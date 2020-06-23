@@ -39,7 +39,7 @@ class Nav extends Component {
             </div>
           </div>
           {
-            this.token? 
+            this.state.token? 
             <SubNavAuthonticated/>
             : <SubNav/>
           }

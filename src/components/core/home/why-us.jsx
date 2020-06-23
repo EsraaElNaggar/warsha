@@ -5,7 +5,7 @@ class WhyUs extends Component {
     render() { 
         return ( 
             <React.Fragment>
-                <section class="why-us">
+                <section className="why-us">
                     <section>
                         <img src="/HomeImages/Search.svg" alt=""/>
                         <h3>Search</h3>
