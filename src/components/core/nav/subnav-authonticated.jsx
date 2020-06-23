@@ -23,7 +23,7 @@ class SubNavAuthonticated extends Component {
 
     // signout from account
     signOut = () =>{
-        removeFromStorage('authoToken');
+        removeFromStorage('authToken');
         removeFromStorage('currentID');
     }
 
@@ -32,7 +32,7 @@ class SubNavAuthonticated extends Component {
             <React.Fragment>
                 <div className="parts">
                     <button onClick={this.toggle} className="navUser">
-                        fName
+                        {this.props.fName}
                     </button>
                     <div className={ this.state.isActive ? "dropNav activedrop " : "dropNav "}>
                         <Link className="itemNavCont dropdown-item" to="/myprofile">

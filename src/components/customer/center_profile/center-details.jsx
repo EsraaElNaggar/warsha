@@ -18,11 +18,10 @@ const CenterDetails = props => {
 
                 {/* Center About */}
                 <CenterAbout
-                    about={center.about}
+                    // about={center.about}
                 />
 
                 {/* Center Services */}
-                
                 {
                     center.services.length !== 0 &&
                     <CenterServices

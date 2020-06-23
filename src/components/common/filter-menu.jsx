@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function FilterList(props) {
+export default function FilterMenu(props) {
     let {header,list} = props
     list = list.map(l => {
         return (
@@ -20,8 +20,8 @@ export default function FilterList(props) {
 
     return (
         <div className="Talal-dropdown col-2">
-            <div onClick={toggleList} className="Talal-dropdown-header">{header}</div>
-            <ul className="collapse-Talal-dropdown">
+            <li onClick={toggleList} className="Talal-dropdown-header">{header}</li>
+            <ul className="collapse-Talal-dropdown>
                 {list}
             </ul>
         </div>
