@@ -20,7 +20,7 @@ export default function Dropdown(props) {
     return (
         <div className="Talal-dropdown col-2">
             <div onClick={toggleList} className="Talal-dropdown-header">{header}</div>
-            <ul>
+            <ul className="drop-down collapse">
                 {list}
             </ul>
         </div>

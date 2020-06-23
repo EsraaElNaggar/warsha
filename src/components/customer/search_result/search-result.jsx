@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 import Nav from './../../core/nav/nav';
 import SearchFilters from './search-filters';
-import Dropdown from './../../common/dropdown';
 import CenterCard from './center-card';
 import Footer from './../../core/footer';
 
@@ -34,18 +33,14 @@ class SearchResult extends Component {
                                 <h5>All Specialities <span className="no-of--all-centers">1050 Centers</span> </h5>
                                 {/* Sort Options Start */}
                                 <div>
-                                {/*}
-                                    <select id="sort" name="sort" className="sort-options">
-                                    <option value="defaultValue" >Select Option</option>
+                                
+                                <select id="sort" name="sort" className="sort-options">
+                                    <option value="defaultValue" >ٍSort Option</option>
                                     <option value="a-to-z" id='1'>A to Z</option>
                                     <option value="z-to-a" id='2'>Z to A</option>
                                     <option value="top-rated" id='3'>Top Rated</option>
                                     <option value="less-waiting-time" id='4'>Less Waiting Time</option>
-                                </select> */}
-                                {/* <Dropdown
-                                    header={"Sort Option"}
-                                    list={this.state.sortOptions}
-                                /> */}
+                                </select>
                                 </div>
                                 {/* Sort Options End */}
                             </div>
