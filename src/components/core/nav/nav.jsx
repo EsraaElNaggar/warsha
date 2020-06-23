@@ -39,9 +39,9 @@ class Nav extends Component {
             </div>
           </div>
           {
-            this.token ?
-              <SubNavAuthonticated />
-              : <SubNav />
+            this.state.token? 
+            <SubNavAuthonticated/>
+            : <SubNav/>
           }
         </nav>
       </React.Fragment>

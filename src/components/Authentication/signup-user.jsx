@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
+
+import { ToastContainer, toast } from "react-toastify";
+import axios from "axios";
+
+import { setInStorage, getFromStorage } from '../../_utils/local-storage';
+
 import SignUpUser1 from './signup-user1';
 import SignUpUser2 from './signup-user2';
 import SignUpUser3 from './signup-user3';
 
 class SignupUser extends Component {
+
     state = {
-        // account: {
         fName: "",
         lName: "",
         userEmail: "",
@@ -20,9 +26,19 @@ class SignupUser extends Component {
         bool1: true,
         bool2: false,
         bool3: false
-        // }
+    };
+
+    // check if user already logged in
+    componentDidMount(){
+        const token = getFromStorage('authToken');
+
+        if (token) {
+            this.props.history.replace("/home");
+        }
     }
-    handleNext1 = (user) => {
+
+    // signup1 handler
+    handleNext1 = user => {
         this.setState({
             fName: user.fName,
             lName: user.lName,
@@ -32,9 +48,10 @@ class SignupUser extends Component {
             bool1: !this.state.bool1,
             bool2: !this.state.bool2,
         })
+    }; 
 
-    }
-    handleNext2 = (user) => {
+    // signup2 handler
+    handleNext2 = user => {
         this.setState({
             carBrand: user.carBrand,
             carModel: user.carModel,
@@ -42,24 +59,90 @@ class SignupUser extends Component {
             bool2: !this.state.bool2,
             bool3: !this.state.bool3,
         })
-    }
-    handleNext3 = (user) => {
+    };
+    
+    // signup3 handler
+    handleNext3 = user => {
         this.setState({
             address: user.address,
             city: user.city,
             area: user.area,
         });
         this.handleSubmit();
-    }
+    };
 
+    // signup backend 
+    register = ({fName, lName, email, password, carBrand, carModel, carYear, address, city, area}) =>{
+        axios.post(process.env.REACT_APP_BACKEND_URL+"/users", {
+            fName,
+            lName,
+            email,
+            password,
+            carBrand,
+            carModel,
+            carYear,
+            address,
+            city,
+            area
+          }).then(res=>{
+            
+            const token = Math.random();
+            setInStorage('authToken', String(token));
+    
+            //Update State
+            // this.props.onAuthorRegister(res.data.data);
+    
+            //Redirect to Home Page
+            this.props.history.replace("/home");
+
+          }).catch(err=>{
+    
+              if(err.response.status === 422)
+              {
+                toast(err.response.data, {type:"error"});
+              }
+              else if (err.response.status === 409) {
+                this.setState({errors: {username: err.response.data}});
+              }
+              else toast("Connection Error", {type:"error"});
+          });
+    };
+
+    // login submit handler
     handleSubmit = () => {
-        console.log(this.state);
-    }
+        const {
+            fName,
+            lName,
+            userEmail,
+            userPassword,
+            carBrand,
+            carModel,
+            carYear,
+            address,
+            city,
+            area
+        } = this.state;
+
+        // call backend
+        this.register({
+            fName, 
+            lName,
+            userEmail,
+            userPassword,
+            carBrand,
+            carModel,
+            carYear,
+            address,
+            city,
+            area
+        });
+    };
 
     render() {
         const { bool1, bool2, bool3 } = this.state;
         return (
-            <React.Fragment>
+            <React.Fragment>     
+                <ToastContainer />
                 {bool1 && <SignUpUser1
                     handleNext={this.handleNext1}
                 />}

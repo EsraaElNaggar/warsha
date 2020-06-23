@@ -5,7 +5,7 @@ class SearchBar extends Component {
     render() {
         return (
             <React.Fragment>
-                <article class="quick-booking">
+                <article className="quick-booking">
                     <h2>Book Now</h2>
                     <div>
                         <select name="sepcialization" id="spec">
@@ -30,7 +30,7 @@ class SearchBar extends Component {
                             <option value="blah">Blah</option>
                             <option value="blah">Blah</option>
                         </select>
-                        <button><i class="fas fa-search"></i></button>
+                        <button><i className="fas fa-search"></i></button>
                     </div>
                 </article>
             </React.Fragment>

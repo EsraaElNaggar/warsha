@@ -5,10 +5,10 @@ class WhyUs extends Component {
     render() {
         return (
             <React.Fragment>
-                <section class="why-us">
+                <section className="why-us">
                     <section>
                         {/* <img src="/HomeImages/Search.svg" alt="" /> */}
-                        <img src="https://img.icons8.com/pastel-glyph/256/000000/search--v2.png" />
+                        <img src="https://img.icons8.com/pastel-glyph/256/000000/search--v2.png" alt=""/>
                         <div className="miniLine"></div>
                         <h3>Search</h3>
                         <p>Search for Mechanics, plumbers ... etc. in your area</p>

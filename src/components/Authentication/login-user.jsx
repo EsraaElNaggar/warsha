@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
-import Joi from "joi-browser";
-import Input from './../common/input';
 import { Link } from 'react-router-dom';
+
+import { ToastContainer, toast } from "react-toastify";
+import Joi from "joi-browser";
+import axios from "axios";
+
+import { setInStorage, getFromStorage } from '../../_utils/local-storage';
+
+import Input from './../common/input';
 
 class LoginUser extends Component {
     state = {
@@ -23,17 +29,17 @@ class LoginUser extends Component {
             .label("Password"),
     };
 
-    handleSubmit = e => {
-        e.preventDefault();
-        const errors = this.validate();
-        if (errors) {
-            this.setState({ errors });
-            return;
-        }
-        this.setState({ errors: {} });
-        // this.login(this.state.account);
-    };
+    // check if user already logged in
+    componentDidMount(){
+        const token = getFromStorage('authToken');
 
+        if (token) {
+            this.props.history.replace("/home");
+
+        }
+    }
+
+    // validate all inputs
     validate = () => {
         const result = Joi.validate(this.state.account, this.schema, {
             abortEarly: false
@@ -48,10 +54,50 @@ class LoginUser extends Component {
         return errors;
     };
 
+    // inputs value handler
     handleChange = ({ target }) => {
         const account = { ...this.state.account };
         account[target.id] = target.value;
         this.setState({ account });
+    };
+
+    // login backend call
+    login = ({email, password}) =>{
+        axios.post(process.env.REACT_APP_BACKEND_URL+"/users", {
+        email,
+        password
+        }).then(res=>{
+            const token = Math.random();
+            setInStorage('authToken', String(token));
+            this.props.history.replace("/home");
+        }).catch(err=>{
+            if(err.response.status === 404)
+            {
+                toast(err.response.data, {type:"error"});
+            }
+            else if(err.response.status === 406)
+            {
+                this.setState({errors: {password: err.response.data}});
+            }
+            else toast("Connection Error", {type:"error"});
+        });
+    };
+
+    // form submit handler
+    handleSubmit = e => {
+        e.preventDefault();
+
+        // validate form inputs
+        const errors = this.validate();
+        if (errors) {
+            this.setState({ errors });
+            return;
+        }
+        this.setState({ errors: {} });
+
+        // call backend
+        const {userEmail, userPassword} = this.state;
+        this.login({userEmail, userPassword});
     };
 
     render() {
@@ -65,7 +111,7 @@ class LoginUser extends Component {
                         <p className="pBook">Book online now !</p>
                     </div>
 
-
+                    <ToastContainer />
                     <form className="form animation a1" onSubmit={this.handleSubmit}>
                         <h2 className="lFTitle animation a1">Login</h2>
 
@@ -105,7 +151,6 @@ class LoginUser extends Component {
                         <span className="animation a6">New to Warsha? <Link to="/signup">Join now</Link></span>
                     </form>
                 </div>
-
             </React.Fragment >
         );
     }

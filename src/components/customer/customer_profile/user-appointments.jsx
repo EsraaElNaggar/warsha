@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { toNumber } from "lodash";
+// import { toNumber } from "lodash";
 
 class UserAppointments extends Component {
   state = {

@@ -8,7 +8,7 @@ const SubNav = props => {
             <div className="parts">
                 <div><Link to="/centersignup">Warsha for Centers</Link></div>
                 <div><Link to="/login">Login</Link></div>
-                <button href="">Sign up</button>
+                <Link className="navBtn" to="/signup">Sign up</Link>
             </div>
         </React.Fragment>
     );
