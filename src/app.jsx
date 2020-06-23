@@ -1,30 +1,3 @@
-// import React from "react";
-// import AppointmentCard from "./components/appointmentCard";
-
-// function App() {
-//  let list = [
-//    {day:"Tomorrow",
-//     time:[{value:"11:00am",isAvalible:true},{value:"12:00pm",isAvalible:false},{value:"1:00pm",isAvalible:true}
-//     ,{value:"2:00pm",isAvalible:true},{value:"4:00pm",isAvalible:false},{value:"5:00pm",isAvalible:false}]}
-//   ]
-//   return (
-//     <React.Fragment>
-//       <h1>working</h1>
-
-//       {
-//         list.map((item,index)=>{
-//           return(
-//             <AppointmentCard key={index} day={item.day} time={item.time}/>
-//           )
-//         })
-//       }
-//     </React.Fragment>
-
-//   );
-// }
-
-// export default App;
-
 import React, { Component } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
@@ -43,7 +16,6 @@ import AddAppointmentCenter from './components/forms/addAppointmentCenter';
 import CenterAppointments from './components/center/center_appointments_List/center-appointments';
 import Appointment from './components/center/appointments_day/appointment';
 import AppointmentsDay from './components/center/appointments_day/appointments-day';
-import FilterList from './components/filterList';
 import CenterProfile from './components/customer/center_profile/center-profile';
 
 
@@ -124,7 +96,7 @@ class App extends Component {
           <Route path="/centersignup" component={SignupCenter} />
 
           {/* Center Profile */}
-          <Route path="/centerprofile" component={MainProfileDataCenter} />
+          <Route path="/centermainprofile" component={MainProfileDataCenter} />
 
           {/* Add Appointments */}
           <Route path="/addappointments" component={AddAppointmentCenter} />

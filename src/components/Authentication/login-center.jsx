@@ -33,9 +33,9 @@ class LoginCenter extends Component {
             return;
         }
         else {
-            axios.get( `http://localhost:4000/centers?centerEmail: ${this.state.account.centerEmail}`)
+            axios.get( `http://localhost:3000/centers?centerEmail=${this.state.account.centerEmail}`)
         .then(res=>{
-            let user = res.data.filter(d=>d.centerEmail===this.state.account.centerEmail)[0]
+            let user = res.data[0]
             console.log(user.password)
             console.log(this.state.account.centerPassword)
             if(user.password == this.state.account.centerPassword){
@@ -43,7 +43,7 @@ class LoginCenter extends Component {
                 const token = Math.random();
                 setInStorage('authToken', String(token));
                 setInStorage('currentID', res.data[0].id);
-                this.props.history.replace("/centerprofile");
+                this.props.history.replace("/centermainprofile");
             }
             else{
                 toast("Wrong Password", {type:"error"});
