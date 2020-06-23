@@ -24,7 +24,7 @@ const BookingInfo = props => {
                     </div>
                 </div>
                 {/* Booking Form Start */}
-                <form>
+                <form class="form">
                     <h6 className="text-center pt-3">Enter Your Info.</h6>
                     <p className="text-center">Tomorrow 15 June - 12:45 PM</p>
                     <div className="appointment-form-input-container">
