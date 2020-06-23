@@ -567,6 +567,7 @@ section.appointment-reservation form{
     font-size: 22px;
     color: rgb(128, 129, 132);
 }
+.center-basic-name span{color:var(--blue)}
 .no-of-views{
     font-size: 15px;
     font-weight: 600;
@@ -685,6 +686,7 @@ section.appointment-reservation form{
     border: none;
     border-bottom: 3px solid var(--salamon);
     color: var(--salamon);
+    box-shadow: 0px 1px 3px;
 }
 .arrow button:hover{
   border: none;
@@ -698,6 +700,7 @@ section.appointment-reservation form{
     font-size: 16px;
     height: 190px;
     border-radius: 5px;
+    box-shadow: 0px 1px 3px;
 }
 .appointment-board:hover{
   box-shadow: 0px 0px 7px var(--dark-blue);
@@ -744,15 +747,20 @@ section.appointment-reservation form{
 
 
 /* TODO search result */
+section.searchR {
+  background-color: var(--bg);
+  margin-top: 2px;
+}
 .search-filters{
     position: fixed;
     /* top: 3vh; */
     background-color: var(--white);
     border-radius: 10px;
-    border: 1px solid #0000001a;
+    /* border: 1px solid #0000001a; */
     width: 11rem;
     font-size: 15px;
     margin-left: 20px;
+    box-shadow: 0px 1px 3px;
 }
 .filters-title{
     margin: 0;
@@ -802,15 +810,18 @@ section.appointment-reservation form{
     border-radius: 5px;
     padding: 5px;
     border: none;
-    box-shadow: 0px 2px 0px var(--dark-blue);
+    border-bottom: 2px solid var(--dark-blue);
+    box-shadow: 0px 1px 3px #a9a9a9;
     font-family: var(--openSans);
     color: var(--blue);
 }
 .center-card{
   padding: 3% 2%;
   margin-bottom: 20px;
-  background-color: #8ba2bd1c;
+  /* background-color: #8ba2bd1c; */
+  background-color: white;
   border-radius: 10px;
+  box-shadow: 0px 1px 3px;
 }
 .center-card-img{
     width: 50px;
@@ -1028,10 +1039,11 @@ margin-right: 5%;
 
 /* TODO Customer-profile */
 .body{
-  background-color: var(--dark-blue);
+  background-color: var(--bg);
     display: flex;
     justify-content: space-around;
     padding: 5% 8%;
+    margin-top: 2px;
 }
 .body .content {
     background-color: white;
@@ -1039,6 +1051,7 @@ margin-right: 5%;
     height: -moz-fit-content;
     height: fit-content;
     width: 16%;
+    box-shadow: 0px 1px 3px;
 }
 .body .content ul{
   list-style: none;
@@ -1122,6 +1135,7 @@ margin-top: 0;
     background-color: white;
     border-radius: 10px;
     overflow: hidden;
+    box-shadow: 0px 1px 3px;
 }
 .table.login-box thead, .table.login-box tbody{width: 85%;}
 .table.login-box thead{
@@ -2181,7 +2195,7 @@ footer p{
   align-items: center;
   width: 100%;
   height: 40vh;
-  background-color: #1a73e829;
+  background-color: #ececec;
 }
 
 .quick-booking h2{
@@ -2198,7 +2212,7 @@ footer p{
     justify-content: space-around;
     background-color: white;
     border-radius: 50px;
-    box-shadow: 0px 0px 5px var(--blue);
+    box-shadow: 0px 1px 3px ;
 }
 .quick-booking .search-form select{
     border-color: var(--white);

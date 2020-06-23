@@ -7,6 +7,8 @@ import CustomerProfileDetails from './customer-profile-details';
 import UserAppointments from './user-appointments';
 import ChangePasswordUser from '../../forms/changePasswordUser';
 import { getFromStorage } from './../../../_utils/local-storage';
+import Nav from "../../core/nav/nav";
+import Footer from "../../core/footer";
 
 class CustomerProfile extends Component {
   state = {
@@ -14,24 +16,22 @@ class CustomerProfile extends Component {
     userData: ""
   };
 
-  componentDidMount(){
+  componentDidMount() {
     let userID = getFromStorage('currentID');
-  
+
     axios.get(`http://localhost:3000/users?id=${userID}`)
-        .then(res=>{
-          const userData = res.data[0];
-          this.setState({userData});
-        }).catch(err=>{
-            if(err.response.status === 404)
-            {
-                toast(err.response.data, {type:"error"});
-            }
-            else if(err.response.status === 406)
-            {
-                this.setState({errors: {password: err.response.data}});
-            }
-            else toast("Connection Error", {type:"error"});
-        });
+      .then(res => {
+        const userData = res.data[0];
+        this.setState({ userData });
+      }).catch(err => {
+        if (err.response.status === 404) {
+          toast(err.response.data, { type: "error" });
+        }
+        else if (err.response.status === 406) {
+          this.setState({ errors: { password: err.response.data } });
+        }
+        else toast("Connection Error", { type: "error" });
+      });
   }
 
   //   href={this.state.paths[0]}
@@ -42,7 +42,9 @@ class CustomerProfile extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="body d-flex justify-content-between" style={{height:"100%"}}>
+        <Nav className="white" />
+
+        <div className="body d-flex justify-content-between" style={{ height: "100%" }}>
           <div className="content">
             <ul>
               <li className="selected-tab"
@@ -74,16 +76,17 @@ class CustomerProfile extends Component {
           {(() => {
             switch (this.state.pathChoice) {
               case 1:
-                return <CustomerProfileDetails userData={this.state.userData}/>;
+                return <CustomerProfileDetails userData={this.state.userData} />;
               case 2:
                 return <ChangePasswordUser />;
               case 3:
                 return <UserAppointments />;
               default:
-                return <CustomerProfileDetails userData={this.state.userData}/>;
+                return <CustomerProfileDetails userData={this.state.userData} />;
             }
           })()}
         </div>
+        <Footer />
       </React.Fragment >
     );
   }
