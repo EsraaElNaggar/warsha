@@ -13,7 +13,7 @@ class Header extends Component {
                 {/* Banner */}
                 <section className="logWrap landWrap">
                     <div className="logLeft land">
-                        <Link href="/"><span>W</span>arsha</Link>
+                        <Link to="/"><span>W</span>arsha</Link>
                         <h2><strong>Your Platform for </strong> <br /> <strong>Car Services</strong></h2>
                         {/* <h2><strong> Welcome to our Website!</strong></h2> */}
                         <p>Find the <span>Nearest</span> mechanic..</p>
