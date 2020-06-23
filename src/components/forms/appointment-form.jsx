@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import Nav from './nav';
-import Footer from './footer';
+
+import Nav from './../core/nav/nav';
+import Footer from './../core/footer';
 
 
 class AppointmentForm extends Component {

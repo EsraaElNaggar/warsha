@@ -39,16 +39,22 @@ import LoginCenter from './components/Authentication/login-center';
 import SignupCenter from './components/Authentication/signup-center';
 import SearchResult from './components/customer/search_result/search-result';
 import FilterList from './components/filterList';
+import CenterProfile from './components/customer/center_profile/center-profile';
 
 class App extends Component {
   state = {
-    searchResult: []
+    searchResult: [],
+    center: ""
   };
 
   // search data handler
   handleSearch = searchResult => {
     this.setState({ searchResult });
   };
+
+  openCenterProfile = center =>{
+    this.setState({ center });
+  }
 
   render() {
     return (
@@ -88,6 +94,17 @@ class App extends Component {
               <SearchResult
                 {...props}
                 centers={this.state.searchResult}
+                openCenterProfile={this.openCenterProfile}
+              />
+            )}
+          />
+
+          {/* Center Profile */}
+          <Route path="/centerprofile"
+            render={props => (
+              <CenterProfile
+                {...props}
+                center={this.state.center}
               />
             )}
           />

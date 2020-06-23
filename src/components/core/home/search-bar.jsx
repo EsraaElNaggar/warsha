@@ -63,13 +63,11 @@ class SearchBar extends Component {
 
     // search backend
     search = ({speciality, city, area}) => {
-        // console.log(process.env.REACT_APP_BACKEND_URL);
 
         if ((speciality && city && area) || (speciality && !city && area)) {
             axios.get(`http://localhost:3000/centers/?services=${speciality}&q=${area}`)
             .then(res=>{
-                console.log(res);
-                this.props.history.replace("/searchresult");
+                this.props.handleSearch(res.data);
             }).catch(err=>{
                 toast("Connectio Error", {type:"error"});
             });
@@ -77,7 +75,7 @@ class SearchBar extends Component {
         else if (speciality && city && !area){
             axios.get(`http://localhost:3000/centers/?services=${speciality}&q=${city}`)
             .then(res=>{
-                this.props.history.replace("/searchresult")
+                this.props.handleSearch(res.data);
             }).catch(err=>{
                 toast("Connectio Error", {type:"error"});
             });
@@ -85,7 +83,7 @@ class SearchBar extends Component {
         else if (!(speciality && city) && area){
             axios.get(`http://localhost:3000/centers/?q=${area}`)
             .then(res=>{
-                this.props.history.replace("/searchresult")
+                this.props.handleSearch(res.data);
             }).catch(err=>{
                 toast("Connectio Error", {type:"error"});
             });
@@ -93,7 +91,7 @@ class SearchBar extends Component {
         else if (speciality && !(city && area)){
             axios.get(`http://localhost:3000/centers/?services=${speciality}`)
             .then(res=>{
-                this.props.history.replace("/searchresult")
+                this.props.handleSearch(res.data);
             }).catch(err=>{
                 toast("Connectio Error", {type:"error"});
             });
@@ -101,7 +99,7 @@ class SearchBar extends Component {
         else if (!(speciality && area) && city){
             axios.get(`http://localhost:3000/centers/?q=${city}`)
             .then(res=>{
-                
+                this.props.handleSearch(res.data);
             }).catch(err=>{
                 toast("Connection Error", {type:"error"});
             });
