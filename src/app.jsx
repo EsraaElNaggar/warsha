@@ -37,57 +37,63 @@ import CustomerProfile from './components/customer/customer_profile/customer-pro
 import ContactUs from './components/forms/contactUs';
 import LoginCenter from './components/Authentication/login-center';
 import SignupCenter from './components/Authentication/signup-center';
+import BookingInfo from './components/customer/center_profile/booking-info';
+import BookingDetails from './components/customer/appointment_confirmation/booking-details';
+import CenterProfile from './components/customer/center_profile/center-profile';
+import Appointment from './components/center/appointments_day/appointment';
 
 class App extends Component {
-  state = {  }
-  render() { 
-    return ( 
+  state = {}
+  render() {
+    return (
       <React.Fragment>
+        <CustomerProfile />
+        <Appointment />
         <Switch>
           {/* Customer Interface */}
 
-            {/* LogIn */}
-            <Route path="/login" component={LoginUser}/>
+          {/* LogIn */}
+          <Route path="/login" component={LoginUser} />
 
-            {/* SignUp */}
-            <Route path="/signup" component={SignupUser}/>
+          {/* SignUp */}
+          <Route path="/signup" component={SignupUser} />
 
-            {/* Home */}
-            <Route path="/home" exact component={Home}/>
+          {/* Home */}
+          <Route path="/home" exact component={Home} />
 
-            {/* About Us */}
-            <Route path="/aboutus" exact component={AboutUs}/>
+          {/* About Us */}
+          <Route path="/aboutus" exact component={AboutUs} />
 
-            {/* Contact Us */}
-            <Route path="/contactus" exact component={ContactUs}/>  
+          {/* Contact Us */}
+          <Route path="/contactus" exact component={ContactUs} />
 
-            {/* My Profile */}
-            <Route path="/myprofile" component={CustomerProfile}/>  
+          {/* My Profile */}
+          <Route path="/myprofile" component={CustomerProfile} />
 
 
           {/* Center Interface */}
 
-            {/* LogIn */}
-            <Route path="/centerlogin" component={LoginCenter}/>
+          {/* LogIn */}
+          <Route path="/centerlogin" component={LoginCenter} />
 
-            {/* SignUp */}
-            <Route path="/centersignup" component={SignupCenter}/>
+          {/* SignUp */}
+          <Route path="/centersignup" component={SignupCenter} />
 
 
 
           {/* NotFound Page */}
-          <Route path="/notfound" component={ErrorPage}/>
+          <Route path="/notfound" component={ErrorPage} />
 
           {/* Redirect to Home */}
-          <Redirect from="/" to="/home"/>
+          <Redirect from="/" to="/home" />
 
           {/* Redirect to NotFound Page */}
-          <Redirect to="/notfound"/>
+          <Redirect to="/notfound" />
 
-        </Switch> 
+        </Switch>
       </React.Fragment>
     );
   }
 }
- 
+
 export default App;

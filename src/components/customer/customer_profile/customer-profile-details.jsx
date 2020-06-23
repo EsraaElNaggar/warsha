@@ -22,22 +22,25 @@ class CustomerProfileDetails extends Component {
         <div className="login-box top-space">
           <div className="booking-info b-radius-10 div-border">
             <h2 className="booking-info-title">Your Profile</h2>
-            <h2>Car details</h2>
-            <div className="user-box">
+            <h4>Personal Data</h4>
+            <div className="miniLine"></div>
+            <div className="user-box details">
               <div className="labels">
-                <h5 htmlFor="password">Password</h5>
-                <h5 htmlFor="newPassword">New Password</h5>
+                <h5>Full Name :</h5>
+                <h5>Email Address :</h5>
               </div>
               <div className="forma">
                 <p>{this.state.userData.firstName} {this.state.userData.lastName}</p>
                 <p>{this.state.userData.email}</p>
               </div>
             </div>
-            <h2>Car details</h2>
-            <div className="user-box">
+            <h4>Address Info</h4>
+            <div className="miniLine"></div>
+            <div className="user-box details">
               <div className="labels">
-                <h5 htmlFor="password">Password</h5>
-                <h5 htmlFor="newPassword">New Password</h5>
+                <h5>Address :</h5>
+                <h5>City :</h5>
+                <h5>Area :</h5>
               </div>
               <div className="forma">
                 <p>{this.state.userData.address}</p>
@@ -45,11 +48,13 @@ class CustomerProfileDetails extends Component {
                 <p>{this.state.userData.area}</p>
               </div>
             </div>
-            <h2>Car details</h2>
-            <div className="user-box">
+            <h4>Car Details</h4>
+            <div className="miniLine"></div>
+            <div className="user-box details">
               <div className="labels">
-                <h5 htmlFor="password">Password</h5>
-                <h5 htmlFor="newPassword">New Password</h5>
+                <h5>Car Make :</h5>
+                <h5>Car Model :</h5>
+                <h5>Car Year :</h5>
               </div>
               <div className="forma">
                 <p>{this.state.userData.carDetails.brand}</p>

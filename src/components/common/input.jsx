@@ -1,7 +1,8 @@
 import React from "react";
+import { useForm } from "react-hook-form";
 
 const Input = props => {
-    const { name, type, placeholder, value, onChange, className, error, errorClasses } = props;
+    const { name, type, placeholder, value, onChange, className, error, errorClasses, ref } = props;
     return (
         <React.Fragment>
             <input
@@ -12,6 +13,7 @@ const Input = props => {
                 className={className}
                 value={value}
                 onChange={onChange}
+                ref={ref}
             />
             {error && <div htmlFor={name}
                 className={errorClasses}>

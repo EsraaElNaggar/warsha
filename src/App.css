@@ -198,7 +198,7 @@ a.logo:hover{
   padding-left:5%
 }
 /* TODO contactUs */
-.contWrap{background-color: var(--dark-blue); padding: 0%;}
+.contWrap{background-color: var(--dark-blue); padding: 0%; height: 100vh;}
 .contWrap .logo{
   font-size: 50px;
   margin: 0 0 1% 0;
@@ -295,6 +295,7 @@ nav button,.navBtn, .navUser{
   box-shadow: 0px 0px 5px var(--blue);
 }
 nav button:hover, .navBtn:hover{
+  color: white !important;
   background-color: var(--dark-blue);
   box-shadow: 0px 2px 9px var(--dark-blue);
 }
@@ -323,7 +324,7 @@ nav.tr a:hover{font-weight: 700; border-bottom: 2px solid var(--white);}
 
 /* ? var(--white) nav */
 nav.white{ background-color: var(--white); }
-nav.white a{color:var(--blue);}
+/* nav.white a{color:var(--blue);} */
 nav.white a:hover{
   color:var(--dark-blue); 
   font-weight: 700; 
@@ -935,7 +936,7 @@ background-color: var(--blue)!important;
 .client-card-btns{
   width: 100%;
 }
-.checkInBtn, .noShowBtn{
+.checkInBtn, .noShowBtn, .appDel, .appRep {
   width: 50%;
   padding: 3%;
   margin: auto 1%;
@@ -950,7 +951,7 @@ background-color: var(--blue)!important;
   background-color: var(--salamon);
   box-shadow: 0px 0px 2px var(--salamon);
 }
-.checkInBtn:hover{
+.checkInBtn:hover, .appRep:hover{
   color: var(--blue);
   background-color: var(--white);
   border-bottom: 3px solid var(--blue);
@@ -960,6 +961,16 @@ background-color: var(--blue)!important;
   background-color: var(--white);
   border-bottom: 3px solid var(--salamon);
 }
+.appDel{
+  background-color: crimson;
+  box-shadow: 0px 0px 2px crimson;
+}
+.appDel:hover{
+  color: crimson;
+  background-color: var(--white);
+  border-bottom: 3px solid crimson;
+}
+
 .client-card-btns > button i{
 margin-right: 5%;
 }
@@ -1013,13 +1024,29 @@ margin-right: 5%;
   background-color: var(--white);
   width: 85%;
 }
-.login-box .booking-info .booking-info-title{
+.login-box .booking-info .booking-info-title, .table.login-box thead{
   color: var(--white);
     font-size: larger;
     font-weight: 600;
     background-color: var(--blue);
     border: none;
     margin-bottom: 3%;
+}
+.login-box .booking-info h4{
+  padding: 0 8%;
+    font-family: var(--oswald);
+}
+.login-box .booking-info .miniLine {
+width: 7%;
+margin-top: 0;
+}
+.login-box .user-box .labels{
+      margin: 2% 0 0 15%;
+      width: 25%;
+}
+.login-box .user-box .forma{
+  padding: 2%;
+  color: var(--black);
 }
 .login-box .forma{
   width: 65%;
@@ -1029,6 +1056,15 @@ margin-right: 5%;
     text-decoration-line: none;
     margin: 3% 0 3% 0;
 }
+.login-box .user-box.details{
+  padding: 0;
+}
+.login-box .user-box.details .forma span{
+  font-family: var(--oswald);
+  font-size: xx-large;
+  color: var(--blue);
+}
+.login-box .user-box.details .forma p{margin: 0 0 2% 0 !important;}
 .user-box{
   display: flex;
   align-items: flex-start;
@@ -1044,9 +1080,27 @@ margin-right: 5%;
     font-family: var(--oswald);
     font-size: larger;
 }
-
-
-
+.table.login-box{
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.table.login-box thead, .table.login-box tbody{width: 85%;}
+.table.login-box thead{
+  text-align: center;
+}
+.table.login-box tbody .td{padding-left: 3%;}
+.td.appDet .appDel, .td.appDet .appRep{
+width: fit-content;
+}
+/* .appDet .col-flex{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start !important;
+} */
+.col-flex .appDel, .col-flex .appRep{
+  width: fit-content !important;
+}
 
 /* TODO Tags */
 .CenterSignTagsLabels{

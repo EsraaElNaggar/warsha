@@ -1,8 +1,8 @@
 import React from 'react';
 
 const BookingInfo = props => {
-   
-    return ( 
+
+    return (
         <React.Fragment>
             <div className="booking-info b-radius-10 div-border">
                 <p className="booking-info-title">Booking Information</p>
@@ -10,43 +10,43 @@ const BookingInfo = props => {
                     <p className="text-center">Book Appointment</p>
                 </div>
                 <div className="pt-3 px-4 pb-4 bg-booking-info">
-                <div className="title-subaddress">
-                    <i className="fas fa-map-marker-alt" />
-                    <span className="subaddress">
-                        New Cairo: Southeren Teseen
+                    <div className="title-subaddress">
+                        <i className="fas fa-map-marker-alt" />
+                        <span className="subaddress">
+                            New Cairo: Southeren Teseen
                     </span>
-                </div>
-                <div>
-                    <p className="pl-4">
-                        Book now to receive the center’s address details and
-                        phone number
+                    </div>
+                    <div>
+                        <p className="pl-4">
+                            Book now to receive the center’s address details and
+                            phone number
                     </p>
-                </div>
+                    </div>
                 </div>
                 {/* Booking Form Start */}
                 <form>
-                <h6 className="text-center pt-3">Enter Your Info.</h6>
-                <p className="text-center">Tomorrow 15 June - 12:45 PM</p>
-                <div className="appointment-form-input-container">
-                    <i className="fas fa-user-alt" />
-                    <input type="text" name="clientName" id="clientName" defaultValue="Mona" placeholder="Full Client Name" />
-                </div>
-                <div className="appointment-form-input-container">
-                    <i className="fas fa-phone-alt" />
+                    <h6 className="text-center pt-3">Enter Your Info.</h6>
+                    <p className="text-center">Tomorrow 15 June - 12:45 PM</p>
+                    <div className="appointment-form-input-container">
+                        <i className="fas fa-user-alt" />
+                        <input type="text" name="clientName" id="clientName" defaultValue="Mona" placeholder="Full Client Name" />
+                    </div>
+                    <div className="appointment-form-input-container">
+                        <i className="fas fa-phone-alt" />
                     +2<input type="text" className="appointment-form-input" name="clientNumber" id="clientNumber" defaultValue={" "} placeholder="Mobile Number" />
-                </div>
-                <div className="appointment-form-input-container">
-                    <i className="fas fa-envelope" />
-                    <input type="email" className="appointment-form-input" name="clientEmail" id="clientEmail" defaultValue="sydeny254@gmail.com" placeholder="Email Address (Optional)" />
-                </div>
-                <div className="appointment-form-checkbox">
-                    <input type="checkbox" name="anotherClient" id="anotherClient" />
+                    </div>
+                    <div className="appointment-form-input-container">
+                        <i className="fas fa-envelope" />
+                        <input type="email" className="appointment-form-input" name="clientEmail" id="clientEmail" defaultValue="sydeny254@gmail.com" placeholder="Email Address (Optional)" />
+                    </div>
+                    <div className="appointment-form-checkbox">
+                        <input type="checkbox" name="anotherClient" id="anotherClient" />
                     I'm looking on behalf of another client.
                 </div>
-                <div className="d-flex justify-content-between appointment-btns">
-                    <button type="submit" className="submit-appointment-form">Book</button>
-                    <button type="button" className="cancel-appointment-form">Cancel</button>
-                </div>
+                    <div className="d-flex justify-content-between appointment-btns">
+                        <button type="submit" className="formBtn submit-appointment-form">Book</button>
+                        <button type="button" className="formBtn cancel-appointment-form">Cancel</button>
+                    </div>
                 </form>
                 {/* Booking Form End */}
 
@@ -114,7 +114,7 @@ const BookingInfo = props => {
             </div>
         </React.Fragment>
     );
-    
+
 };
- 
+
 export default BookingInfo;
