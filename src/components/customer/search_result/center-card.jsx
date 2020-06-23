@@ -7,7 +7,6 @@ const CenterCard = props => {
    
     const {
         centerName, 
-        // ownerName, 
         // locations, 
         telephone, 
         // onLocationService, 
@@ -15,7 +14,14 @@ const CenterCard = props => {
         speciality,
         noOfVisitors,
         totalRating
-    } = props.center
+    } = props.center;
+
+    const openCenterProfile = ()=>
+    {
+        const center = props.center;
+        props.openCenterProfile(center);
+    }
+
     return ( 
         <React.Fragment>
             <div className="center-card d-flex justify-content-between b-radius-10 div-border">
@@ -24,7 +30,7 @@ const CenterCard = props => {
                     <img src="../../public/assets/mechanistic.jpg" alt="" className="center-details-img img-circle" />
                 </div>
                 {/* Center Image End */}
-                <div className="center-card-info">
+                <div className="center-card-info" style={{cursor: "pointer"}} onClick={openCenterProfile}>
                     {/* Center Name Start */}
                     <p className="center-name">Center <b>{centerName}</b></p>
                     {/* Center Name End */}

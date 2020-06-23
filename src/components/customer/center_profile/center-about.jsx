@@ -17,9 +17,11 @@ const CenterAbout = props => {
                 {/* About Conent Start */}
                 <div className="about-conent">
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum repellat atque vel eligendi
-                        libero voluptatibus magni id, saepe illo tempore corrupti enim maiores ex cupiditate repellendus
-                        reiciendis suscipit blanditiis rerum?
+                        {
+                            props.about
+                            ||
+                            'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum repellat atque vel eligendi libero voluptatibus magni id, saepe illo tempore corrupti enim maiores ex cupiditate repellendusreiciendis suscipit blanditiis rerum?'
+                        }
                     </p>
                 </div>
                 {/* About Conent End */}

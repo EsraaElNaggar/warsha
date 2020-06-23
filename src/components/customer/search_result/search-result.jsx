@@ -14,6 +14,11 @@ class SearchResult extends Component {
         ]
     };
 
+    openCenterProfile = center => {
+        this.props.openCenterProfile(center);
+        this.props.history.replace('/centerprofile')
+    };
+
     render() {
         return (
             <React.Fragment>
@@ -50,6 +55,7 @@ class SearchResult extends Component {
                                 <CenterCard
                                     key={center.id}
                                     center={center}
+                                    openCenterProfile={this.openCenterProfile}
                                 />
                             ))}
                         </div>

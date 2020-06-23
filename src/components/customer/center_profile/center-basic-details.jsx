@@ -3,12 +3,14 @@ import Ratings from '../../common/ratings';
 
 const CenterBasicDetails = props => {
    
+    const center = props.center;
+
     return ( 
         <React.Fragment>
             <div className="center-basic-details d-flex justify-content-around b-radius-10 div-border">
                 {/* Center Image Start */}
                 <div className="center-details-img-container">
-                    <img src="../../public/assets/mechanistic.jpg" alt="" className="center-details-img img-circle" />
+                    <img style={{width:"124px", height:"124px"}} src="/assets/mechanistic.jpg" alt="" className="center-details-img img-circle" />
                 </div>
                 {/* Center Image End */}
 
@@ -16,7 +18,7 @@ const CenterBasicDetails = props => {
                     <span className="d-flex justify-content-between mb-3">
                         {/* Center Name Start */}
                         <span className="center-basic-name">
-                            Center Bla Bla
+                            Center {center.centerName}
                         </span>
                         {/* Center Name End*/}
 
@@ -29,7 +31,7 @@ const CenterBasicDetails = props => {
 
                     {/* Center speciality Start */}
                     <h6 className="center-speciality">
-                        Speciality Of Electricity &amp; Mechanic
+                        Speciality Of {center.speciality}
                     </h6>
                     {/* Center speciality End */}
 
@@ -40,7 +42,7 @@ const CenterBasicDetails = props => {
 
                         {/* No. Of Reviews Start */}
                         <span className="no-of-reviews">
-                            Overall Ratings From 255 Visitors
+                            Overall Ratings From {center.noOfVisitors} Visitors
                         </span>
                         {/* No. Of Reviews End */}
 
