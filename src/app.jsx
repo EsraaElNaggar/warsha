@@ -38,83 +38,100 @@ import ContactUs from './components/forms/contactUs';
 import LoginCenter from './components/Authentication/login-center';
 import SignupCenter from './components/Authentication/signup-center';
 import SearchResult from './components/customer/search_result/search-result';
-import FilterList from './components/filterList';
+import MainProfileDataCenter from './components/mainProfileDataCenter';
+import AddAppointmentCenter from './components/forms/addAppointmentCenter';
+import CenterAppointments from './components/center/center_appointments_List/center-appointments';
+import Appointment from './components/center/appointments_day/appointment';
+import AppointmentsDay from './components/center/appointments_day/appointments-day';
 
 class App extends Component {
-  state = { 
+  state = {
     searchResult: []
-   };
+  };
 
-   // search data handler
-   handleSearch = searchResult =>{
-      this.setState({searchResult});      
-   };
+  // search data handler
+  handleSearch = searchResult => {
+    this.setState({ searchResult });
+  };
 
-  render() { 
-    return ( 
-      
+  render() {
+    return (
+
       <React.Fragment>
         <Switch>
           {/* Customer Interface */}
 
-            {/* LogIn */}
-            <Route path="/login" component={LoginUser}/>
+          {/* LogIn */}
+          <Route path="/login" component={LoginUser} />
 
-            {/* SignUp */}
-            <Route path="/signup" component={SignupUser}/>
+          {/* SignUp */}
+          <Route path="/signup" component={SignupUser} />
 
-            {/* Home */}
-            <Route path="/home" exact 
-              render={ props => (
-                <Home
-                    {...props}
-                    handleSearch={this.handleSearch}
-                />
-              )}
-            />
+          {/* Home */}
+          <Route path="/home" exact
+            render={props => (
+              <Home
+                {...props}
+                handleSearch={this.handleSearch}
+              />
+            )}
+          />
 
-            {/* About Us */}
-            <Route path="/aboutus" component={AboutUs}/>
+          {/* About Us */}
+          <Route path="/aboutus" component={AboutUs} />
 
-            {/* Contact Us */}
-            <Route path="/contactus" component={ContactUs}/>  
+          {/* Contact Us */}
+          <Route path="/contactus" component={ContactUs} />
 
-            {/* My Profile */}
-            <Route path="/myprofile" component={CustomerProfile}/>  
+          {/* My Profile */}
+          <Route path="/myprofile" component={CustomerProfile} />
 
-            {/* Search Result */}
-            <Route path="/searchresult" 
-              render={ props => (
-                      <SearchResult
-                          {...props}
-                          centers={this.state.searchResult}
-                      />
-                  )}
-            />
+          {/* Search Result */}
+          <Route path="/searchresult"
+            render={props => (
+              <SearchResult
+                {...props}
+                centers={this.state.searchResult}
+              />
+            )}
+          />
 
           {/* Center Interface */}
 
-            {/* LogIn */}
-            <Route path="/centerlogin" component={LoginCenter}/>
+          {/* LogIn */}
+          <Route path="/centerlogin" component={LoginCenter} />
 
-            {/* SignUp */}
-            <Route path="/centersignup" component={SignupCenter}/>
+          {/* SignUp */}
+          <Route path="/centersignup" component={SignupCenter} />
 
+          {/* Center Profile */}
+          <Route path="/centerprofile" component={MainProfileDataCenter} />
 
+          {/* Add Appointments */}
+          <Route path="/addappointments" component={AddAppointmentCenter} />
+
+          {/* Appointments */}
+          <Route path="/appointment" component={Appointment} />
+
+          {/* Appointments Day */}
+          <Route path="/appointmentday" component={AppointmentsDay} />
+
+          {/* Center Apointments */}
+          <Route path="/centerappointments" component={CenterAppointments} />
 
           {/* NotFound Page */}
-          <Route path="/notfound" component={ErrorPage}/>
+          <Route path="/notfound" component={ErrorPage} />
 
           {/* Redirect to Home */}
-          <Redirect from="/" to="/home"/>
+          <Redirect from="/" to="/home" />
 
           {/* Redirect to NotFound Page */}
-          <Redirect to="/notfound"/>
+          <Redirect to="/notfound" />
 
-        </Switch> 
+        </Switch>
       </React.Fragment>
     );
   }
 }
- 
+
 export default App;

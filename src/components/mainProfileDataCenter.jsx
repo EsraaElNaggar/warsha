@@ -18,13 +18,16 @@ class MainProfileDataCenter extends Component {
   infoHandler = i => {
     this.setState({ displayed: i });
   };
+  handleAppointmentClick=()=>{
+    this.props.history.replace("/addappointments");
+  }
 
   render() {
     return (
       <React.Fragment>
         <div className="tab">
           <button className="tablinks active">Profile</button>
-          <button className="tablinks">Appointments</button>
+          <button className="tablinks" onClick={this.handleAppointmentClick}>Appointments</button>
         </div>
         <div className="center-details">
           <div className="div1-3">

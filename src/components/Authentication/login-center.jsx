@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import Joi from "joi-browser";
 import Input from './../common/input';
 import { Link } from 'react-router-dom';
-
+import axios from "axios"
+import { setInStorage, getFromStorage } from '../../_utils/local-storage';
+import { ToastContainer, toast } from "react-toastify";
 class LoginCenter extends Component {
     state = {
         account: {
@@ -30,9 +32,41 @@ class LoginCenter extends Component {
             this.setState({ errors });
             return;
         }
+        else {
+            axios.get( `http://localhost:4000/centers?centerEmail: ${this.state.account.centerEmail}`)
+        .then(res=>{
+            let user = res.data.filter(d=>d.centerEmail===this.state.account.centerEmail)[0]
+            console.log(user.password)
+            console.log(this.state.account.centerPassword)
+            if(user.password == this.state.account.centerPassword){
+                console.log("hi")
+                const token = Math.random();
+                setInStorage('authToken', String(token));
+                setInStorage('currentID', res.data[0].id);
+                this.props.history.replace("/centerprofile");
+            }
+            else{
+                toast("Wrong Password", {type:"error"});
+            }
+        }).catch(err=>{
+            if(err.response.status === 404)
+            {
+                toast(err.response.data, {type:"error"});
+            }
+            else if(err.response.status === 406)
+            {
+                this.setState({errors: {password: err.response.data}});
+            }
+            else toast("Connection Error", {type:"error"});
+        });
+
+
+        }
         this.setState({ errors: {} });
+
         // this.login(this.state.account);
     };
+    
 
     validate = () => {
         const result = Joi.validate(this.state.account, this.schema, {
@@ -97,7 +131,7 @@ class LoginCenter extends Component {
                             errorClasses="myError animation a3"
                         />
 
-                        <button className="formBtn animation a4">Login</button>
+                        <button type="submit" className="formBtn animation a4">Login</button>
 
                         <div id="or" className="animation a5">
                             <span id="s1"></span>
