@@ -18,14 +18,17 @@
 
 *{outline: none !important}
 
+
+html, body, #root{
+  height: 100%;
+}
+
 body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: var(--openSans);
 }
-
-
 
 /* TODO form 1 */
 .logWrap{
@@ -183,6 +186,9 @@ body{
 .form1Wrap .let{margin-top: 1%;}
 a.logo:hover{
   text-decoration: none;
+}
+.contWrap{
+  height: 100%;
 }
 .form1Wrap.myHeight{
   height: 100vh;
@@ -714,7 +720,7 @@ section.appointment-reservation form{
 /* TODO search result */
 .search-filters{
     position: fixed;
-    top: 3vh;
+    /* top: 3vh; */
     background-color: var(--white);
     border-radius: 8px;
     border: 1px solid grey;

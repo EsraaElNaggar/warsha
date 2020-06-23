@@ -62,14 +62,21 @@ class LoginUser extends Component {
     };
 
     // login backend call
-    login = ({email, password}) =>{
-        axios.post("http://localhost:3000/users", {
-        email,
-        password
-        }).then(res=>{
-            const token = Math.random();
-            setInStorage('authToken', String(token));
-            this.props.history.replace("/home");
+    login = ({userEmail, userPassword}) =>{
+        console.log(userEmail);
+
+        axios.get(`http://localhost:3000/users?userEmail=${userEmail}`)
+        .then(res=>{
+
+            if(res.data[0].userPassword === userPassword){
+                const token = Math.random();
+                setInStorage('authToken', String(token));
+                setInStorage('currentID', res.data[0].id);
+                this.props.history.replace("/home");
+            }
+            else{
+                toast("Wrong Password", {type:"error"});
+            }
         }).catch(err=>{
             if(err.response.status === 404)
             {
@@ -96,7 +103,9 @@ class LoginUser extends Component {
         this.setState({ errors: {} });
 
         // call backend
-        const {userEmail, userPassword} = this.state;
+        const {userEmail, userPassword} = this.state.account;
+        console.log(userEmail);
+
         this.login({userEmail, userPassword});
     };
 

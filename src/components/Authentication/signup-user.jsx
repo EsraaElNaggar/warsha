@@ -72,12 +72,12 @@ class SignupUser extends Component {
     };
 
     // signup backend 
-    register = ({fName, lName, email, password, carBrand, carModel, carYear, address, city, area}) =>{
+    register = ({fName, lName, userEmail, userPassword, carBrand, carModel, carYear, address, city, area}) =>{
         axios.post("http://localhost:3000/users", {
             fName,
             lName,
-            email,
-            password,
+            userEmail,
+            userPassword,
             carBrand,
             carModel,
             carYear,
@@ -88,7 +88,7 @@ class SignupUser extends Component {
             
             const token = Math.random();
             setInStorage('authToken', String(token));
-    
+            setInStorage('currentID', res.data.id);
             //Update State
             // this.props.onAuthorRegister(res.data.data);
     
