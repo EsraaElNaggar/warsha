@@ -21,7 +21,7 @@ export default function FilterList(props) {
     return (
         <div className="Talal-dropdown col-2">
             <div onClick={toggleList} className="Talal-dropdown-header">{header}</div>
-            <ul>
+            <ul className="collapse-Talal-dropdown">
                 {list}
             </ul>
         </div>
