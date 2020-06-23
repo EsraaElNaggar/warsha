@@ -54,8 +54,6 @@ class App extends Component {
     return (
 
       <React.Fragment>
-        <CustomerProfile />
-        <Appointment />
         <Switch>
           {/* Customer Interface */}
 
