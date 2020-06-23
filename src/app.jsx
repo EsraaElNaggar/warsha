@@ -38,6 +38,7 @@ import ContactUs from './components/forms/contactUs';
 import LoginCenter from './components/Authentication/login-center';
 import SignupCenter from './components/Authentication/signup-center';
 import SearchResult from './components/customer/search_result/search-result';
+import FilterList from './components/filterList';
 
 class App extends Component {
   state = { 
@@ -51,6 +52,7 @@ class App extends Component {
 
   render() { 
     return ( 
+      
       <React.Fragment>
         <Switch>
           {/* Customer Interface */}
