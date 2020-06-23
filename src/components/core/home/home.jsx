@@ -5,32 +5,30 @@ import SearchBar from './search-bar';
 import WhyUs from './why-us';
 import Footer from '../footer';
 
-class Home extends Component {
+const Home = props => {
 
-    handleSearch = searchResult =>{
-        this.props.handleSearch(searchResult);
-        this.props.history.replace("searchresult");
+    const handleSearch = searchResult =>{
+        props.handleSearch(searchResult);
+        props.history.replace("searchresult");
     };
 
-    render() { 
-        return ( 
-            <React.Fragment>
-                {/* Header */}
-                <Header/>
+    return ( 
+        <React.Fragment>
+            {/* Header */}
+            <Header/>
 
-                {/* Home Container */}
-                <section className="full-height-container credits">
-                    <SearchBar 
-                        handleSearch={this.handleSearch}
-                    />
-                    <WhyUs/>
-                </section>
+            {/* Home Container */}
+            <section className="full-height-container credits">
+                <SearchBar 
+                    handleSearch={handleSearch}
+                />
+                <WhyUs/>
+            </section>
 
-                {/* Footer */}
-                <Footer/>
-            </React.Fragment>
-         );
-    }
+            {/* Footer */}
+            <Footer/>
+        </React.Fragment>
+    );
 }
  
 export default Home;

@@ -1,3 +1,5 @@
+
+// get data of key from storage
 export function getFromStorage(key) {
     if(!key){
         return null;
@@ -15,6 +17,7 @@ export function getFromStorage(key) {
     }    
 }
 
+// set data of key in storage
 export function setInStorage(key, obj){
     if(!key){
         console.error('Error: Key is missing');
@@ -27,6 +30,7 @@ export function setInStorage(key, obj){
     }
 }
 
+// remove data of key from storage
 export function removeFromStorage(key){
     if(!key){
         console.error('Error: Key is missing');

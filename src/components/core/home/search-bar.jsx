@@ -69,7 +69,7 @@ class SearchBar extends Component {
             .then(res=>{
                 this.props.handleSearch(res.data);
             }).catch(err=>{
-                toast("Connectio Error", {type:"error"});
+                toast("Connection Error", {type:"error"});
             });
         }
         else if (speciality && city && !area){
@@ -77,7 +77,7 @@ class SearchBar extends Component {
             .then(res=>{
                 this.props.handleSearch(res.data);
             }).catch(err=>{
-                toast("Connectio Error", {type:"error"});
+                toast("Connection Error", {type:"error"});
             });
         }
         else if (!(speciality && city) && area){
@@ -85,7 +85,7 @@ class SearchBar extends Component {
             .then(res=>{
                 this.props.handleSearch(res.data);
             }).catch(err=>{
-                toast("Connectio Error", {type:"error"});
+                toast("Connection Error", {type:"error"});
             });
         }
         else if (speciality && !(city && area)){
@@ -93,7 +93,7 @@ class SearchBar extends Component {
             .then(res=>{
                 this.props.handleSearch(res.data);
             }).catch(err=>{
-                toast("Connectio Error", {type:"error"});
+                toast("Connection Error", {type:"error"});
             });
         }
         else if (!(speciality && area) && city){
@@ -112,7 +112,6 @@ class SearchBar extends Component {
                 toast("Connection Error", {type:"error"});
             });
         }
-       
     };
 
     // form submit handler

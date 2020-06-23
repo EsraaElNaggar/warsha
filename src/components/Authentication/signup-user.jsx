@@ -89,22 +89,19 @@ class SignupUser extends Component {
             const token = Math.random();
             setInStorage('authToken', String(token));
             setInStorage('currentID', res.data.id);
-            //Update State
-            // this.props.onAuthorRegister(res.data.data);
     
             //Redirect to Home Page
             this.props.history.replace("/home");
 
           }).catch(err=>{
-    
-              if(err.response.status === 422)
-              {
-                toast(err.response.data, {type:"error"});
-              }
-              else if (err.response.status === 409) {
-                this.setState({errors: {username: err.response.data}});
-              }
-              else toast("Connection Error", {type:"error"});
+            //   if(err.response.status === 422)
+            //   {
+            //     toast(err.response.data, {type:"error"});
+            //   }
+            //   else if (err.response.status === 409) {
+            //     this.setState({errors: {username: err.response.data}});
+            //   }else 
+              toast("Connection Error", {type:"error"});
           });
     };
 
@@ -143,15 +140,24 @@ class SignupUser extends Component {
         return (
             <React.Fragment>     
                 <ToastContainer />
-                {bool1 && <SignUpUser1
-                    handleNext={this.handleNext1}
-                />}
-                {bool2 && <SignUpUser2
-                    handleNext={this.handleNext2}
-                />}
-                {bool3 && <SignUpUser3
-                    handleNext={this.handleNext3}
-                />}
+                {   
+                    bool1 && 
+                    <SignUpUser1
+                        handleNext={this.handleNext1}
+                    />
+                }
+                {
+                    bool2 && 
+                    <SignUpUser2
+                        handleNext={this.handleNext2}
+                    />
+                }
+                {
+                    bool3 && 
+                    <SignUpUser3
+                        handleNext={this.handleNext3}
+                    />
+                }
             </React.Fragment>
         );
     }

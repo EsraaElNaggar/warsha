@@ -1,17 +1,18 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
-import SubNavAuthonticated from "./subnav-authonticated";
 import SubNav from "./subnav";
+import SubNavAuthonticated from "./subnav-authonticated";
 
 import { getFromStorage } from './../../../_utils/local-storage';
-import { Link } from "react-router-dom";
 
 class Nav extends Component {
 
   state = {
     token: ''
-  }
+  };
 
+  // check authontication
   componentDidMount() {
     const token = getFromStorage('authToken');
 

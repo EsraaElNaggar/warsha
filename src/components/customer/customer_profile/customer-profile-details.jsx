@@ -1,21 +1,7 @@
 import React, { Component } from "react";
 
 class CustomerProfileDetails extends Component {
-  state = {
-    userData: {
-      firstName: "Ahmed",
-      lastName: "Maged",
-      email: "am@gmail.com",
-      address: "25 yemen street, yemen",
-      city: "cairo",
-      area: "nasr city",
-      carDetails: {
-        brand: "chevrolet",
-        model: "aveo",
-        year: "2017"
-      }
-    }
-  };
+
   render() {
     return (
       <React.Fragment>
@@ -30,8 +16,8 @@ class CustomerProfileDetails extends Component {
                 <h5>Email Address :</h5>
               </div>
               <div className="forma">
-                <p>{this.state.userData.firstName} {this.state.userData.lastName}</p>
-                <p>{this.state.userData.email}</p>
+                <p>{this.props.userData.fName} {this.props.userData.lName}</p>
+                <p>{this.props.userData.userEmail}</p>
               </div>
             </div>
             <h4>Address Info</h4>
@@ -43,9 +29,9 @@ class CustomerProfileDetails extends Component {
                 <h5>Area :</h5>
               </div>
               <div className="forma">
-                <p>{this.state.userData.address}</p>
-                <p>{this.state.userData.city}</p>
-                <p>{this.state.userData.area}</p>
+                <p>{this.props.userData.address}</p>
+                <p>{this.props.userData.city}</p>
+                <p>{this.props.userData.area}</p>
               </div>
             </div>
             <h4>Car Details</h4>
@@ -57,9 +43,9 @@ class CustomerProfileDetails extends Component {
                 <h5>Car Year :</h5>
               </div>
               <div className="forma">
-                <p>{this.state.userData.carDetails.brand}</p>
-                <p>{this.state.userData.carDetails.model}</p>
-                <p>{this.state.userData.carDetails.year}</p>
+                <p>{this.props.userData.carBrand}</p>
+                <p>{this.props.userData.carModel}</p>
+                <p>{this.props.userData.carYear}</p>
               </div>
             </div>
           </div>
