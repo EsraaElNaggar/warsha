@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
+import Input from "../common/input";
 
 const PasswordSchema = yup.object().shape({
   password: yup
@@ -32,43 +33,42 @@ const ChangePasswordUser = () => {
   });
   return (
     <React.Fragment>
-      <div className="body">
-        {/* <div className="content">
+      {/* <div className="content">
           <div>Profile</div>
           <div>My Appointemets</div>
           <div className="active">Change Password</div>
         </div> */}
-        <div className="login-box pass">
-          <h2>Change Password</h2>
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="user-box">
-              <input
-                className="input"
-                type="text"
+      <div className="login-box ">
+        <div className="booking-info b-radius-10 div-border">
+          <h2 className="booking-info-title">Change Password</h2>
+          <div className="user-box">
+            <div className="labels">
+              <label htmlFor="password">Password</label>
+              <label htmlFor="newPassword">New Password</label>
+            </div>
+            <form className="forma" onSubmit={handleSubmit(onSubmit)}>
+              <Input
+                className="form-field"
+                type="password"
                 name="password"
+                id="password"
+                placeholder="Password"
                 ref={register}
+                errorClasses="myError animation a1"
+                autofocus
               />
-              {errors.password && (
-                <p style={{ color: "red" }}>{errors.password.message}</p>
-              )}
-              <label>Password</label>
-            </div>
-            <div className="user-box">
-              <input
-                className="input"
-                type="text"
+              <Input
+                className="form-field"
+                type="password"
                 name="newPassword"
+                id="newPassword"
+                placeholder="New Password"
                 ref={register}
+                errorClasses="myError animation a1"
               />
-              {errors.newPassword && (
-                <p style={{ color: "red" }}>{errors.newPassword.message}</p>
-              )}
-              <label>New Password</label>
-            </div>
-            <div className="save">
-              <input className="a" type="submit" value="Submit" />
-            </div>
-          </form>
+              <a className="changeBtn" href="#">Submit</a>
+            </form>
+          </div>
         </div>
       </div>
     </React.Fragment>

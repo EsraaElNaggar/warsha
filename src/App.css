@@ -45,9 +45,9 @@ body{
     font-family: var(--leckerliOne);
     color: var(--blue);
     font-size: 85px;
-    font-weight: 100;
+    font-weight: 100 ;
     margin: auto;
-    text-decoration: none;
+    text-decoration: none !important;
 }
 .logLeft a span, .logo span{
     background-color: var(--white);
@@ -63,7 +63,7 @@ body{
     font-size: x-large;
 }
 /* ? right side form */
-.form{
+.form, .forma{
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -85,7 +85,7 @@ body{
   margin-bottom: 15px;
   margin-top: 0;
 }
-.form .form-field {
+.form .form-field, .forma .form-field {
     height: 46px;
     padding: 0 16px;
     border:none;
@@ -100,7 +100,7 @@ body{
   color: red;
   font-size: small;
 }
-.form > .formBtn, .formBtn {
+.form > .formBtn, .formBtn, .changeBtn {
   padding: 12px;
   border: 0;
   background-color: var(--blue); 
@@ -236,7 +236,7 @@ a.logo:hover{
   margin: 15% 0;
 }
 .contWrap .form textarea{height: auto; margin-bottom: 0;}
-.contWrap .form .formBtn{
+.contWrap .form .formBtn, .changeBtn {
   width: 25%;
   margin: auto;
   background-color: var(--salamon);
@@ -244,7 +244,7 @@ a.logo:hover{
   border-bottom: 3px solid var(--white);
   box-shadow: 0px 2px 9px var(--salamon);
 }
-.contWrap .form .formBtn:hover{
+.contWrap .form .formBtn:hover, .changeBtn:hover{
   color: var(--salamon);
   background-color: var(--white);
   border-bottom: 3px solid var(--salamon);
@@ -270,6 +270,7 @@ nav .parts .logo{
   padding: 1px;
   margin: 0 25px 0 0;
 }
+
 nav .parts .logo span{
   font-size: 25px;
   padding: 1px 5px;
@@ -283,7 +284,7 @@ nav a, .navUser {
   text-decoration: none !important;
   color: var(--blue);
 }
-nav button, .navUser{
+nav button,.navBtn, .navUser{
   margin: auto 0 auto 20px;
   background-color: var(--blue);
   border: none;
@@ -293,7 +294,7 @@ nav button, .navUser{
   color: var(--white);
   box-shadow: 0px 0px 5px var(--blue);
 }
-nav button:hover{
+nav button:hover, .navBtn:hover{
   background-color: var(--dark-blue);
   box-shadow: 0px 2px 9px var(--dark-blue);
 }
@@ -332,7 +333,11 @@ nav.white .logo span{
   background-color: var(--blue);
   color: var(--white);
 }
-
+nav a.logo:hover{
+  color:var(--blue);
+  font-weight: 100; 
+  border-bottom: none; 
+}
 .td{
     padding-left: 5%;
     display: table-cell;
@@ -972,6 +977,73 @@ margin-right: 5%;
   background-color: var(--dark-blue);
 }
 
+/* TODO Customer-profile */
+.body{
+  background-color: var(--dark-blue);
+    display: flex;
+    justify-content: space-around;
+    padding: 5% 8%;
+}
+.body .content {
+    background-color: white;
+    border-radius: 10px;
+    height: -moz-fit-content;
+    height: fit-content;
+    width: 16%;
+}
+.body .content ul{
+  list-style: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 7px 0px var(--dark-blue);
+}
+.body .content ul li{
+  text-align: left;
+    padding: 15px;
+    white-space: pre-line;
+    color: var(--dark-grey);
+}
+.login-box {
+  width: 70%;
+    height: fit-content;
+}
+.login-box .booking-info{
+  background-color: var(--white);
+  width: 85%;
+}
+.login-box .booking-info .booking-info-title{
+  color: var(--white);
+    font-size: larger;
+    font-weight: 600;
+    background-color: var(--blue);
+    border: none;
+    margin-bottom: 3%;
+}
+.login-box .forma{
+  width: 65%;
+}
+.login-box form a.changeBtn{
+  text-align: center;
+    text-decoration-line: none;
+    margin: 3% 0 3% 0;
+}
+.user-box{
+  display: flex;
+  align-items: flex-start;
+  padding: 3%;
+}
+.user-box .labels{
+     display: flex;
+    flex-flow: column;
+        margin: 7% 5%;
+}
+.user-box .labels label{
+  margin-bottom: 32%;
+    font-family: var(--oswald);
+    font-size: larger;
+}
 
 
 

@@ -20,40 +20,47 @@ class CustomerProfileDetails extends Component {
     return (
       <React.Fragment>
         <div className="login-box top-space">
-          <h2>Your Profile</h2>
-
-          <div className="user-box">
-            <label>{this.state.userData.firstName}</label>
-          </div>
-          <div className="user-box">
-            <label>{this.state.userData.lastName}</label>
-          </div>
-          <div className="user-box">
-            <label>{this.state.userData.email}</label>
-          </div>
-          <div className="user-box">
-            <label>{this.state.userData.address}</label>
-          </div>
-          <div className="position">
-            <label>{this.state.userData.city}</label>
-            <label>{this.state.userData.area}</label>
-          </div>
-
-          <div className="user-box">
-            <label>Car details</label>
-
-            <div className="position">
-              <label>{this.state.userData.carDetails.brand}</label>
-              <br />
-
-              <label>{this.state.userData.carDetails.model}</label>
-              <br />
-
-              <label>{this.state.userData.carDetails.year}</label>
+          <div className="booking-info b-radius-10 div-border">
+            <h2 className="booking-info-title">Your Profile</h2>
+            <h2>Car details</h2>
+            <div className="user-box">
+              <div className="labels">
+                <h5 htmlFor="password">Password</h5>
+                <h5 htmlFor="newPassword">New Password</h5>
+              </div>
+              <div className="forma">
+                <p>{this.state.userData.firstName} {this.state.userData.lastName}</p>
+                <p>{this.state.userData.email}</p>
+              </div>
+            </div>
+            <h2>Car details</h2>
+            <div className="user-box">
+              <div className="labels">
+                <h5 htmlFor="password">Password</h5>
+                <h5 htmlFor="newPassword">New Password</h5>
+              </div>
+              <div className="forma">
+                <p>{this.state.userData.address}</p>
+                <p>{this.state.userData.city}</p>
+                <p>{this.state.userData.area}</p>
+              </div>
+            </div>
+            <h2>Car details</h2>
+            <div className="user-box">
+              <div className="labels">
+                <h5 htmlFor="password">Password</h5>
+                <h5 htmlFor="newPassword">New Password</h5>
+              </div>
+              <div className="forma">
+                <p>{this.state.userData.carDetails.brand}</p>
+                <p>{this.state.userData.carDetails.model}</p>
+                <p>{this.state.userData.carDetails.year}</p>
+              </div>
             </div>
           </div>
         </div>
-      </React.Fragment>
+
+      </React.Fragment >
     );
   }
 }
