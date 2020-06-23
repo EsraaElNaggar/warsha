@@ -47,7 +47,7 @@ const ContactUs = () => {
   return (
     <React.Fragment>
       <div className="contWrap">
-        <Link to="#" className="logo animation a1">
+        <Link to="/" className="logo animation a1">
           <span>W</span>arsha
         </Link>
         <form onSubmit={handleSubmit(onSubmit)} className="form animation a1">

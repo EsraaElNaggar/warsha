@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import "../../node_modules/@fortawesome/fontawesome-free/css/all.css";
+import "../../../node_modules/@fortawesome/fontawesome-free/css/all.css";
+//import "../../node_modules/@fortawesome/fontawesome-free/css/all.css";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 
