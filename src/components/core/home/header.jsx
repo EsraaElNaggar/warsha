@@ -11,17 +11,6 @@ class Header extends Component {
                 <Nav className="white" />
 
                 {/* Banner */}
-<<<<<<< HEAD
-                <section className="banner">
-                    <article className="Talal-banner-shape"></article>
-                    <article className="Talal-banner-introduction">
-                        <div>
-                            <span>Find</span> the best mechanics in Egypt
-                        </div> 
-                        <i className="fas fa-angle-down Talal-angle-down"></i>
-                    </article>
-                    <article className="Talal-banner-image"></article>
-=======
                 <section className="logWrap landWrap">
                     <div className="logLeft land">
                         <Link href="/"><span>W</span>arsha</Link>
@@ -31,7 +20,6 @@ class Header extends Component {
                         <p className="pBook">Book online now !</p>
                     </div>
                     <div className="landPic" ></div>
->>>>>>> 08feafecb1feb1f73ba41fe8ddea94261ce18ca6
                 </section>
             </React.Fragment>
         );

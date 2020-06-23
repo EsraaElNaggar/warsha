@@ -38,13 +38,9 @@ class SignUpUser3 extends Component {
         return (
             <React.Fragment>
                 <div className="form1Wrap myHeight">
-<<<<<<< HEAD
                     <Link to="/" className="logo animation a1">
                         <span>W</span>arsha
                     </Link>
-=======
-                    <a href="/" className="logo animation a1"><span>W</span>arsha</a>
->>>>>>> 08feafecb1feb1f73ba41fe8ddea94261ce18ca6
                     <h2 className="animation a1">
                         Welcome to our website !
                     </h2>
