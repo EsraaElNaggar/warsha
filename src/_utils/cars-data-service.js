@@ -1,4 +1,5 @@
 
+// all car brands names
 const carBrands = [
     {
         label: "Abarth",
@@ -358,6 +359,7 @@ const carBrands = [
     }
 ];
 
+// all center services types
 const centerServices = [
     {
         label: '4x4 Services',
@@ -465,14 +467,17 @@ const centerServices = [
     }
 ];
 
+// get all car brands names
 export function getCarBrands(){
     return carBrands;
 }
 
+// get all center services types
 export function getCenterServices(){
     return centerServices;
 }
 
+// get car models of a chosen car brand
 export async function getBrandModels(brand) {
 
     const where = encodeURIComponent(JSON.stringify({
@@ -495,6 +500,7 @@ export async function getBrandModels(brand) {
       return models;
 }
 
+// get car years of a chosen car model
 export async function getModelYears(model) {
     const where = encodeURIComponent(JSON.stringify({
         "Model": model

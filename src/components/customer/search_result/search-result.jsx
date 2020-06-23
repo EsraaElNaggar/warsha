@@ -1,14 +1,29 @@
 import React, { Component } from 'react';
 
+import Nav from './../../core/nav/nav';
 import SearchFilters from './search-filters';
+import Dropdown from './../../common/dropdown';
 import CenterCard from './center-card';
+import Footer from './../../core/footer';
 
 class SearchResult extends Component {
-    state = {  }
+    state = { 
+        sortOptions: [
+            'A to Z',
+            'Z to A',
+            'Top Rated',
+        ]
+     };
+
     render() { 
         return ( 
             <React.Fragment>
-                <div className="container row pt-3 m-auto">
+
+                {/* Navbar */}
+                <Nav className="white"/>
+
+                {/* Search Result Container */}
+                <div className="container row pt-5 m-auto">
                     {/* Filters Container */}
                     <SearchFilters/> 
 
@@ -19,29 +34,36 @@ class SearchResult extends Component {
                                 <h5>All Specialities <span className="no-of--all-centers">1050 Centers</span> </h5>
                                 {/* Sort Options Start */}
                                 <div>
+                                {/*}
                                     <select id="sort" name="sort" className="sort-options">
-                                    <option value="default" selected>Select Option</option>
-                                    {/* {this.state.options.map(opt => (
-                                    <option value={opt.value}>
-                                        {opt.name}
-                                    </option>
-                                    ))} */}
-                                    <option value="best-match">Best Match</option>
-                                    <option value="top-rated">Top Rated</option>
-                                    <option value="price-low-to-hight">Price Low To Hight</option>
-                                    <option value="les-waiting-time">Less Waiting Time</option>
-                                </select>
+                                    <option value="defaultValue" >Select Option</option>
+                                    <option value="a-to-z" id='1'>A to Z</option>
+                                    <option value="z-to-a" id='2'>Z to A</option>
+                                    <option value="top-rated" id='3'>Top Rated</option>
+                                    <option value="less-waiting-time" id='4'>Less Waiting Time</option>
+                                </select> */}
+                                {/* <Dropdown
+                                    header={"Sort Option"}
+                                    list={this.state.sortOptions}
+                                /> */}
                                 </div>
                                 {/* Sort Options End */}
                             </div>
 
-                            {/* Center Card */}
-                            <CenterCard/>
-
+                            {/* Centers Cards */}
+                            {this.props.centers.map(center=>(
+                                <CenterCard
+                                    key={center.id}
+                                    center={center}
+                                />
+                            ))}
                         </div>
                     </div>
                     {/* Centers Cards Container End */}
                 </div>
+
+                {/* Footer */}
+                <Footer/>
             </React.Fragment>
         );
     }

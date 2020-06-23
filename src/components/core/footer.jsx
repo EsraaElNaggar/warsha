@@ -6,10 +6,12 @@ const Footer = () => {
         <React.Fragment>
             <footer>
                 <div className="footer">
-                    <Link to="/" className="logo"><span>W</span>arsha</Link>
-                    <div><Link to="">About us</Link></div>
-                    <div><Link to="">Contact us</Link></div>
-                    <div><Link to="">Warsha for Centers</Link></div>
+                    <Link to="/" className="logo">
+                        <span>W</span>arsha
+                    </Link>
+                    <div><Link to="/aboutus">About us</Link></div>
+                    <div><Link to="/contactus">Contact us</Link></div>
+                    <div><Link to="/centersignup">Warsha for Centers</Link></div>
                     <div>
                         {/* <a to=""><i className="fab fa-facebook"></i></a> */}
                         {/* <a to=""><i className="fab fa-twitter"></i></a> */}

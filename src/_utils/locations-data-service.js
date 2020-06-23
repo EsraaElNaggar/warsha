@@ -1,3 +1,5 @@
+
+// cities names
 const cities = [
     {
         lable: 'Cairo',
@@ -13,6 +15,7 @@ const cities = [
     }
 ];
 
+// areas of cities
 const areas = [
     {
         city: 'Cairo',
@@ -48,14 +51,16 @@ const areas = [
     }
 ];
 
+// get cities
 export function getCities() {
     return cities;
 }
 
+// get areas of a chosen city
 export function getAreas(city) {
     const cityAreas = areas.filter(obj=>(
         obj.city === city 
     ));
     
-    return cityAreas.areas;
+    return cityAreas[0].areas;
 }

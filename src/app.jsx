@@ -37,15 +37,22 @@ import CustomerProfile from './components/customer/customer_profile/customer-pro
 import ContactUs from './components/forms/contactUs';
 import LoginCenter from './components/Authentication/login-center';
 import SignupCenter from './components/Authentication/signup-center';
-import BookingInfo from './components/customer/center_profile/booking-info';
-import BookingDetails from './components/customer/appointment_confirmation/booking-details';
-import CenterProfile from './components/customer/center_profile/center-profile';
-import Appointment from './components/center/appointments_day/appointment';
+import SearchResult from './components/customer/search_result/search-result';
+import FilterList from './components/filterList';
 
 class App extends Component {
-  state = {}
+  state = {
+    searchResult: []
+  };
+
+  // search data handler
+  handleSearch = searchResult => {
+    this.setState({ searchResult });
+  };
+
   render() {
     return (
+
       <React.Fragment>
         <CustomerProfile />
         <Appointment />
@@ -59,17 +66,33 @@ class App extends Component {
           <Route path="/signup" component={SignupUser} />
 
           {/* Home */}
-          <Route path="/home" exact component={Home} />
+          <Route path="/home" exact
+            render={props => (
+              <Home
+                {...props}
+                handleSearch={this.handleSearch}
+              />
+            )}
+          />
 
           {/* About Us */}
-          <Route path="/aboutus" exact component={AboutUs} />
+          <Route path="/aboutus" component={AboutUs} />
 
           {/* Contact Us */}
-          <Route path="/contactus" exact component={ContactUs} />
+          <Route path="/contactus" component={ContactUs} />
 
           {/* My Profile */}
           <Route path="/myprofile" component={CustomerProfile} />
 
+          {/* Search Result */}
+          <Route path="/searchresult"
+            render={props => (
+              <SearchResult
+                {...props}
+                centers={this.state.searchResult}
+              />
+            )}
+          />
 
           {/* Center Interface */}
 

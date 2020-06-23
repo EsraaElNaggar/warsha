@@ -1,24 +1,36 @@
-import React from 'react'
+import React, {Component} from 'react'
 
 import Header from './header';
 import SearchBar from './search-bar';
 import WhyUs from './why-us';
 import Footer from '../footer';
 
-export default function Home(props) {
-    return (
-        <React.Fragment>
-            {/* Header */}
-            <Header/>
+class Home extends Component {
 
-            {/* Home Container */}
-            <section className="full-height-container credits">
-                <SearchBar/>
-                <WhyUs/>
-            </section>
+    handleSearch = searchResult =>{
+        this.props.handleSearch(searchResult);
+        this.props.history.replace("searchresult");
+    };
 
-            {/* Footer */}
-            <Footer/>
-        </React.Fragment>
-    );
+    render() { 
+        return ( 
+            <React.Fragment>
+                {/* Header */}
+                <Header/>
+
+                {/* Home Container */}
+                <section className="full-height-container credits">
+                    <SearchBar 
+                        handleSearch={this.handleSearch}
+                    />
+                    <WhyUs/>
+                </section>
+
+                {/* Footer */}
+                <Footer/>
+            </React.Fragment>
+         );
+    }
 }
+ 
+export default Home;
