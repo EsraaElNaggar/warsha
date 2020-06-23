@@ -63,7 +63,7 @@ class LoginUser extends Component {
 
     // login backend call
     login = ({email, password}) =>{
-        axios.post(process.env.REACT_APP_BACKEND_URL+"/users", {
+        axios.post("http://localhost:3000/users", {
         email,
         password
         }).then(res=>{

@@ -73,7 +73,7 @@ class SignupUser extends Component {
 
     // signup backend 
     register = ({fName, lName, email, password, carBrand, carModel, carYear, address, city, area}) =>{
-        axios.post(process.env.REACT_APP_BACKEND_URL+"/users", {
+        axios.post("http://localhost:3000/users", {
             fName,
             lName,
             email,

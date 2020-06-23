@@ -1955,7 +1955,7 @@ footer p{
   font-family: var(--oswald);
   font-weight: bold;
 }
-.quick-booking div{
+.search-form{
   width: 70%;
     padding: 1%;
     margin: 2rem 0px;
@@ -1966,7 +1966,7 @@ footer p{
     border-radius: 50px;
     box-shadow: 0px 0px 5px var(--blue);
 }
-.quick-booking div select{
+.quick-booking .search-form select{
     border-color: var(--white);
     outline: none;
     border-bottom: 0.2rem solid var(--blue);
@@ -1976,12 +1976,12 @@ footer p{
     width: 20%;
     text-transform: capitalize;
 }
-.quick-booking div option{
+.quick-booking .search-form option{
   outline: none;
   border: none;
   text-transform: capitalize;
 }
-.quick-booking div button{
+.quick-booking .search-form button{
   border: none;
   color: var(--white);
   background-color: var(--blue);
@@ -1990,7 +1990,7 @@ footer p{
   width: 7%;
   border-radius: 50%;
 }
-.quick-booking div button:hover{
+.quick-booking .search-form button:hover{
   background-color: var(--dark-blue);
   box-shadow: 0px 0px 2px var(--dark-blue);
 }

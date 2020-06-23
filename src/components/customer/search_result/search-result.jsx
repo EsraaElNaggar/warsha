@@ -6,6 +6,7 @@ import CenterCard from './center-card';
 class SearchResult extends Component {
     state = {  }
     render() { 
+        console.log(this.props);
         return ( 
             <React.Fragment>
                 <div className="container row pt-3 m-auto">
@@ -20,16 +21,16 @@ class SearchResult extends Component {
                                 {/* Sort Options Start */}
                                 <div>
                                     <select id="sort" name="sort" className="sort-options">
-                                    <option value="default" selected>Select Option</option>
+                                    <option value="defaultValue" >Select Option</option>
                                     {/* {this.state.options.map(opt => (
                                     <option value={opt.value}>
                                         {opt.name}
                                     </option>
                                     ))} */}
-                                    <option value="best-match">Best Match</option>
-                                    <option value="top-rated">Top Rated</option>
-                                    <option value="price-low-to-hight">Price Low To Hight</option>
-                                    <option value="les-waiting-time">Less Waiting Time</option>
+                                    <option value="a-to-z" id='1'>A to Z</option>
+                                    <option value="z-to-a" id='2'>Z to A</option>
+                                    <option value="top-rated" id='3'>Top Rated</option>
+                                    <option value="less-waiting-time" id='4'>Less Waiting Time</option>
                                 </select>
                                 </div>
                                 {/* Sort Options End */}
