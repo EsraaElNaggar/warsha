@@ -12,7 +12,8 @@ class MainProfileDataCenter extends Component {
       phone: "15154541",
       onLocationService: true,
       views: 2500,
-      bookings: 100
+      bookings: 100,
+      
     }
   };
   infoHandler = i => {

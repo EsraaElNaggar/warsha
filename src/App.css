@@ -163,7 +163,7 @@ body{
   color: white;
   background-color: var(--blue);
 }
-.landPic{
+.landPic, .aboutUs, .aboutTeam, .mo,.es,.ha,.ta{
   width: 45%;
   height: 85%;
   background-size: cover;
@@ -291,6 +291,9 @@ nav a, .navUser {
   font-size: smaller;
   text-decoration: none !important;
   color: var(--blue);
+}
+a.itemNavCont.dropdown-item {
+    color: white;
 }
 nav button,.navBtn, .navUser{
   margin: auto 0 auto 20px;
@@ -1135,6 +1138,76 @@ width: fit-content;
 } */
 .col-flex .appDel, .col-flex .appRep{
   width: fit-content !important;
+}
+
+/* TODO About us */
+.logWrap.landWrap.about{
+  padding: 0 8%;
+}
+.logLeft.aboutt{
+  flex: 2;
+  text-align: center;
+}
+.aboutWarsha{
+  text-align: center;
+    /* width: 50% !important; */
+    margin: 1% 5% !important;
+}
+
+.aboutUs, .aboutTeam{
+  background-image: url("/assets/aboutus.svg");
+  width: 100%;
+  flex: 3;
+  background-size: contain;
+}
+.logWrap.landWrap.team{
+  flex-direction: row-reverse;
+    align-items: center;
+}
+.miniALine{ 
+     width: 20%;
+    height: 7px;
+    background-color: var(--salamon);
+    margin: 0 auto 0 39.5%;
+  }
+.whoAreWe{
+  text-align: center;
+    padding: 0 10%;
+}
+.aboutTeam{
+  flex: 1;
+  background-image: url("/assets/team.svg");
+}
+.flexii{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.mo,.es,.ha,.ta{
+  border-radius: 50%;
+margin: 8% 0;
+  width: 200px;
+    height: 200px;
+    overflow: hidden;
+    background-size: contain;
+}
+.flexii h3{
+  font-size: x-large;
+    font-family: var(--oswald);
+    margin: 0;
+}
+.flexii p {font-size: medium;}
+.mo{
+  background-image: url("/assets/MonaMohamed2.jpeg");
+}
+.es{
+  background-image: url("/assets/EsraaElNaggar2.jpeg");
+}
+.ha{
+  background-image: url("/assets/MariamHasan2.jpg");
+}
+.ta{
+  background-image: url("/assets/MaryamTalal.jpeg");
 }
 
 /* TODO Tags */

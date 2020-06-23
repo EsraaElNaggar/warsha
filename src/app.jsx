@@ -96,7 +96,7 @@ class App extends Component {
           <Route path="/centersignup" component={SignupCenter} />
 
           {/* Center Profile */}
-          <Route path="/centerprofile" component={MainProfileDataCenter} />
+          <Route path="/centermainprofile" component={MainProfileDataCenter} />
 
           {/* Add Appointments */}
           <Route path="/addappointments" component={AddAppointmentCenter} />
