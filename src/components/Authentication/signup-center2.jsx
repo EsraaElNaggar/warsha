@@ -4,6 +4,7 @@ import Input from '../common/input';
 class SignupCenter2 extends Component {
     state = {
         data: {
+            location: "",
             address: "",
             city: "",
             area: ""
@@ -58,13 +59,25 @@ class SignupCenter2 extends Component {
 
                         <Input
                             type="text"
+                            name="location"
+                            id="location"
+                            placeholder="Main Location"
+                            className="form-field animation a2"
+                            value={this.state.data.location}
+                            onChange={this.handleChange}
+                            errorClasses="myError animation a1"
+                            autoFocus
+                        />
+
+                        <Input
+                            type="text"
                             name="address"
                             id="address"
                             placeholder="Address"
-                            className="form-field animation a2"
+                            className="form-field animation a3"
                             value={this.state.data.address}
                             onChange={this.handleChange}
-                            errorClasses="myError animation a2"
+                            errorClasses="myError animation a1"
                             autoFocus
                         />
 

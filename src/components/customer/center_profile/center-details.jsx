@@ -6,18 +6,30 @@ import CenterBasicDetails from './center-basic-details';
 
 const CenterDetails = props => {
    
+    const center = props.center;
+
     return ( 
         <React.Fragment>
             <div className="center-details">                
                 {/* Center Basic Details */}
-                <CenterBasicDetails/> {/*  send basic info */}
+                <CenterBasicDetails
+                    center={center}
+                />
 
                 {/* Center About */}
-                <CenterAbout/>   {/*  send about content */}
+                <CenterAbout
+                    about={center.about}
+                />
 
                 {/* Center Services */}
-                <CenterServices/>  {/*  send services array */}
-
+                
+                {
+                    center.services.length !== 0 &&
+                    <CenterServices
+                        services={center.services}
+                    />
+                }
+                
                 {/* Remember to add reviews here */}
             </div>
         </React.Fragment>

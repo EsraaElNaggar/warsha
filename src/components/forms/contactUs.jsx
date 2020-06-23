@@ -71,7 +71,7 @@ const ContactUs = () => {
                 ref={register}
               />
               {errors.name && (
-                <p style={{ color: "red" }}>{errors.name.message}</p>
+                <div className="myError animation a1">{errors.name.message}</div>
               )}
               <input
                 type="text"
@@ -82,7 +82,7 @@ const ContactUs = () => {
                 ref={register}
               />
               {errors.number && (
-                <p style={{ color: "red" }}>{errors.number.message}</p>
+                <div className="myError animation a1">{errors.number.message}</div>
               )}
               <input
                 type="email"
@@ -93,7 +93,7 @@ const ContactUs = () => {
                 ref={register}
               />
               {errors.email && (
-                <p style={{ color: "red" }}>{errors.email.message}</p>
+                <div className="myError animation a1">{errors.email.message}</div>
               )}
               <textarea
                 name="comment"
@@ -105,7 +105,7 @@ const ContactUs = () => {
                 ref={register}
               />
               {errors.comment && (
-                <p style={{ color: "red" }}>{errors.comment.message}</p>
+                <div className="myError animation a1">{errors.comment.message}</div>
               )}
             </div>
           </div>

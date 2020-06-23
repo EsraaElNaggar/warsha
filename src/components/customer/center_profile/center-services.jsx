@@ -1,7 +1,9 @@
 import React from 'react';
 
 const CenterServices = props => {
-   
+    
+    const services = props.services;
+
     return ( 
         <React.Fragment>
             <div className="center-services b-radius-10 div-border">
@@ -24,7 +26,7 @@ const CenterServices = props => {
                         <span className="service-tag">Bla Bla</span>
                         <span className="service-tag">Blaaaa</span> */}
                         {
-                            props.services.map(service => 
+                            services.map(service => 
                                 <span className="service-tag">{service}</span>
                             )
                         }

@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import MultiSelect from "react-multi-select-component";
+import Input from '../common/input';
 
 class SignupCenter3 extends Component {
     state = {
         data: {
+            speciality: "",
             services: [],
             carBrands: [],
             carModels: [],
@@ -480,6 +482,12 @@ class SignupCenter3 extends Component {
         this.props.handleNext(this.state.data)
     }
 
+    handleChange = ({ target }) => {
+        const data = { ...this.state.data };
+        data[target.id] = target.value;
+        this.setState({ data });
+    };
+
     handleChangeService = (e) => {
         const data = { ...this.state.data };
         data.services = e;
@@ -516,6 +524,21 @@ class SignupCenter3 extends Component {
                     <p className="let animation a1">And now with your services provided for which car's informations.</p>
 
                     <form className="form animation a2" onSubmit={this.handleSubmit}>
+                        <label htmlFor="speciality" className="CenterSignTagsLabels">
+                            Center Speciality :
+                        </label>
+                        <Input
+                            type="text"
+                            name="speciality"
+                            id="speciality"
+                            placeholder="Center Speciality"
+                            className="form-field "
+                            value={this.state.data.location}
+                            onChange={this.handleChange}
+                            errorClasses="myError animation a1"
+                            autoFocus
+                        />
+
                         <label htmlFor="services" className="CenterSignTagsLabels">
                             Services Provided :
                         </label>

@@ -48,9 +48,9 @@ body{
     font-family: var(--leckerliOne);
     color: var(--blue);
     font-size: 85px;
-    font-weight: 100;
+    font-weight: 100 ;
     margin: auto;
-    text-decoration: none;
+    text-decoration: none !important;
 }
 .logLeft a span, .logo span{
     background-color: var(--white);
@@ -66,7 +66,7 @@ body{
     font-size: x-large;
 }
 /* ? right side form */
-.form{
+.form, .forma{
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -88,7 +88,7 @@ body{
   margin-bottom: 15px;
   margin-top: 0;
 }
-.form .form-field {
+.form .form-field, .forma .form-field {
     height: 46px;
     padding: 0 16px;
     border:none;
@@ -103,7 +103,7 @@ body{
   color: red;
   font-size: small;
 }
-.form > .formBtn, .formBtn {
+.form > .formBtn, .formBtn, .changeBtn {
   padding: 12px;
   border: 0;
   background-color: var(--blue); 
@@ -204,7 +204,7 @@ a.logo:hover{
   padding-left:5%
 }
 /* TODO contactUs */
-.contWrap{background-color: var(--dark-blue); padding: 0%;}
+.contWrap{background-color: var(--dark-blue); padding: 0%; height: 100vh;}
 .contWrap .logo{
   font-size: 50px;
   margin: 0 0 1% 0;
@@ -242,7 +242,7 @@ a.logo:hover{
   margin: 15% 0;
 }
 .contWrap .form textarea{height: auto; margin-bottom: 0;}
-.contWrap .form .formBtn{
+.contWrap .form .formBtn, .changeBtn {
   width: 25%;
   margin: auto;
   background-color: var(--salamon);
@@ -250,7 +250,7 @@ a.logo:hover{
   border-bottom: 3px solid var(--white);
   box-shadow: 0px 2px 9px var(--salamon);
 }
-.contWrap .form .formBtn:hover{
+.contWrap .form .formBtn:hover, .changeBtn:hover{
   color: var(--salamon);
   background-color: var(--white);
   border-bottom: 3px solid var(--salamon);
@@ -276,6 +276,7 @@ nav .parts .logo{
   padding: 1px;
   margin: 0 25px 0 0;
 }
+
 nav .parts .logo span{
   font-size: 25px;
   padding: 1px 5px;
@@ -289,7 +290,7 @@ nav a, .navUser {
   text-decoration: none !important;
   color: var(--blue);
 }
-nav button, .navUser{
+nav button,.navBtn, .navUser{
   margin: auto 0 auto 20px;
   background-color: var(--blue);
   border: none;
@@ -299,7 +300,8 @@ nav button, .navUser{
   color: var(--white);
   box-shadow: 0px 0px 5px var(--blue);
 }
-nav button:hover{
+nav button:hover, .navBtn:hover{
+  color: white !important;
   background-color: var(--dark-blue);
   box-shadow: 0px 2px 9px var(--dark-blue);
 }
@@ -328,7 +330,7 @@ nav.tr a:hover{font-weight: 700; border-bottom: 2px solid var(--white);}
 
 /* ? var(--white) nav */
 nav.white{ background-color: var(--white); }
-nav.white a{color:var(--blue);}
+/* nav.white a{color:var(--blue);} */
 nav.white a:hover{
   color:var(--dark-blue); 
   font-weight: 700; 
@@ -338,7 +340,11 @@ nav.white .logo span{
   background-color: var(--blue);
   color: var(--white);
 }
-
+nav a.logo:hover{
+  color:var(--blue);
+  font-weight: 100; 
+  border-bottom: none; 
+}
 .td{
     padding-left: 5%;
     display: table-cell;
@@ -722,9 +728,9 @@ section.appointment-reservation form{
     position: fixed;
     /* top: 3vh; */
     background-color: var(--white);
-    border-radius: 8px;
-    border: 1px solid grey;
-    width: 10rem;
+    border-radius: 10px;
+    border: 1px solid #0000001a;
+    width: 11rem;
     font-size: 15px;
     margin-left: 20px;
 }
@@ -736,9 +742,17 @@ section.appointment-reservation form{
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--blue);
+    color: white;
+    background-color: var(--blue);
     font-size: 1.2rem;
 }
+.search-filters ul.filters{
+    padding: 0% 2%;
+}
+.filters .outerLi{
+  padding: 4%;
+}
+.filters .outerLi:hover{background-color: #1a73e829;}
 .search-filters ul{list-style: none;}
 .filters li div{
   border-top: 1px solid grey;
@@ -767,6 +781,10 @@ section.appointment-reservation form{
 .sort-options{
     border-radius: 5px;
     padding: 5px;
+    border: none;
+    box-shadow: 0px 4px 0px var(--dark-blue);
+    font-family: var(--openSans);
+    color: var(--blue);
 }
 .center-card{
   padding: 3% 2%;
@@ -936,7 +954,7 @@ background-color: var(--blue)!important;
 .client-card-btns{
   width: 100%;
 }
-.checkInBtn, .noShowBtn{
+.checkInBtn, .noShowBtn, .appDel, .appRep {
   width: 50%;
   padding: 3%;
   margin: auto 1%;
@@ -951,7 +969,7 @@ background-color: var(--blue)!important;
   background-color: var(--salamon);
   box-shadow: 0px 0px 2px var(--salamon);
 }
-.checkInBtn:hover{
+.checkInBtn:hover, .appRep:hover{
   color: var(--blue);
   background-color: var(--white);
   border-bottom: 3px solid var(--blue);
@@ -961,6 +979,16 @@ background-color: var(--blue)!important;
   background-color: var(--white);
   border-bottom: 3px solid var(--salamon);
 }
+.appDel{
+  background-color: crimson;
+  box-shadow: 0px 0px 2px crimson;
+}
+.appDel:hover{
+  color: crimson;
+  background-color: var(--white);
+  border-bottom: 3px solid crimson;
+}
+
 .client-card-btns > button i{
 margin-right: 5%;
 }
@@ -978,9 +1006,119 @@ margin-right: 5%;
   background-color: var(--dark-blue);
 }
 
-
-
-
+/* TODO Customer-profile */
+.body{
+  background-color: var(--dark-blue);
+    display: flex;
+    justify-content: space-around;
+    padding: 5% 8%;
+}
+.body .content {
+    background-color: white;
+    border-radius: 10px;
+    height: -moz-fit-content;
+    height: fit-content;
+    width: 16%;
+}
+.body .content ul{
+  list-style: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 7px 0px var(--dark-blue);
+}
+.body .content ul li{
+  text-align: left;
+    padding: 15px;
+    white-space: pre-line;
+    color: var(--dark-grey);
+}
+.login-box {
+  width: 70%;
+    height: fit-content;
+}
+.login-box .booking-info{
+  background-color: var(--white);
+  width: 85%;
+}
+.login-box .booking-info .booking-info-title, .table.login-box thead{
+  color: var(--white);
+    font-size: larger;
+    font-weight: 600;
+    background-color: var(--blue);
+    border: none;
+    margin-bottom: 3%;
+}
+.login-box .booking-info h4{
+  padding: 0 8%;
+    font-family: var(--oswald);
+}
+.login-box .booking-info .miniLine {
+width: 7%;
+margin-top: 0;
+}
+.login-box .user-box .labels{
+      margin: 2% 0 0 15%;
+      width: 25%;
+}
+.login-box .user-box .forma{
+  padding: 2%;
+  color: var(--black);
+}
+.login-box .forma{
+  width: 65%;
+}
+.login-box form a.changeBtn{
+  text-align: center;
+    text-decoration-line: none;
+    margin: 3% 0 3% 0;
+}
+.login-box .user-box.details{
+  padding: 0;
+}
+.login-box .user-box.details .forma span{
+  font-family: var(--oswald);
+  font-size: xx-large;
+  color: var(--blue);
+}
+.login-box .user-box.details .forma p{margin: 0 0 2% 0 !important;}
+.user-box{
+  display: flex;
+  align-items: flex-start;
+  padding: 3%;
+}
+.user-box .labels{
+     display: flex;
+    flex-flow: column;
+        margin: 7% 5%;
+}
+.user-box .labels label{
+  margin-bottom: 32%;
+    font-family: var(--oswald);
+    font-size: larger;
+}
+.table.login-box{
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.table.login-box thead, .table.login-box tbody{width: 85%;}
+.table.login-box thead{
+  text-align: center;
+}
+.table.login-box tbody .td{padding-left: 3%;}
+.td.appDet .appDel, .td.appDet .appRep{
+width: fit-content;
+}
+/* .appDet .col-flex{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start !important;
+} */
+.col-flex .appDel, .col-flex .appRep{
+  width: fit-content !important;
+}
 
 /* TODO Tags */
 .CenterSignTagsLabels{
