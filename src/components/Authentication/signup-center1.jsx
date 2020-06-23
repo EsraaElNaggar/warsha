@@ -77,7 +77,9 @@ class SignupCenter1 extends Component {
             <React.Fragment>
                 <div className="logWrap " style={{ backgroundImage: `url(/assets/bg2.png)` }}>
                     <div className="logLeft">
-                        <a href="#"><span>W</span>arsha</a>
+                        <Link to="/">
+                            <span>W</span>arsha
+                        </Link>
                         <h2><strong> Welcome to Warsha !</strong></h2>
                         <p>Find the <span>Nearest</span> mechanic..</p>
                         <p className="pBook">Book online now !</p>

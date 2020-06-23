@@ -92,7 +92,7 @@ class SignupCenter2 extends Component {
                             className="form-field animation a5"
                         >
                             <option value="0">Select your Area</option>
-                            {data.city == cities[0].name ? areas1.map(area => (
+                            {data.city === cities[0].name ? areas1.map(area => (
                                 <option value={area.name} >
                                     {area.name}
                                 </option>
