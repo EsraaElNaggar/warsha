@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { removeFromStorage } from './../../../_utils/local-storage';
 
 class SubNavAuthonticated extends Component {
     constructor(props) {
@@ -20,32 +21,34 @@ class SubNavAuthonticated extends Component {
         this.setState({ isActive: !this.state.isActive });
     }
 
+    // signout from account
+    signOut = () =>{
+        removeFromStorage('authoToken');
+        removeFromStorage('currentID');
+    }
+
     render() { 
         return ( 
             <React.Fragment>
                 <div className="parts">
-            <button onClick={this.toggle} className="navUser">
-            fName
-            </button>
-            <div
-            className={
-                this.state.isActive ? "dropNav activedrop " : "dropNav "
-            }
-            >
-            <NavLink className="itemNavCont dropdown-item" to="/myprofile">
-                My Profile
-            </NavLink>
-            <div className="dropdown-divider"></div>
-            <a
-                className="itemNavCont dropdown-item"
-                onClick={this.onClick}
-                href="/landingPage"
-            >
-                Sign Out
-            </a>
-            </div>
-            </div>
-        </React.Fragment>
+                    <button onClick={this.toggle} className="navUser">
+                        fName
+                    </button>
+                    <div className={ this.state.isActive ? "dropNav activedrop " : "dropNav "}>
+                        <Link className="itemNavCont dropdown-item" to="/myprofile">
+                            My Profile
+                        </Link>
+                        <div className="dropdown-divider"></div>
+                        <Link
+                            className="itemNavCont dropdown-item"
+                            onClick={this.signOut}
+                            to="/landingPage"
+                        >
+                            Sign Out
+                        </Link>
+                    </div>
+                </div>
+            </React.Fragment>
          );
     }
 }

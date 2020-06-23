@@ -63,30 +63,33 @@ class LoginUser extends Component {
 
     // login backend call
     login = ({userEmail, userPassword}) =>{
-        console.log(userEmail);
 
         axios.get(`http://localhost:3000/users?userEmail=${userEmail}`)
         .then(res=>{
 
-            if(res.data[0].userPassword === userPassword){
-                const token = Math.random();
-                setInStorage('authToken', String(token));
-                setInStorage('currentID', res.data[0].id);
-                this.props.history.replace("/home");
-            }
-            else{
-                toast("Wrong Password", {type:"error"});
+            if (res.data.length !== 0) {
+                if(res.data[0].userPassword === userPassword){
+                    const token = Math.random();
+                    setInStorage('authToken', String(token));
+                    setInStorage('currentID', res.data[0].id);
+                    this.props.history.replace("/home");
+                }
+                else{
+                    toast("Wrong Password", {type:"error"});
+                }
+            } else {
+                toast("Wrong Email", {type:"error"});
             }
         }).catch(err=>{
-            if(err.response.status === 404)
-            {
-                toast(err.response.data, {type:"error"});
-            }
-            else if(err.response.status === 406)
-            {
-                this.setState({errors: {password: err.response.data}});
-            }
-            else toast("Connection Error", {type:"error"});
+            // if(err.response.status === 404)
+            // {
+            //     toast(err.response.data, {type:"error"});
+            // }
+            // else if(err.response.status === 406)
+            // {
+            //     this.setState({errors: {password: err.response.data}});
+            // }else 
+            toast("Connection Error", {type:"error"});
         });
     };
 

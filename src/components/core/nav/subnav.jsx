@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const SubNav = props => {
-   
     return ( 
         <React.Fragment>
             <div className="parts">
@@ -12,7 +11,6 @@ const SubNav = props => {
             </div>
         </React.Fragment>
     );
-    
 };
  
 export default SubNav;
