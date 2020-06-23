@@ -1,17 +1,34 @@
 import React, { Component } from 'react';
 
+import _ from "lodash";
+
 import Nav from './../../core/nav/nav';
 import SearchFilters from './search-filters';
 import CenterCard from './center-card';
 import Footer from './../../core/footer';
+import Sort from '../../common/sort';
 
 class SearchResult extends Component {
     state = {
-        sortOptions: [
-            'A to Z',
-            'Z to A',
-            'Top Rated',
-        ]
+        sortTypes: [
+            { id: "defaultValue", name: "Sort Option" },
+            { id: 1, name: 'A to Z' },
+            { id: 2, name: 'Z to A' },
+            { id: 3, name: 'Top Rated' },
+            { id: 4, name: 'Less Waiting Time' }
+        ],
+        sortOption: '',
+        centers: []
+    };
+
+    componentDidMount() {
+        this.setState({ centers: this.props.centers });
+    }
+
+    // inputs value handler
+    handleChange = ({ target }) => {
+        const sortOption = target.value;
+        this.setState({ sortOption });
     };
 
     openCenterProfile = center => {
@@ -20,6 +37,27 @@ class SearchResult extends Component {
     };
 
     render() {
+
+        let sortedCentered = [];
+        let searchedCenters = this.state.centers;
+        if (this.state.sortOption === '1') {
+            sortedCentered = _.orderBy(searchedCenters, 'centerName', 'asc');
+        }
+        else if (this.state.sortOption === '2') {
+            sortedCentered = _.orderBy(searchedCenters, 'centerName', 'desc');
+
+        }
+        else if (this.state.sortOption === '3') {
+            sortedCentered = _.orderBy(searchedCenters, 'totalRating', 'asc');
+        }
+        else if (this.state.sortOption === '4') {
+            sortedCentered = _.orderBy(searchedCenters, 'waitingTime', 'desc');
+        }
+        else {
+            sortedCentered = searchedCenters;
+        }
+        console.log(sortedCentered);
+
         return (
             <React.Fragment>
 
@@ -39,20 +77,16 @@ class SearchResult extends Component {
                                     <h5>All Specialities <span className="no-of--all-centers">1050 Centers</span> </h5>
                                     {/* Sort Options Start */}
                                     <div>
-
-                                        <select id="sort" name="sort" className="sort-options">
-                                            <option value="defaultValue" >Sort Option</option>
-                                            <option value="a-to-z" id='1'>A to Z</option>
-                                            <option value="z-to-a" id='2'>Z to A</option>
-                                            <option value="top-rated" id='3'>Top Rated</option>
-                                            <option value="less-waiting-time" id='4'>Less Waiting Time</option>
-                                        </select>
+                                        <Sort
+                                            activeSort={this.state.sortOption}
+                                            sortTypes={this.state.sortTypes}
+                                            onSortChange={this.handleChange}
+                                        />
                                     </div>
-                                    {/* Sort Options End */}
                                 </div>
 
                                 {/* Centers Cards */}
-                                {this.props.centers.map(center => (
+                                {sortedCentered.map(center => (
                                     <CenterCard
                                         key={center.id}
                                         center={center}
