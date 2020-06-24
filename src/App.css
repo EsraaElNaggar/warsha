@@ -104,7 +104,7 @@ body{
   color: red;
   font-size: small;
 }
-.form > .formBtn, .formBtn, .changeBtn {
+.form > .formBtn, .formBtn, .changeBtn, .appSave {
   padding: 12px;
   border: 0;
   background-color: var(--blue); 
@@ -163,7 +163,7 @@ body{
   color: white;
   background-color: var(--blue);
 }
-.landPic{
+.landPic, .aboutUs, .aboutTeam, .mo,.es,.ha,.ta{
   width: 45%;
   height: 85%;
   background-size: cover;
@@ -244,7 +244,7 @@ a.logo:hover{
   width: fit-content;
 }
 .contWrap .form textarea{height: auto; margin-bottom: 0;}
-.contWrap .form .formBtn, .changeBtn {
+.contWrap .form .formBtn, .changeBtn, .appSave {
   width: 25%;
   margin: auto;
   background-color: var(--salamon);
@@ -252,7 +252,7 @@ a.logo:hover{
   border-bottom: 3px solid var(--white);
   box-shadow: 0px 2px 9px var(--salamon);
 }
-.contWrap .form .formBtn:hover, .changeBtn:hover{
+.contWrap .form .formBtn:hover, .changeBtn:hover, .appSave:hover{
   color: var(--salamon);
   background-color: var(--white);
   border-bottom: 3px solid var(--salamon);
@@ -273,13 +273,13 @@ nav .parts{
   justify-content: space-around;
   margin: auto 10%;
 }
-nav .parts .logo{
+nav .parts .logo, div.white.tab .logo{
   font-size: 25px;
   padding: 1px;
   margin: 0 25px 0 0;
 }
 
-nav .parts .logo span{
+nav .parts .logo span, div.white.tab .logo span{
   font-size: 25px;
   padding: 1px 5px;
 }
@@ -287,10 +287,13 @@ nav .parts div{
   width: fit-content;
   margin: 3% 10px;
 }
-nav a, .navUser {
+nav a, .navUser  {
   font-size: smaller;
   text-decoration: none !important;
   color: var(--blue);
+}
+a.itemNavCont.dropdown-item {
+    color: white;
 }
 nav button,.navBtn, .navUser{
   margin: auto 0 auto 20px;
@@ -338,7 +341,7 @@ nav.white a:hover{
   font-weight: 700; 
   border-bottom: 2px solid var(--dark-blue);
 }
-nav.white .logo span{ 
+nav.white .logo span, div.white.tab .logo span{ 
   background-color: var(--blue);
   color: var(--white);
 }
@@ -564,6 +567,7 @@ section.appointment-reservation form{
     font-size: 22px;
     color: rgb(128, 129, 132);
 }
+.center-basic-name span{color:var(--blue)}
 .no-of-views{
     font-size: 15px;
     font-weight: 600;
@@ -627,6 +631,7 @@ section.appointment-reservation form{
   color: var(--dark-blue);
   border-radius: 6px;
   background-color: #1A73e829;
+  margin: 5px;
 }
 .border-y{
     border-top: 1px solid var(--blue);
@@ -682,6 +687,7 @@ section.appointment-reservation form{
     border: none;
     border-bottom: 3px solid var(--salamon);
     color: var(--salamon);
+    box-shadow: 0px 1px 3px;
 }
 .arrow button:hover{
   border: none;
@@ -695,6 +701,7 @@ section.appointment-reservation form{
     font-size: 16px;
     height: 190px;
     border-radius: 5px;
+    box-shadow: 0px 1px 3px;
 }
 .appointment-board:hover{
   box-shadow: 0px 0px 7px var(--dark-blue);
@@ -741,15 +748,20 @@ section.appointment-reservation form{
 
 
 /* TODO search result */
+section.searchR {
+  background-color: var(--bg);
+  margin-top: 2px;
+}
 .search-filters{
     position: fixed;
     /* top: 3vh; */
     background-color: var(--white);
     border-radius: 10px;
-    border: 1px solid #0000001a;
+    /* border: 1px solid #0000001a; */
     width: 11rem;
     font-size: 15px;
     margin-left: 20px;
+    box-shadow: 0px 1px 3px;
 }
 .filters-title{
     margin: 0;
@@ -799,15 +811,18 @@ section.appointment-reservation form{
     border-radius: 5px;
     padding: 5px;
     border: none;
-    box-shadow: 0px 2px 0px var(--dark-blue);
+    border-bottom: 2px solid var(--dark-blue);
+    box-shadow: 0px 1px 3px #a9a9a9;
     font-family: var(--openSans);
     color: var(--blue);
 }
 .center-card{
   padding: 3% 2%;
   margin-bottom: 20px;
-  background-color: #8ba2bd1c;
+  /* background-color: #8ba2bd1c; */
+  background-color: white;
   border-radius: 10px;
+  box-shadow: 0px 1px 3px;
 }
 .center-card-img{
     width: 50px;
@@ -980,7 +995,7 @@ background-color: var(--blue)!important;
   border-radius: 5px;
   border: none;
   border-bottom: 3px solid var(--white);
-  box-shadow: 0px 0px 2px var(--blue);
+  /* box-shadow: 0px 0px 2px var(--blue); */
 }
 .noShowBtn{
   background-color: var(--salamon);
@@ -989,7 +1004,7 @@ background-color: var(--blue)!important;
 .checkInBtn:hover, .appRep:hover{
   color: var(--blue);
   background-color: var(--white);
-  border-bottom: 3px solid var(--blue);
+  border-bottom: 1px solid var(--blue);
 }
 .noShowBtn:hover{
   color: var(--salamon);
@@ -998,12 +1013,12 @@ background-color: var(--blue)!important;
 }
 .appDel{
   background-color: crimson;
-  box-shadow: 0px 0px 2px crimson;
+  /* box-shadow: 0px 0px 2px crimson; */
 }
 .appDel:hover{
   color: crimson;
   background-color: var(--white);
-  border-bottom: 3px solid crimson;
+  border-bottom: 1px solid crimson;
 }
 
 .client-card-btns > button i{
@@ -1025,10 +1040,11 @@ margin-right: 5%;
 
 /* TODO Customer-profile */
 .body{
-  background-color: var(--dark-blue);
+  background-color: var(--bg);
     display: flex;
     justify-content: space-around;
     padding: 5% 8%;
+    margin-top: 2px;
 }
 .body .content {
     background-color: white;
@@ -1036,6 +1052,7 @@ margin-right: 5%;
     height: -moz-fit-content;
     height: fit-content;
     width: 16%;
+    box-shadow: 0px 1px 3px;
 }
 .body .content ul{
   list-style: none;
@@ -1043,7 +1060,7 @@ margin-right: 5%;
     margin: 0;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 7px 0px var(--dark-blue);
+    /* box-shadow: 0 7px 0px var(--dark-blue); */
 }
 .body .content ul li{
   text-align: left;
@@ -1119,6 +1136,7 @@ margin-top: 0;
     background-color: white;
     border-radius: 10px;
     overflow: hidden;
+    box-shadow: 0px 1px 3px;
 }
 .table.login-box thead, .table.login-box tbody{width: 85%;}
 .table.login-box thead{
@@ -1135,6 +1153,76 @@ width: fit-content;
 } */
 .col-flex .appDel, .col-flex .appRep{
   width: fit-content !important;
+}
+
+/* TODO About us */
+.logWrap.landWrap.about{
+  padding: 0 8%;
+}
+.logLeft.aboutt{
+  flex: 2;
+  text-align: center;
+}
+.aboutWarsha{
+  text-align: center;
+    /* width: 50% !important; */
+    margin: 1% 5% !important;
+}
+
+.aboutUs, .aboutTeam{
+  background-image: url("/assets/aboutus.svg");
+  width: 100%;
+  flex: 3;
+  background-size: contain;
+}
+.logWrap.landWrap.team{
+  flex-direction: row-reverse;
+    align-items: center;
+}
+.miniALine{ 
+     width: 20%;
+    height: 7px;
+    background-color: var(--salamon);
+    margin: 0 auto 0 39.5%;
+  }
+.whoAreWe{
+  text-align: center;
+    padding: 0 10%;
+}
+.aboutTeam{
+  flex: 1;
+  background-image: url("/assets/team.svg");
+}
+.flexii{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.mo,.es,.ha,.ta{
+  border-radius: 50%;
+margin: 8% 0;
+  width: 200px;
+    height: 200px;
+    overflow: hidden;
+    background-size: contain;
+}
+.flexii h3{
+  font-size: x-large;
+    font-family: var(--oswald);
+    margin: 0;
+}
+.flexii p {font-size: medium;}
+.mo{
+  background-image: url("/assets/MonaMohamed2.jpeg");
+}
+.es{
+  background-image: url("/assets/EsraaElNaggar2.jpeg");
+}
+.ha{
+  background-image: url("/assets/MariamHasan2.jpg");
+}
+.ta{
+  background-image: url("/assets/MaryamTalal.jpeg");
 }
 
 /* TODO Tags */
@@ -1268,6 +1356,239 @@ width: fit-content;
   }
 }
 
+/* TODO center profile */
+.tab {
+  overflow: hidden;
+  padding: 0 10%;
+  background-color: #f1f1f1;
+}
+.tab .tabLinks {
+    background-color: white;
+    color: var(--blue);
+    border: none;
+    outline: none;
+    padding: 8px;
+    cursor: pointer;
+
+}
+.tab .tabLinks.active, .tab .tabLinks:hover {
+    color: var(--dark-blue);
+    font-weight: 600;
+    border-radius: 5px;
+    border-bottom: 3px solid var(--dark-blue);
+}
+.tabContent {
+  display: flex;
+  flex-direction: column;
+  padding: 2% 10%;
+  border-top: none;
+  background-color: var(--bg);
+}
+.tabContentTitle{
+  padding: 1% 3%;
+  border-radius: 10px 10px 0 0;
+  margin: 0;
+  font-size: large;
+  color: white;
+  background-color: #1A73E8;
+  box-shadow: 0px 1px 3px;
+}
+.profile-center-details{
+display: flex;
+    align-items: flex-start;
+    text-align: center;
+    padding: 20px;
+    border-radius: 0 0 10px 10px;
+    background-color: white;
+    box-shadow: 0px 1px 3px;
+}
+.div1-3 {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+}
+.div1-3 .name-img {
+  display: flex;
+  flex-direction: row;
+}
+.div1-3 .name-img .center-img {
+  width: 100px;
+  margin: 0 10px;
+  height: 100px;
+  border-radius: 50%;
+}
+.profile-center-name{
+  font-size: 22px;
+  color: rgb(128, 129, 132);
+}
+.phone-address {
+  width: max-content;
+        margin: 20px 0;
+    padding: 6px 20px;
+    background-color: #1a73e829;
+    border-radius: 10px;
+}
+.div1-3 .name-img .profile-center-name span{
+  color: var(--blue);
+
+}
+.div2-3, .div3-3{
+flex: 2;
+    text-align: -webkit-center;
+}
+.div3-3 .share-Prof{
+  background-color: #03e9f4;
+  border: hidden;
+  width: 100px;
+  height: 50px;
+  border-radius: 10%;
+}
+.center-table {
+  border: 1px solid white;
+  border-left: hidden;
+  border-right: hidden;
+  border-collapse: separate;
+  border-spacing: 0 15px;
+  width: 90px;
+}
+.td-center {
+  padding: 0 30px;
+}
+.options {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  overflow: hidden;
+  box-sizing: border-box;
+  cursor: pointer;
+  width: 25%;
+  margin: 1% auto;
+  border-radius: 10px;
+  background-color: #1A73E8;
+  box-shadow: 0px 1px 3px;
+}
+.option {
+  padding: 10px 1px;
+  color: #00072d;
+  font-size: larger;
+  width: 100%;
+  text-decoration: none !important;
+  border-bottom: 5px solid #1A73E8;
+}
+.option.active, .option:hover{
+  color: white !important;
+  border-bottom: 5px solid white !important;
+}
+.profile-center-info {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin: 1% 0;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0px 1px 3px;
+}
+.profile-center-info h4{
+  font-family: var(--oswald);
+}
+.profile-center-info .miniLine{
+  width: 4%;
+  margin-bottom: 3%;
+  margin-top: 0;
+}
+.profile-center-info p{padding: 0 8%;}
+.profile-center-info .fa-star{color: gold;}
+.specialities {
+    display: flex;
+    justify-content: flex-start;
+}
+.specialities span{
+  padding: 5px;
+  margin: 2%;
+  color: var(--dark-blue);
+  border-radius: 6px;
+  background-color: #1A73e829;
+}
+.center-reviews {
+    background-color: #1a73e829;
+    width: 60%;
+    padding: 3%;
+    margin: 1%;
+    border-radius: 10px;
+    /* box-shadow: 0px 1px 3px; */
+}
+.center-reviews h3{
+  text-transform: capitalize;
+}
+.center-reviews .wrapStar{
+  display: flex;
+}
+.center-reviews p {
+  padding: 19px;
+    background-color: #1a73e829;
+    margin: 4% 0 0 0;
+    border-radius: 10px;
+    text-transform: capitalize;
+}
+.tabContentTitle.part2{
+  border-radius: 10px;
+    box-shadow: 0px 1px 3px;
+}
+
+.appBody {
+    background-color: var(--bg);
+    display: flex;
+    justify-content: space-around;
+    padding: 5% 8%;
+    margin-top: 2px;
+    height: 90vh;
+}
+  div.white.tab{
+    font-family: var(--openSans);
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0px 0px 5px var(--bg);
+    background-color: white;
+  }
+
+  .login-box.pass {
+    background-color: white;
+    padding: 4%;
+    border-radius: 10px;
+    box-shadow: 0px 1px 3px;
+}
+.login-box.pass h2 {
+    color: var(--blue);
+    font-weight: 600;
+}
+.login-box.pass form.form {
+    color: black;
+    width: 100%;
+    padding: 4% 14% 0 14%;
+}
+.alignment {
+    margin: 3% 5%;
+}
+.alignment .form-field {
+    margin: 0 8%;
+}
+.login-box.pass form.form .Save{
+  text-align: center;
+    padding-top: 5%;
+}
+select.form-field{width: 44%;}
+
+.wrapNewNav{
+  display: flex;
+  align-items: center;
+  /* justify-content: flex-end; */
+}
+
+.tabContent .profile-center-details .div2-3 .center-table{
+  width: 45%;
+}
 
 /* TODO Footer */
 footer{
@@ -2108,7 +2429,7 @@ footer p{
   align-items: center;
   width: 100%;
   height: 40vh;
-  background-color: #1a73e829;
+  background-color: #ececec;
 }
 
 .quick-booking h2{
@@ -2125,7 +2446,7 @@ footer p{
     justify-content: space-around;
     background-color: white;
     border-radius: 50px;
-    box-shadow: 0px 0px 5px var(--blue);
+    box-shadow: 0px 1px 3px ;
 }
 .quick-booking .search-form select{
     border-color: var(--white);

@@ -18,16 +18,9 @@ const CenterServices = props => {
 
                     {/* Services Conent Start */}
                     <div className="services-conent">
-                        {/* <span className="service-tag">Electrical</span>
-                        <span className="service-tag">Mechanic</span>
-                        <span className="service-tag">Stereo</span>
-                        <span className="service-tag">Wheels</span>
-                        <span className="service-tag">Doors</span>
-                        <span className="service-tag">Bla Bla</span>
-                        <span className="service-tag">Blaaaa</span> */}
                         {
                             services.map(service => 
-                                <span className="service-tag">{service}</span>
+                                <span className="service-tag" key={service}>{service}</span>
                             )
                         }
                     </div>

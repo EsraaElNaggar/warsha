@@ -5,6 +5,8 @@ import AppointmentsContainer from './appointments-container';
 const BookingInfo = props => {
 
     const booking = false;
+    const center = props.center;
+    
     return (
         <React.Fragment>
             <div className="booking-info b-radius-10 div-border">
@@ -16,7 +18,7 @@ const BookingInfo = props => {
                     <div className="title-subaddress">
                         <i className="fas fa-map-marker-alt" />
                         <span className="subaddress">
-                            New Cairo: Southeren Teseen
+                            {center.locations[0].city}: {center.locations[0].area}
                     </span>
                     </div>
                     <div>

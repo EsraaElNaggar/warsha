@@ -13,43 +13,36 @@ class ShowProfileCenter extends Component {
     return (
       <React.Fragment>
         {/* {this.state.centerData.specialities.map(speciality => speciality)} */}
-        <div>
-          <div className="tabcontent">
-            <h3>Profile</h3>
+        <h3 class="tabContentTitle part2">Center Info</h3>
 
-            <div className="center-info">
-              <div>About</div>
-              <br />
-              <div>{this.state.centerData.about}</div>
+        <div className="tabcontent">
+          {/* <h3>Profile</h3> */}
+
+          <div className="profile-center-info">
+            <h4>About</h4>
+            <div className="miniLine"></div>
+            <p>{this.state.centerData.about}</p>
+          </div>
+          <div className="profile-center-info">
+            <h4>Speciality</h4>
+            <div className="miniLine"></div>
+            <div className="specialities">
+              {this.state.centerData.specialities.map(speciality => (
+                <span>{speciality}</span>
+              ))}
             </div>
-            <div className="center-info">
-              <div>Speciality</div>
-              <br />
-              <div className="specialities">
-                {this.state.centerData.specialities.map(speciality => (
-                  <React.Fragment>
-                    <div className="specialities">
-                      <div>{speciality}</div>
-                    </div>
-                  </React.Fragment>
-                ))}
-              </div>
-            </div>
-            <div className="center-info">
-              <div>Car Models</div>
-              <br />
-              <div className="specialities">
-                {this.state.centerData.carModels.map(carModel => (
-                  <React.Fragment>
-                    <div className="specialities">
-                      <div>{carModel}</div>
-                    </div>
-                  </React.Fragment>
-                ))}
-              </div>
+          </div>
+          <div className="profile-center-info">
+            <h4>Car Models</h4>
+            <div className="miniLine"></div>
+            <div className="specialities">
+              {this.state.centerData.carModels.map(carModel => (
+                <span>{carModel}</span>
+              ))}
             </div>
           </div>
         </div>
+
       </React.Fragment>
     );
   }

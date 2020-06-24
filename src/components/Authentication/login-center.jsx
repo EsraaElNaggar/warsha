@@ -33,32 +33,33 @@ class LoginCenter extends Component {
             return;
         }
         else {
-            axios.get( `http://localhost:3000/centers?centerEmail=${this.state.account.centerEmail}`)
-        .then(res=>{
-            let user = res.data[0]
-            console.log(user.password)
-            console.log(this.state.account.centerPassword)
-            if(user.password == this.state.account.centerPassword){
-                console.log("hi")
-                const token = Math.random();
-                setInStorage('authToken', String(token));
-                setInStorage('currentID', res.data[0].id);
-                this.props.history.replace("/centermainprofile");
-            }
-            else{
-                toast("Wrong Password", {type:"error"});
-            }
-        }).catch(err=>{
-            if(err.response.status === 404)
-            {
-                toast(err.response.data, {type:"error"});
-            }
-            else if(err.response.status === 406)
-            {
-                this.setState({errors: {password: err.response.data}});
-            }
-            else toast("Connection Error", {type:"error"});
-        });
+            axios.get(`http://localhost:3000/centers?centerEmail=${this.state.account.centerEmail}`)
+                .then(res => {
+                    let user = res.data[0]
+                    console.log(user.password)
+                    console.log(this.state.account.centerPassword)
+                    if (user.password == this.state.account.centerPassword) {
+                        console.log("hi")
+                        const token = Math.random();
+                        setInStorage('authToken', String(token));
+                        setInStorage('currentID', res.data[0].id);
+                        this.props.history.replace("/centermainprofile");
+                    }
+                    else {
+                        toast("Wrong Password", { type: "error" });
+                    }
+                }).catch(err => {
+                    // if(err.response.status === 404)
+                    // {
+                    //     toast(err.response.data, {type:"error"});
+                    // }
+                    // else if(err.response.status === 406)
+                    // {
+                    //     this.setState({errors: {password: err.response.data}});
+                    // }
+                    // else
+                    toast("Connection Error", { type: "error" });
+                });
 
 
         }
@@ -66,7 +67,7 @@ class LoginCenter extends Component {
 
         // this.login(this.state.account);
     };
-    
+
 
     validate = () => {
         const result = Joi.validate(this.state.account, this.schema, {
