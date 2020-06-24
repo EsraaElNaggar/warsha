@@ -157,5 +157,5 @@ class CenterCardAppointments extends Component {
         );
     }    
 };
- 
+
 export default CenterCardAppointments;

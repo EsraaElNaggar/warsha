@@ -11,7 +11,6 @@ import Footer from "../../core/footer";
 
 import { getFromStorage } from './../../../_utils/local-storage';
 
-
 class CustomerProfile extends Component {
   state = {
     pathChoice: 0,
@@ -21,22 +20,20 @@ class CustomerProfile extends Component {
   // get customer data
   componentDidMount(){
     let userID = getFromStorage('currentID');
-  
+
     axios.get(`http://localhost:3000/users?id=${userID}`)
-        .then(res=>{
-          const userData = res.data[0];
-          this.setState({userData});
-        }).catch(err=>{
-            if(err.response.status === 404)
-            {
-                toast(err.response.data, {type:"error"});
-            }
-            else if(err.response.status === 406)
-            {
-                this.setState({errors: {password: err.response.data}});
-            }
-            else toast("Connection Error", {type:"error"});
-        });
+      .then(res => {
+        const userData = res.data[0];
+        this.setState({ userData });
+      }).catch(err => {
+        if (err.response.status === 404) {
+          toast(err.response.data, { type: "error" });
+        }
+        else if (err.response.status === 406) {
+          this.setState({ errors: { password: err.response.data } });
+        }
+        else toast("Connection Error", { type: "error" });
+      });
   }
 
   //   href={this.state.paths[0]}
@@ -83,13 +80,13 @@ class CustomerProfile extends Component {
           {(() => {
             switch (this.state.pathChoice) {
               case 1:
-                return <CustomerProfileDetails userData={this.state.userData}/>;
+                return <CustomerProfileDetails userData={this.state.userData} />;
               case 2:
                 return <ChangePasswordUser userData={this.state.userData}/>;
               case 3:
                 return <UserAppointments userData={this.state.userData}/>;
               default:
-                return <CustomerProfileDetails userData={this.state.userData}/>;
+                return <CustomerProfileDetails userData={this.state.userData} />;
             }
           })()}
         </div>

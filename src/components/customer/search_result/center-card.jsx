@@ -4,7 +4,7 @@ import Ratings from './../../common/ratings';
 import CenterCardAppointments from './center-card-appointments';
 
 const CenterCard = props => {
-   
+
     const {
         id,
         centerName, 
@@ -18,21 +18,20 @@ const CenterCard = props => {
         totalRating
     } = props.center;
 
-    const openCenterProfile = ()=>
-    {
+    const openCenterProfile = () => {
         const center = props.center;
         props.openCenterProfile(center);
     }
 
-    return ( 
+    return (
         <React.Fragment>
             <div className="center-card d-flex justify-content-between b-radius-10 div-border">
                 {/* Center Image Start */}
                 <div className="center-details-img-container">
-                    <img src="../../public/assets/mechanistic.jpg" alt="" className="center-details-img img-circle" />
+                    <img src="/assets/mechanistic.jpg" alt="" className="center-details-img img-circle" />
                 </div>
                 {/* Center Image End */}
-                <div className="center-card-info" style={{cursor: "pointer"}} onClick={openCenterProfile}>
+                <div className="center-card-info" style={{ cursor: "pointer" }} onClick={openCenterProfile}>
                     {/* Center Name Start */}
                     <p className="center-name">Center <b>{centerName}</b></p>
                     {/* Center Name End */}
@@ -52,7 +51,7 @@ const CenterCard = props => {
 
                         {/* No. Of Reviews Start */}
                         <p className="no-of-reviews m-0">
-                        Overall Ratings From {noOfVisitors} Visitors
+                            Overall Ratings From {noOfVisitors} Visitors
                         </p>
                         {/* No. Of Reviews End */}
 
@@ -65,7 +64,7 @@ const CenterCard = props => {
 
                         {/* Telephone Start */}
                         <p className="center-card-phone m-0">
-                        <i className="fas fa-phone-alt pr-2" />
+                            <i className="fas fa-phone-alt pr-2" />
                             {telephone} - Regular Call
                         </p>
                         {/* Telephone End */}
@@ -87,7 +86,7 @@ const CenterCard = props => {
             </div>
         </React.Fragment>
     );
-    
+
 };
- 
+
 export default CenterCard;

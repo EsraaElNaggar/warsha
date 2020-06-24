@@ -11,11 +11,11 @@ import Sort from '../../common/sort';
 class SearchResult extends Component {
     state = {
         sortTypes: [
-            {id: "defaultValue", name: "Sort Option"},
-            {id: 1, name: 'A to Z'},
-            {id: 2, name: 'Z to A'},
-            {id: 3, name: 'Top Rated'},
-            {id: 4, name: 'Less Waiting Time'}
+            { id: "defaultValue", name: "Sort Option" },
+            { id: 1, name: 'A to Z' },
+            { id: 2, name: 'Z to A' },
+            { id: 3, name: 'Top Rated' },
+            { id: 4, name: 'Less Waiting Time' }
         ],
         sortOption: '',
         centers: []
@@ -60,7 +60,7 @@ class SearchResult extends Component {
         else if (this.state.sortOption === '4') {
             sortedCentered = _.orderBy(searchedCenters, 'waitingTime', 'asc');
         }
-        else{
+        else {
             sortedCentered = searchedCenters;
         }
         console.log(sortedCentered);
@@ -72,40 +72,40 @@ class SearchResult extends Component {
                 <Nav className="white" />
 
                 {/* Search Result Container */}
-                <div className="container row pt-5 m-auto">
-                    {/* Filters Container */}
-                    <SearchFilters />
+                <section className="searchR">
+                    <div className="container row pt-5 m-auto">
+                        {/* Filters Container */}
+                        <SearchFilters />
 
-                    {/* Centers Cards Container */}
-                    <div className="col-9">
-                        <div className="cards-container">
-                            <div className="d-flex justify-content-between mb-3 mx-2">
-                                <h5>All Centers <span className="no-of--all-centers">/ {sortedCentered.length} Centers</span> </h5>
-                                {/* Sort Options Start */}
-                                <div>
-                                    <Sort
-                                        activeSort={this.state.sortOption}
-                                        sortTypes={this.state.sortTypes}
-                                        onSortChange={this.handleChange}
-                                    />
+                        {/* Centers Cards Container */}
+                        <div className="col-9">
+                            <div className="cards-container">
+                                <div className="d-flex justify-content-between mb-3 mx-2">
+                                    <h5>All Specialities <span className="no-of--all-centers">1050 Centers</span> </h5>
+                                    {/* Sort Options Start */}
+                                    <div>
+                                        <Sort
+                                            activeSort={this.state.sortOption}
+                                            sortTypes={this.state.sortTypes}
+                                            onSortChange={this.handleChange}
+                                        />
+                                    </div>
                                 </div>
-                                {/* Sort Options End */}
-                            </div>
 
-                            {/* Centers Cards */}
-                            {sortedCentered.map(center => (
-                                <CenterCard
-                                    key={center.id}
-                                    center={center}
-                                    openCenterProfile={this.openCenterProfile}
-                                    handleBooking={this.handleBooking}
-                                />
-                            ))}
+                                {/* Centers Cards */}
+                                {sortedCentered.map(center => (
+                                    <CenterCard
+                                        key={center.id}
+                                        center={center}
+                                        openCenterProfile={this.openCenterProfile}
+                                        handleBooking={this.handleBooking}
+                                    />
+                                ))}
+                            </div>
+                            {/* Centers Cards Container End */}
                         </div>
                     </div>
-                    {/* Centers Cards Container End */}
-                </div>
-
+                </section>
                 {/* Footer */}
                 <Footer />
             </React.Fragment>
