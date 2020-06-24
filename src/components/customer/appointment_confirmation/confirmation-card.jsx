@@ -2,6 +2,7 @@ import React from 'react';
 
 const ConfirmationCard = props => {
    
+    const bookingInfo = props.bookingInfo;
     return ( 
         <React.Fragment>
             <div className="confirm-card div-border">
@@ -12,11 +13,11 @@ const ConfirmationCard = props => {
                 </div>
                 <p className="confirm-notify m-4">
                     <i className="far fa-envelope pr-2" />
-                    We notified Center "Center Name" of your booking
+                    We notified Center {bookingInfo.centerName} of your booking
                 </p>
                 <p className="confirm-phone m-4">
                     <i className="fas fa-phone-alt pr-2" />
-                    Center number: 0125778612
+                    Center number: {bookingInfo.telephone}
                 </p>
             </div>
         </React.Fragment>

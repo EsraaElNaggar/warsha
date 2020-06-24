@@ -1,5 +1,6 @@
 import React from 'react';
 import Ratings from '../../common/ratings';
+import { Link } from 'react-router-dom';
 
 const CenterBasicDetails = props => {
    
@@ -24,7 +25,7 @@ const CenterBasicDetails = props => {
 
                         {/* No. Of Views Start */}
                         <span className="no-of-views">
-                            279 View(s)
+                        {center.noOfViews} View(s)
                         </span>
                         {/* No. Of Views End */}
                     </span>
@@ -38,7 +39,9 @@ const CenterBasicDetails = props => {
                     {/* Center Ratings Start */}
                     <div className="center-ratings">
                         {/* Ratings Start */}
-                        <Ratings/>  {/* send Ratings value */}
+                        <Ratings
+                            ratingValue={center.totalRating}
+                        /> 
 
                         {/* No. Of Reviews Start */}
                         <span className="no-of-reviews">
@@ -47,7 +50,7 @@ const CenterBasicDetails = props => {
                         {/* No. Of Reviews End */}
 
                         {/* Reviews Link Start */}
-                        <a href className="reviews-link">Show All Reviews</a>
+                        <Link to="#" className="reviews-link">Show All Reviews</Link>
                         {/* Reviews Link End */}
                     </div>
                     {/* Center Ratings Start */}
@@ -56,7 +59,9 @@ const CenterBasicDetails = props => {
                     <div className="most-recent-review">
                         <p className="most-recent-review-content"> "Good place, good services, nice people"</p>
                         {/* Ratings Start */}
-                        <Ratings/>  {/* send Ratings value */}
+                        <Ratings
+                            ratingValue={center.totalRating}
+                        />
 
                         <span className="most-recent-review-date">Sunday, 20 September 2020</span>
                     </div>

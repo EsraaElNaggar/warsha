@@ -21,6 +21,7 @@ class SearchResult extends Component {
         centers: []
     };
 
+    // set centers data
     componentDidMount(){
         this.setState({centers: this.props.centers});
     }
@@ -31,10 +32,16 @@ class SearchResult extends Component {
         this.setState({ sortOption });
     };
 
+    // open center profile handler
     openCenterProfile = center => {
         this.props.openCenterProfile(center);
         this.props.history.replace('/centerprofile')
     };
+
+    handleBooking = data =>{
+        this.props.handleBooking(data);
+        this.props.history.replace("/confirmbooking");
+    }
 
     render() {
 
@@ -51,7 +58,7 @@ class SearchResult extends Component {
             sortedCentered = _.orderBy(searchedCenters, 'totalRating', 'asc');
         }
         else if (this.state.sortOption === '4') {
-            sortedCentered = _.orderBy(searchedCenters, 'waitingTime', 'desc');
+            sortedCentered = _.orderBy(searchedCenters, 'waitingTime', 'asc');
         }
         else{
             sortedCentered = searchedCenters;
@@ -73,7 +80,7 @@ class SearchResult extends Component {
                     <div className="col-9">
                         <div className="cards-container">
                             <div className="d-flex justify-content-between mb-3 mx-2">
-                                <h5>All Specialities <span className="no-of--all-centers">1050 Centers</span> </h5>
+                                <h5>All Centers <span className="no-of--all-centers">/ {sortedCentered.length} Centers</span> </h5>
                                 {/* Sort Options Start */}
                                 <div>
                                     <Sort
@@ -91,6 +98,7 @@ class SearchResult extends Component {
                                     key={center.id}
                                     center={center}
                                     openCenterProfile={this.openCenterProfile}
+                                    handleBooking={this.handleBooking}
                                 />
                             ))}
                         </div>

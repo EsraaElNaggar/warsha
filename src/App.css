@@ -630,6 +630,7 @@ section.appointment-reservation form{
   color: var(--dark-blue);
   border-radius: 6px;
   background-color: #1A73e829;
+  margin: 5px;
 }
 .border-y{
     border-top: 1px solid var(--blue);
@@ -983,7 +984,7 @@ background-color: var(--blue)!important;
   border-radius: 5px;
   border: none;
   border-bottom: 3px solid var(--white);
-  box-shadow: 0px 0px 2px var(--blue);
+  /* box-shadow: 0px 0px 2px var(--blue); */
 }
 .noShowBtn{
   background-color: var(--salamon);
@@ -992,7 +993,7 @@ background-color: var(--blue)!important;
 .checkInBtn:hover, .appRep:hover{
   color: var(--blue);
   background-color: var(--white);
-  border-bottom: 3px solid var(--blue);
+  border-bottom: 1px solid var(--blue);
 }
 .noShowBtn:hover{
   color: var(--salamon);
@@ -1001,12 +1002,12 @@ background-color: var(--blue)!important;
 }
 .appDel{
   background-color: crimson;
-  box-shadow: 0px 0px 2px crimson;
+  /* box-shadow: 0px 0px 2px crimson; */
 }
 .appDel:hover{
   color: crimson;
   background-color: var(--white);
-  border-bottom: 3px solid crimson;
+  border-bottom: 1px solid crimson;
 }
 
 .client-card-btns > button i{
