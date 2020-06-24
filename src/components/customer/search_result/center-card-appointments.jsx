@@ -36,8 +36,13 @@ class CenterCardAppointments extends Component {
 
     handleTime = ({target})=>
     {
-        const bookingTime = target.id;
-        this.setState({bookingTime})
+        const token = getFromStorage('authToken');
+        if (token) {
+            const bookingTime = target.id;
+            this.setState({bookingTime});
+        } else {
+            toast("Join us to enable this feature", {type:"error"});
+        }
     };
 
     handleBookBtn = ()=>{
@@ -57,7 +62,7 @@ class CenterCardAppointments extends Component {
                     month: appointment[0].month,
                     day: appointment[0].day,
                     time: appointment[0].time,
-                    status: "Not Confirmed"
+                    status: "available"
                 }
             )
             .then(res=>{

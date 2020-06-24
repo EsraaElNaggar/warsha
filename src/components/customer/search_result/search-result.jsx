@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 
 import _ from "lodash";
+import { ToastContainer, toast } from "react-toastify";
 
 import Nav from './../../core/nav/nav';
 import SearchFilters from './search-filters';
 import CenterCard from './center-card';
 import Footer from './../../core/footer';
 import Sort from '../../common/sort';
+import { getFromStorage } from './../../../_utils/local-storage';
 
 class SearchResult extends Component {
     state = {
@@ -34,8 +36,13 @@ class SearchResult extends Component {
 
     // open center profile handler
     openCenterProfile = center => {
-        this.props.openCenterProfile(center);
-        this.props.history.replace('/centerprofile')
+        const token = getFromStorage('authToken');
+        if (token) {
+            this.props.openCenterProfile(center);
+            this.props.history.replace('/centerprofile');
+        } else {
+            toast("Join us to enable this feature", {type:"error"});
+        }
     };
 
     handleBooking = data =>{
