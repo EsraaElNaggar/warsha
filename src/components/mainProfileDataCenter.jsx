@@ -48,7 +48,7 @@ class MainProfileDataCenter extends Component {
                   className="center-img"
                   src="/assets/mechanistic.jpg"
                 />
-                <p class="profile-center-name">Center <span>{this.state.CenterDetails.name}</span></p>
+                <p className="profile-center-name">Center <span>{this.state.CenterDetails.name}</span></p>
               </div>
               <div className="phone-address">
                 <p>{this.state.CenterDetails.address}</p>
