@@ -30,7 +30,7 @@ const AboutUs = props => {
                     <div className="logLeft aboutt land ">
                         {/* <Link to="/"><span>W</span>arsha</Link> */}
                         <h1>Who are we?</h1>
-                        <p className="aboutWarsha">We are a group of fresh graduate developer</p>
+                        <p className="aboutWarsha">We are a group of fresh graduate developers</p>
                         <div className="flexii">
                             <div>
                                 <div className="mo" ></div>

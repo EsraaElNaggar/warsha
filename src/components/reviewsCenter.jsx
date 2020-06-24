@@ -12,10 +12,12 @@ class ReviewsCenter extends Component {
   render() {
     return (
       <React.Fragment>
-        <div>
+        <h3 class="tabContentTitle part2">Reviews</h3>
+
+        <div className="profile-center-info">
           {this.state.reviews.map(review => (
             <React.Fragment>
-              <div className="center-info center-reviews">
+              <div className="center-reviews">
                 {/* <div>
                   <img
                     className="circle"
@@ -23,27 +25,15 @@ class ReviewsCenter extends Component {
                     alt=""
                   />
                 </div> */}
-                <div>{review.name}</div>
-                <div className="flex-col">
-                  <div>
-                    <span>
-                      <i className="fas fa-star" />
-                    </span>
-                    <span>
-                      <i className="fas fa-star" />
-                    </span>
-                    <span>
-                      <i className="fas fa-star" />
-                    </span>
-                    <span>
-                      <i className="fas fa-star" />
-                    </span>
-                    <span>
-                      <i className="fas fa-star" />
-                    </span>
-                  </div>
-                  <div className="wrap">{review.userReview}</div>
+                <h3>{review.name}</h3>
+                <div className="wrapStar">
+                  <i className="fas fa-star" />
+                  <i className="fas fa-star" />
+                  <i className="fas fa-star" />
+                  <i className="fas fa-star" />
+                  <i className="fas fa-star" />
                 </div>
+                <p className="review">{review.userReview}</p>
               </div>
             </React.Fragment>
           ))}
