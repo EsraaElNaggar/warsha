@@ -1,25 +1,40 @@
 import React, { Component } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import axios from "axios";
 import ReviewsCenter from "./reviewsCenter";
 import ShowProfileCenter from "./showProfileCenter";
 import CenterDetails from "./customer/center_profile/center-details";
 import Footer from "./core/footer";
 import CenterTab from "./centerTab";
+import { getFromStorage } from '../_utils/local-storage';
+
 
 class MainProfileDataCenter extends Component {
   state = {
     displayed: 0,
-    CenterDetails: {
-      name: "Al Yousr",
-      address: "25 yemen st. yemen",
-      phone: "15154541",
-      onLocationService: true,
-      views: 2500,
-      bookings: 100,
-
-    },
+    CenterDetails: [],
     toggle1: false,
     toggle2: true
   };
+
+  componentDidMount(){
+    let centerID = getFromStorage('currentID');
+
+    axios.get(`http://localhost:3000/centers?id=${centerID}`)
+      .then(res => {
+        const centerData = res.data[0];
+        this.setState({ CenterDetails:  centerData});
+      }).catch(err => {
+        // if (err.response.status === 404) {
+        //   toast(err.response.data, { type: "error" });
+        // }
+        // else if (err.response.status === 406) {
+        //   this.setState({ errors: { password: err.response.data } });
+        // }
+        // else 
+        toast("Connection Error", { type: "error" });
+      });
+  }
 
   infoHandler = i => {
     this.setState({ displayed: i, toggle1: !this.state.toggle1, toggle2: !this.state.toggle2 });
@@ -48,11 +63,11 @@ class MainProfileDataCenter extends Component {
                   className="center-img"
                   src="/assets/mechanistic.jpg"
                 />
-                <p className="profile-center-name">Center <span>{this.state.CenterDetails.name}</span></p>
+                <p className="profile-center-name">Center <span>{this.state.CenterDetails.centerName}</span></p>
               </div>
               <div className="phone-address">
-                <p>{this.state.CenterDetails.address}</p>
-                <p>{this.state.CenterDetails.phone}</p>
+                <p>{this.state.CenterDetails.mainLocation}</p>
+                <p>{this.state.CenterDetails.telephone}</p>
                 {this.state.CenterDetails.onLocationService ? (
                   <p>On location service available</p>
                 ) : (
@@ -69,10 +84,10 @@ class MainProfileDataCenter extends Component {
                 </tr>
                 <tr className="tr-center">
                   <td className="td-center">
-                    {this.state.CenterDetails.views}
+                    {this.state.CenterDetails.noOfViews}
                   </td>
                   <td className="td-center">
-                    {this.state.CenterDetails.bookings}
+                    {this.state.CenterDetails.noOfVisitors}
                   </td>
                 </tr>
                 </tbody>

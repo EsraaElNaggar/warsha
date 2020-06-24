@@ -1,14 +1,39 @@
 import React, { Component } from "react";
 import mainProfileDataCenter from "./mainProfileDataCenter";
+import { getFromStorage } from '../_utils/local-storage';
+import { ToastContainer, toast } from "react-toastify";
+import axios from "axios";
 
 class ShowProfileCenter extends Component {
   state = {
-    centerData: {
-      about: "cghvhhbjhbjknm",
-      specialities: ["elec", "mechanic", "welding"],
-      carModels: ["chevy", "BMW", "audi"]
-    }
+    centerData: "",
+    services: [],
+    brands: []
   };
+
+  componentDidMount(){
+    let centerID = getFromStorage('currentID');
+
+    axios.get(`http://localhost:3000/centers?id=${centerID}`)
+      .then(res => {
+        const centerData = res.data[0];
+        this.setState({ centerData});
+        this.setState({ services: centerData.services});
+        this.setState({ brands: centerData.carBrands});
+
+        console.log(res);
+      }).catch(err => {
+        // if (err.response.status === 404) {
+        //   toast(err.response.data, { type: "error" });
+        // }
+        // else if (err.response.status === 406) {
+        //   this.setState({ errors: { password: err.response.data } });
+        // }
+        // else 
+        toast("Connection Error", { type: "error" });
+      });
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -23,21 +48,24 @@ class ShowProfileCenter extends Component {
             <div className="miniLine"></div>
             <p>{this.state.centerData.about}</p>
           </div>
-          <div className="profile-center-info">
-            <h4>Speciality</h4>
+          {
+            this.state.services.length &&
+            <div className="profile-center-info">
+            <h4>Services</h4>
             <div className="miniLine"></div>
             <div className="specialities">
-              {this.state.centerData.specialities.map(speciality => (
-                <span key={speciality}>{speciality}</span>
+              {this.state.services.map(service => (
+                <span key={service}>{service}</span>
               ))}
             </div>
           </div>
+          }
           <div className="profile-center-info">
             <h4>Car Models</h4>
             <div className="miniLine"></div>
             <div className="specialities">
-              {this.state.centerData.carModels.map(carModel => (
-                <span key={carModel}>{carModel}</span>
+              {this.state.brands.map(carBrand => (
+                <span key={carBrand.carBrand}>{carBrand.carBrand}</span>
               ))}
             </div>
           </div>
