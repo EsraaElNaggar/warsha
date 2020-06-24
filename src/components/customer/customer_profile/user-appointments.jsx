@@ -28,6 +28,29 @@ class UserAppointments extends Component {
     let appointments = [...this.state.appointmentsData];
     appointments.splice(i, 1);
     this.setState({ appointmentsData: appointments });
+
+    const appointment = this.state.appointments[i];
+    axios.put(`http://localhost:3000/appointments/${Number(appointment.id)}`,
+        {
+            clientId: "",
+            customerName: "",
+            centerId: appointment.centerId,
+            centerName: appointment.centerName,
+            centerAddress: appointment.centerAddress,
+            waitingTime: appointment.waitingTime,
+            year: appointment.year,
+            month: appointment.month,
+            day: appointment.day,
+            time: appointment.time,
+            status: "Confirmed"
+        }
+    )
+    .then(res=>{
+        this.props.handleBooking(res.data);
+    }).catch(err=>{
+        toast("Connection Error", {type:"error"});
+    });
+
   };
 
   render() {
@@ -51,7 +74,7 @@ class UserAppointments extends Component {
                   <td className="td">{appointment.centerAddress}</td>
                   <td className="td appDet">
                   <p>
-                    {appointment.day} {getMonthName(new Date(`${appointment.month}/01/2020`))} {appointment.year}, {appointment.time}
+                    {appointment.day} {getMonthName(new Date(`${appointment.month}/01/2020`))} {appointment.year}, {appointment.time} PM
                   </p>
                     <p>
                         Name: {this.props.userData.fName}

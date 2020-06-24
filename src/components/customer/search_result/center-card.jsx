@@ -12,7 +12,6 @@ const CenterCard = props => {
         telephone, 
         waitingTime,
         // onLocationService, 
-        // waitingTime,
         speciality,
         noOfVisitors,
         totalRating
@@ -81,7 +80,8 @@ const CenterCard = props => {
                 {/* Center Card Apointments */}
                 <CenterCardAppointments
                     centerID={id}
-                    handleBooking={this.props.handleBooking}
+                    width="50%"
+                    handleBooking={props.handleBooking}
                 />
             </div>
         </React.Fragment>

@@ -4,10 +4,14 @@ import CenterDetails from './center-details';
 import BookingInfo from './booking-info';
 import Nav from './../../core/nav/nav';
 import Footer from './../../core/footer';
-import AppointmentForm from './../../forms/appointment-form';
+// import AppointmentForm from './../../forms/appointment-form';
 
 class CenterProfile extends Component {
     state = {  }
+    handleBooking = data =>{
+        this.props.handleBooking(data);
+        this.props.history.replace("/confirmbooking");
+    }
     render() { 
         return ( 
             <React.Fragment>
@@ -25,6 +29,7 @@ class CenterProfile extends Component {
                     {/* Booking Info Start */}
                     <BookingInfo
                         center={this.props.center}
+                        handleBooking={this.handleBooking}
                     /> 
                 </section>
                 {/* Center Profile End */}

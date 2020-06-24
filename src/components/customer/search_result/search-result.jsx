@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 
 import _ from "lodash";
+import { ToastContainer, toast } from "react-toastify";
 
 import Nav from './../../core/nav/nav';
 import SearchFilters from './search-filters';
 import CenterCard from './center-card';
 import Footer from './../../core/footer';
 import Sort from '../../common/sort';
+import { getFromStorage } from './../../../_utils/local-storage';
 
 class SearchResult extends Component {
     state = {
@@ -34,8 +36,13 @@ class SearchResult extends Component {
 
     // open center profile handler
     openCenterProfile = center => {
-        this.props.openCenterProfile(center);
-        this.props.history.replace('/centerprofile')
+        const token = getFromStorage('authToken');
+        if (token) {
+            this.props.openCenterProfile(center);
+            this.props.history.replace('/centerprofile');
+        } else {
+            toast("Join us to enable this feature", {type:"error"});
+        }
     };
 
     handleBooking = data =>{
@@ -45,26 +52,25 @@ class SearchResult extends Component {
 
     render() {
 
-        let sortedCentered = [];
+        let sortedCenters = [];
         let searchedCenters = this.state.centers;
         if (this.state.sortOption === '1') {
-            sortedCentered = _.orderBy(searchedCenters, 'centerName', 'asc');
+            sortedCenters = _.orderBy(searchedCenters, 'centerName', 'asc');
         }
         else if (this.state.sortOption === '2') {
-            sortedCentered = _.orderBy(searchedCenters, 'centerName', 'desc');
+            sortedCenters = _.orderBy(searchedCenters, 'centerName', 'desc');
 
         }
         else if (this.state.sortOption === '3') {
-            sortedCentered = _.orderBy(searchedCenters, 'totalRating', 'asc');
+            sortedCenters = _.orderBy(searchedCenters, 'totalRating', 'asc');
         }
         else if (this.state.sortOption === '4') {
-            sortedCentered = _.orderBy(searchedCenters, 'waitingTime', 'asc');
+            sortedCenters = _.orderBy(searchedCenters, 'waitingTime', 'asc');
         }
         else {
-            sortedCentered = searchedCenters;
+            sortedCenters = searchedCenters;
         }
-        console.log(sortedCentered);
-
+        
         return (
             <React.Fragment>
 
@@ -81,7 +87,7 @@ class SearchResult extends Component {
                         <div className="col-9">
                             <div className="cards-container">
                                 <div className="d-flex justify-content-between mb-3 mx-2">
-                                    <h5>All Specialities <span className="no-of--all-centers">1050 Centers</span> </h5>
+                                    <h5>All Centers <span className="no-of--all-centers">/ {sortedCenters.length} Centers</span> </h5>
                                     {/* Sort Options Start */}
                                     <div>
                                         <Sort
@@ -93,7 +99,7 @@ class SearchResult extends Component {
                                 </div>
 
                                 {/* Centers Cards */}
-                                {sortedCentered.map(center => (
+                                {sortedCenters.map(center => (
                                     <CenterCard
                                         key={center.id}
                                         center={center}
