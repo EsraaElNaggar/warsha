@@ -48,7 +48,7 @@ class MainProfileDataCenter extends Component {
                   className="center-img"
                   src="/assets/mechanistic.jpg"
                 />
-                <p class="profile-center-name">Center <span>{this.state.CenterDetails.name}</span></p>
+                <p className="profile-center-name">Center <span>{this.state.CenterDetails.name}</span></p>
               </div>
               <div className="phone-address">
                 <p>{this.state.CenterDetails.address}</p>
@@ -62,7 +62,7 @@ class MainProfileDataCenter extends Component {
             </div>
             <div className="div2-3">
               <table className="center-table">
-                {/* <tbody> */}
+                <tbody>
                 <tr className="tr-center">
                   <th>Profile views</th>
                   <th>Bookings</th>
@@ -75,7 +75,7 @@ class MainProfileDataCenter extends Component {
                     {this.state.CenterDetails.bookings}
                   </td>
                 </tr>
-                {/* </tbody> */}
+                </tbody>
               </table>
             </div>
           </div>

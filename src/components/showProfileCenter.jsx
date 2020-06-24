@@ -13,7 +13,7 @@ class ShowProfileCenter extends Component {
     return (
       <React.Fragment>
         {/* {this.state.centerData.specialities.map(speciality => speciality)} */}
-        <h3 class="tabContentTitle part2">Center Info</h3>
+        <h3 className="tabContentTitle part2">Center Info</h3>
 
         <div className="tabcontent">
           {/* <h3>Profile</h3> */}
@@ -28,7 +28,7 @@ class ShowProfileCenter extends Component {
             <div className="miniLine"></div>
             <div className="specialities">
               {this.state.centerData.specialities.map(speciality => (
-                <span>{speciality}</span>
+                <span key={speciality}>{speciality}</span>
               ))}
             </div>
           </div>
@@ -37,7 +37,7 @@ class ShowProfileCenter extends Component {
             <div className="miniLine"></div>
             <div className="specialities">
               {this.state.centerData.carModels.map(carModel => (
-                <span>{carModel}</span>
+                <span key={carModel}>{carModel}</span>
               ))}
             </div>
           </div>
