@@ -80,6 +80,7 @@ const CenterCard = props => {
                 {/* Center Card Apointments */}
                 <CenterCardAppointments
                     centerID={id}
+                    width="50%"
                     handleBooking={props.handleBooking}
                 />
             </div>

@@ -82,7 +82,7 @@ class CenterCardAppointments extends Component {
         return ( 
             <React.Fragment>
                 <ToastContainer/>
-                <div className="d-flex justify-content-between center-card-appoitments">
+                <div className="d-flex justify-content-between center-card-appoitments" style={{width: this.props.width}}>
                             <div className="arrow">
                                 <button>
                                 <i className="fas fa-arrow-left" />

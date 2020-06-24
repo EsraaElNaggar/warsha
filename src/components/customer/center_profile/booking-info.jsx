@@ -38,6 +38,7 @@ const BookingInfo = props => {
                     // <AppointmentsContainer/>
                     <CenterCardAppointments
                         centerID={center.id}
+                        width="100%"
                         handleBooking={props.handleBooking}
                     />
                 }
