@@ -51,7 +51,7 @@ class UserAppointments extends Component {
                   <td className="td">{appointment.centerAddress}</td>
                   <td className="td appDet">
                   <p>
-                    {appointment.day} {getMonthName(new Date(`${appointment.month}/01/2020`))} {appointment.year}, {appointment.time}
+                    {appointment.day} {getMonthName(new Date(`${appointment.month}/01/2020`))} {appointment.year}, {appointment.time} PM
                   </p>
                     <p>
                         Name: {this.props.userData.fName}

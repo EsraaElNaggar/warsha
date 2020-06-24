@@ -36,12 +36,12 @@ class Ratings extends Component {
             filledStars.push(index);
         }
         this.setState({filledStars});
-        console.log(this.state.filledStars);
+        // console.log(this.state.filledStars);
 
 
         const totalStars = filled + this.state.halfStars.length;
         this.setState({totalStars});
-        console.log(totalStars);
+        // console.log(totalStars);
 
 
         const empty = 5 - totalStars;
@@ -50,7 +50,7 @@ class Ratings extends Component {
             emptyStarsArr.push(index);
         }
         this.setState({emptyStars: emptyStarsArr});
-        console.log(this.state.emptyStars);
+        // console.log(this.state.emptyStars);
 
 
         this.setState({showFull: 
@@ -71,7 +71,7 @@ class Ratings extends Component {
             ))
         });
 
-        console.log(this.state.filledStars)
+        // console.log(this.state.filledStars)
 
     }
 

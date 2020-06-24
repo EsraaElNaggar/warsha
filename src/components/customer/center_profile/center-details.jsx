@@ -18,7 +18,7 @@ const CenterDetails = props => {
 
                 {/* Center About */}
                 <CenterAbout
-                    // about={center.about}
+                    about={center.about}
                 />
 
                 {/* Center Services */}

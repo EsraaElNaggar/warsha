@@ -14,7 +14,7 @@ class CenterCardAppointments extends Component {
     };
 
     componentDidMount(){
-        let centerID = this.props.centerID;
+        let centerID = Number(this.props.centerID);
   
         let d = new Date();
         axios.get(`http://localhost:3000/appointments?centerId=${centerID}&status=available&year_gte=${d.getFullYear()}&month_gte=${d.getMonth()+1}&day_gte=${d.getDate()}`)
@@ -45,17 +45,18 @@ class CenterCardAppointments extends Component {
         if (appointmentId) {
 
             const appointment = this.state.appointments.filter(app=> app.id === appointmentId);
-            axios.put(`http://localhost:3000/appointments?id=${appointmentId}/`,
+            axios.put(`http://localhost:3000/appointments/${Number(appointmentId)}`,
                 {
                     clientId: this.state.currentUser.id,
                     customerName: this.state.currentUser.fName+" "+this.state.currentUser.lName,
-                    centerId: appointment.centerId,
-                    centerName: appointment.centerName,
-                    centerAddress: appointment.centerAddress,
-                    year: appointment.year,
-                    month: appointment.month,
-                    day: appointment.day,
-                    time: appointment.time,
+                    centerId: appointment[0].centerId,
+                    centerName: appointment[0].centerName,
+                    centerAddress: appointment[0].centerAddress,
+                    waitingTime: appointment[0].waitingTime,
+                    year: appointment[0].year,
+                    month: appointment[0].month,
+                    day: appointment[0].day,
+                    time: appointment[0].time,
                     status: "Not Confirmed"
                 }
             )
@@ -74,9 +75,9 @@ class CenterCardAppointments extends Component {
     render(){
         
         let d = new Date();
-        let day1 =  this.state.appointments.filter(app=> app.day===d.getDate());
-        let day2 = this.state.appointments.filter(app=> app.day===(d.getDate()+1));
-        let day3 = this.state.appointments.filter(app=> app.day===(d.getDate()+2));
+        let day1 =  this.state.appointments.filter( app => Number(app.day) === d.getDate());
+        let day2 = this.state.appointments.filter(app=> Number(app.day)===(d.getDate()+1));
+        let day3 = this.state.appointments.filter(app=> Number(app.day)===(d.getDate()+2));
 
         return ( 
             <React.Fragment>
@@ -93,7 +94,7 @@ class CenterCardAppointments extends Component {
                                     <p className="booking-day">Today</p>
                                     <ul className="appointments-times">
                                     {day1.map(app=>(
-                                        <li key={app.id} id={app.id} onClick={this.handleTime}>{app.time} PM</li>
+                                        <div><a key={app.id} id={app.id} onClick={this.handleTime}>{app.time} PM</a></div>
                                     ))}
                                     </ul>
                                     <button className="booking-btn" onClick={this.handleBookBtn}>Book</button>
@@ -102,7 +103,7 @@ class CenterCardAppointments extends Component {
                                 <div className="appointment-board">
                                     <p className="booking-day">Today</p>
                                     <ul className="appointments-times">
-                                    <li>Not Available</li>
+                                        <li>Not Available</li>
                                     </ul>
                                     <button className="booking-btn">Book</button>
                                 </div>
@@ -113,7 +114,7 @@ class CenterCardAppointments extends Component {
                                     <p className="booking-day">Tomorrow</p>
                                     <ul className="appointments-times">
                                     {day2.map(app=>(
-                                        <li key={app.id} id={app.id} onClick={this.handleTime}>{app.time} PM</li>
+                                        <div><a key={app.id} id={app.id} onClick={this.handleTime}>{app.time} PM</a></div>
                                     ))}
                                     </ul>
                                     <button className="booking-btn" onClick={this.handleBookBtn}>Book</button>
@@ -133,7 +134,7 @@ class CenterCardAppointments extends Component {
                                     <p className="booking-day">{day3[0].day} {getMonthName(new Date(`01/${day3[0].month}/2020`))}</p>
                                     <ul className="appointments-times">
                                     {day3.map(app=>(
-                                        <li key={app.id} id={app.id} onClick={this.handleTime}>{app.time} PM</li>
+                                        <div><a key={app.id} id={app.id} onClick={this.handleTime}>{app.time} PM</a></div>
                                     ))}
                                     </ul>
                                     <button className="booking-btn" onClick={this.handleBookBtn}>Book</button>

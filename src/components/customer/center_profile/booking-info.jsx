@@ -1,6 +1,7 @@
 import React from 'react';
 import BookingForm from './booking-form';
-import AppointmentsContainer from './appointments-container';
+// import AppointmentsContainer from './appointments-container';
+import CenterCardAppointments from './../search_result/center-card-appointments';
 
 const BookingInfo = props => {
 
@@ -34,7 +35,11 @@ const BookingInfo = props => {
                     <BookingForm/>
                     :
                     // Booking Appointments
-                    <AppointmentsContainer/>
+                    // <AppointmentsContainer/>
+                    <CenterCardAppointments
+                        centerID={center.id}
+                        handleBooking={props.handleBooking}
+                    />
                 }
                 
             </div>

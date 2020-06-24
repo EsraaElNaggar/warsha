@@ -100,6 +100,7 @@ class App extends Component {
               <CenterProfile
                 {...props}
                 center={this.state.center}
+                handleBooking={this.handleBooking}
               />
             )}
           />
