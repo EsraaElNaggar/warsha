@@ -122,9 +122,6 @@ class App extends Component {
           {/* Appointments */}
           <Route path="/appointment" component={Appointment} />
 
-          {/* Appointments Day */}
-          <Route path="/appointmentday" component={AppointmentsDay} />
-
           {/* Center Apointments */}
           <Route path="/centerappointments" component={CenterAppointments} />
 
