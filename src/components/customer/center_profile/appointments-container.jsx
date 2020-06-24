@@ -4,60 +4,60 @@ class AppointmentsContainer extends Component {
     state = {}
     render() {
         return (
-            <div class="booking-appointments">
-                <p class="booking-appointments-title">
+            <div className="booking-appointments">
+                <p className="booking-appointments-title">
                     Choose Your Appointment
                         </p>
-                <div class="border-y d-flex justify-content-between appoitments-content">
-                    <div class="arrow">
+                <div className="border-y d-flex justify-content-between appoitments-content">
+                    <div className="arrow">
                         <button>
-                            <i class="fas fa-arrow-left"></i>
+                            <i className="fas fa-arrow-left"></i>
                         </button>
                     </div>
-                    <div class="appointment-board">
-                        <p class="booking-day">Today</p>
-                        <div class="appointments-times">
+                    <div className="appointment-board">
+                        <p className="booking-day">Today</p>
+                        <div className="appointments-times">
                             <div><a href="#">Not Available</a></div>
                         </div>
-                        <button class="booking-btn">Book</button>
+                        <button className="booking-btn">Book</button>
                     </div>
-                    <div class="appointment-board">
-                        <p class="booking-day">Tomorrow</p>
-                        <div class="appointments-times">
+                    <div className="appointment-board">
+                        <p className="booking-day">Tomorrow</p>
+                        <div className="appointments-times">
                             <div><a href="#">12:00 PM</a></div>
                             <div><a href="#"><del>01:00 PM</del></a></div>
                             <div><a href="#">03:00 PM</a></div>
                             <div><a href="#"><del>05:00 PM</del></a></div>
                             {/* <div><a href="#">More</a></div> */}
                         </div>
-                        <button class="booking-btn">Book</button>
+                        <button className="booking-btn">Book</button>
                     </div>
-                    <div class="appointment-board">
-                        <p class="booking-day">Wed 06/5</p>
-                        <div class="appointments-times">
+                    <div className="appointment-board">
+                        <p className="booking-day">Wed 06/5</p>
+                        <div className="appointments-times">
                             <div><a href="#">12:00 PM</a></div>
                             <div><a href="#"><del>01:00 PM</del></a></div>
                             <div><a href="#">03:00 PM</a></div>
                             <div><a href="#"><del>05:00 PM</del></a></div>
                             {/* <div><a href="#">More</a></div> */}
                         </div>
-                        <button class="booking-btn">Book</button>
+                        <button className="booking-btn">Book</button>
                     </div>
-                    <div class="arrow">
+                    <div className="arrow">
                         <button>
-                            <i class="fas fa-arrow-right"></i>
+                            <i className="fas fa-arrow-right"></i>
                         </button>
                     </div>
                 </div>
-                <div class="pt-3 px-5 d-flex justify-content-between">
-                    <div class="width20 pl-5">
-                        <i class="fas fa-calendar-alt"></i>
+                <div className="pt-3 px-5 d-flex justify-content-between">
+                    <div className="width20 pl-5">
+                        <i className="fas fa-calendar-alt"></i>
                     </div>
                     <div>
-                        <p class="subaddress mb-0">
+                        <p className="subaddress mb-0">
                             Book Online, Pay at the center!
                                 </p>
-                        <p class="pl-3">
+                        <p className="pl-3">
                             Center requires reservation!
                                 </p>
                     </div>

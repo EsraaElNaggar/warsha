@@ -17,11 +17,13 @@ import CenterAppointments from './components/center/center_appointments_List/cen
 import Appointment from './components/center/appointments_day/appointment';
 import AppointmentsDay from './components/center/appointments_day/appointments-day';
 import CenterProfile from './components/customer/center_profile/center-profile';
+import AppointmentConfirmation from './components/customer/appointment_confirmation/appointment-confirmation';
 
 
 class App extends Component {
   state = {
     searchResult: [],
+    bookingInfo: "",
     center: ""
   };
 
@@ -32,6 +34,10 @@ class App extends Component {
 
   openCenterProfile = center =>{
     this.setState({ center });
+  }
+
+  handleBooking = data =>{
+    this.setState({bookingInfo: data});
   }
 
   render() {
@@ -73,6 +79,17 @@ class App extends Component {
                 {...props}
                 centers={this.state.searchResult}
                 openCenterProfile={this.openCenterProfile}
+                handleBooking={this.handleBooking}
+              />
+            )}
+          />
+
+          {/* Search Result */}
+          <Route path="/confirmbooking"
+            render={props => (
+              <AppointmentConfirmation
+                {...props}
+                bookingInfo={this.state.bookingInfo}
               />
             )}
           />

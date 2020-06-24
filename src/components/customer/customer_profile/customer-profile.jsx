@@ -3,12 +3,13 @@ import React, { Component } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";
 
+import Nav from './../../core/nav/nav';
 import CustomerProfileDetails from './customer-profile-details';
 import UserAppointments from './user-appointments';
-import ChangePasswordUser from '../../forms/changePasswordUser';
-import { getFromStorage } from './../../../_utils/local-storage';
-import Nav from "../../core/nav/nav";
+import ChangePasswordUser from '../../forms/change-user-password';
 import Footer from "../../core/footer";
+
+import { getFromStorage } from './../../../_utils/local-storage';
 
 class CustomerProfile extends Component {
   state = {
@@ -16,7 +17,8 @@ class CustomerProfile extends Component {
     userData: ""
   };
 
-  componentDidMount() {
+  // get customer data
+  componentDidMount(){
     let userID = getFromStorage('currentID');
 
     axios.get(`http://localhost:3000/users?id=${userID}`)
@@ -42,9 +44,11 @@ class CustomerProfile extends Component {
   render() {
     return (
       <React.Fragment>
-        <Nav className="white" />
+        {/* NavBar */}
+        <Nav className="white"/>
 
-        <div className="body d-flex justify-content-between" style={{ height: "100%" }}>
+        {/* Profile Container */}
+        <div className="body d-flex justify-content-between" style={{height:"100%"}}>
           <div className="content">
             <ul>
               <li className="selected-tab"
@@ -78,15 +82,17 @@ class CustomerProfile extends Component {
               case 1:
                 return <CustomerProfileDetails userData={this.state.userData} />;
               case 2:
-                return <ChangePasswordUser />;
+                return <ChangePasswordUser userData={this.state.userData}/>;
               case 3:
-                return <UserAppointments />;
+                return <UserAppointments userData={this.state.userData}/>;
               default:
                 return <CustomerProfileDetails userData={this.state.userData} />;
             }
           })()}
         </div>
-        <Footer />
+
+        {/* Footer */}
+        <Footer/>
       </React.Fragment >
     );
   }

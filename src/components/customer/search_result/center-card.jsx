@@ -6,9 +6,11 @@ import CenterCardAppointments from './center-card-appointments';
 const CenterCard = props => {
 
     const {
-        centerName,
-        // locations, 
-        telephone,
+        id,
+        centerName, 
+        locations, 
+        telephone, 
+        waitingTime,
         // onLocationService, 
         // waitingTime,
         speciality,
@@ -53,25 +55,34 @@ const CenterCard = props => {
                         </p>
                         {/* No. Of Reviews End */}
 
-                        {/* No. Of Reviews Start */}
+                        {/* Address Start */}
                         <p className="center-card-addess m-0">
-                            <i className="fas fa-map-marker-alt pr-2" />
-                        Nasr City: Enozha
+                        <i className="fas fa-map-marker-alt pr-2" />
+                            {locations[0].city}: {locations[0].area}
                         </p>
-                        {/* No. Of Reviews End */}
+                        {/* Address End */}
 
-                        {/* No. Of Reviews Start */}
+                        {/* Telephone Start */}
                         <p className="center-card-phone m-0">
                             <i className="fas fa-phone-alt pr-2" />
                             {telephone} - Regular Call
                         </p>
-                        {/* No. Of Reviews End */}
+                        {/* Telephone End */}
+                        {/* Waiting Time Start */}
+                        <p className="center-card-phone m-0">
+                        <i className="fas fa-clock pr-2"></i>
+                            {waitingTime} mins - Waiting Time
+                        </p>
+                        {/* Waiting Time End */}
                     </div>
                     {/* Center Ratings Start */}
                 </div>
 
                 {/* Center Card Apointments */}
-                <CenterCardAppointments />
+                <CenterCardAppointments
+                    centerID={id}
+                    handleBooking={this.props.handleBooking}
+                />
             </div>
         </React.Fragment>
     );

@@ -1,7 +1,8 @@
 import React from 'react';
+import { getMonthName } from './../../../_utils/get-month-name';
 
 const BookingDetails = props => {
-   
+   const bookingInfo = props.bookingInfo;
     return ( 
         <React.Fragment>
             <div className="booking-details div-border">
@@ -17,7 +18,7 @@ const BookingDetails = props => {
                         Client Name
                     </span>
                     <span>
-                        Mona Mohamed
+                        {bookingInfo.customerName}
                     </span>
                 </div>
                 <div className="line" />
@@ -26,7 +27,7 @@ const BookingDetails = props => {
                     Booking Date
                     </span>
                     <span>
-                    05 May . 08:00 PM . Appointment reservation
+                    {bookingInfo.day} {getMonthName(new Date(`${bookingInfo.month}/01/2020`))} . {bookingInfo.time} PM . Appointment reservation
                     </span>
                 </div>
                 <div className="line" />
@@ -35,7 +36,7 @@ const BookingDetails = props => {
                     Waiting Time
                     </span>
                     <span>
-                    19 minutes
+                    {bookingInfo.waitingTime}
                     </span>
                 </div>
                 <div className="line" />
@@ -44,8 +45,7 @@ const BookingDetails = props => {
                     Center Address
                     </span>
                     <span>
-                    50 Mohy Eldin Abo ElEzz Street Same
-                    Building As Alfa Labs And Beside KFC.
+                        {bookingInfo.centerAddress}
                     </span>
                 </div>
             </div>

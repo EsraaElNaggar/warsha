@@ -16,7 +16,7 @@ const PasswordSchema = yup.object().shape({
     .matches("^(?=.*[A-Za-z])(?=.*d)(?=.*[@$!%*#?&])[A-Za-zd@$!%*#?&]{8,}$")
 });
 
-const ChangePasswordUser = () => {
+const ChangeUserPassword = () => {
   const [password, setPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
 
@@ -66,7 +66,7 @@ const ChangePasswordUser = () => {
                 ref={register}
                 errorClasses="myError animation a1"
               />
-              <a className="changeBtn" href="#">Submit</a>
+              <button type="submit" className="changeBtn">Submit</button>
             </form>
           </div>
         </div>
@@ -75,4 +75,4 @@ const ChangePasswordUser = () => {
   );
 };
 
-export default ChangePasswordUser;
+export default ChangeUserPassword;

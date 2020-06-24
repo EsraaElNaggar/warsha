@@ -12,10 +12,14 @@ class AppointmentConfirmation extends Component {
                 <section className=" appointment-confirmation">
                     <div className="firstPart d-flex justify-content-between container">
                         {/* Confirmation Card */}
-                        <ConfirmationCard/> {/* send center name + phone no. */}
+                        <ConfirmationCard
+                            bookingInfo={this.props.bookingInfo}
+                        /> 
                         
                         {/* Booking Details */}
-                        <BookingDetails/> {/* send Booking Details */}
+                        <BookingDetails
+                            bookingInfo={this.props.bookingInfo}
+                        />
                     </div>
                     
                     {/* Thanks For Booking Start */}
