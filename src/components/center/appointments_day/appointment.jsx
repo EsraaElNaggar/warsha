@@ -8,11 +8,11 @@ const Appointment = props => {
                 <div className="appointment-client-card">
                     <div className="appointment-client-details">
                         <span>
-                            Mona Mohamed
-                    </span>
+                            {props.clientName}
+                        </span>
                         <span>
-                            12:00 PM
-                    </span>
+                            {ppros.appos}
+                        </span>
                     </div>
                     <div className="client-card-btns d-flex">
                         <button className="checkInBtn">

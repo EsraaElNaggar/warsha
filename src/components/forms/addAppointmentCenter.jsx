@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios"
+import CenterAppointments from "../center/center_appointments_List/center-appointments";
+import AppointmentsDay from "../center/appointments_day/appointments-day";
 
 class AddAppointmentCenter extends Component {
   state = {
@@ -27,12 +29,13 @@ class AddAppointmentCenter extends Component {
   //   "time": "02:00",
   //   "centerId": "3"
   // }
+  onReturn = () =>{
+    this.props.history.replace("/centermainprofile");
+  }
   onSubmit = e => {
     const centerID = localStorage.getItem("currentID");
     axios.get(`http://localhost:3000/appointments`).then(res=>{
-      let id = ++res.data[res.data.length-1].id;
       axios.post(`http://localhost:3000/appointments`,{
-        "id":id.toString(),
         "clientId": "",
         "centerId": centerID,
         "year": this.state.date.getFullYear().toString(),
@@ -79,8 +82,10 @@ class AddAppointmentCenter extends Component {
                 <input type="submit" value="Submit" />
               </div>
             </form>
+            <button onClick={this.onReturn}>Return to Profile</button>
           </div>
         </div>
+        <AppointmentsDay/>
       </React.Fragment>
     );
   }
